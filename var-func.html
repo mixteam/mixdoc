@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Var · Taobao H5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--Le Less-->
+    <link rel="stylesheet" type="text/css" href="assets/css/tbh5v0.css" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">首页</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">简介</a>
+              </li>
+              <li class="active">
+                <a href="./var-func.html">变量&amp;函数</a>
+              </li>
+              <li class="">
+                <a href="./base-less.html">Global&amp;Base LESS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">HTML组件</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">JS模块</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./qa.html">Q&A</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <h1>变量 &amp; 函数</h1>
+  <p class="lead">源代码：<a href="_var.less">_var.less</a>，<a href="_func.less">_func.less</a></p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#builtWith">使用LESS</a></li>
+      <li><a href="#variables">变量</a></li>
+      <li><a href="#mixins">函数</a></li>
+      <li><a href="#compiling">编译</a></li>
+    </ul>
+  </div>
+</header>
+
+
+
+<!-- BUILT WITH LESS
+================================================== -->
+<section id="builtWith">
+  <div class="page-header">
+    <h1>使用LESS</h1>
+  </div>
+  
+  <h2>LESS相关教程，请访问Wiki：<a href="http://wiki.ued.taobao.net/doku.php?id=team:mobile:f2e:less" target="_blank">http://wiki.ued.taobao.net/doku.php?id=team:mobile:f2e:less</a></h2>
+</section>
+
+
+<!-- VARIABLES
+================================================== -->
+<section id="variables">
+  <div class="page-header">
+    <h1>变量</h1>
+  </div>
+
+  <h3>背景色</h3>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <td class="span3"><code>@standard-bg-color</code></td>
+        <td><code>#EEE</code></td>
+        <td>主要背景色</td>
+        <td class="swatch-col"><span class="swatch" style="background-color: #EEE;"></span></td>
+      </tr>
+      <tr>
+        <td><code>@standard-main-color</code></td>
+        <td><code>#F40</code></td>
+        <td>主色</td>
+        <td class="swatch-col"><span class="swatch" style="background-color: #F40;"></span></td>
+      </tr>
+      <tr>
+        <td><code>@standard-sub-color1</code></td>
+        <td><code>#F60</code></td>
+        <td>辅色A</td>
+        <td class="swatch-col"><span class="swatch" style="background-color: #F60;"></span></td>
+      </tr>
+      <tr>
+        <td><code>@standard-sub-color2</code></td>
+        <td><code>#F90</code></td>
+        <td>辅色B</td>
+        <td><span class="swatch" style="background-color: #F90;"></span></td>
+      </tr>
+      <tr>
+        <td><code>@standard-linear-l</code></td>
+        <td><code>#F94B21</code></td>
+        <td>渐变色开始</td>
+        <td><span class="swatch" style="background-color: #F94B21;"></span></td>
+      </tr>
+      <tr>
+        <td><code>@standard-linear-r</code></td>
+        <td><code>#EB3E12</code></td>
+        <td>渐变色结束</td>
+        <td><span class="swatch" style="background-color: #EB3E12;"></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>文字属性</h3>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <td class="span3"><code>@text-main-color</code></td>
+        <td><code>#333</code></td>
+        <td>主色</td>
+        <td><span class="swatch" style="color: #333;">TEXT</span></td>
+      </tr>
+      <tr>
+        <td><code>@text-highlight-color</code></td>
+        <td><code>#F40</code></td>
+        <td>高亮</td>
+        <td><span class="swatch" style="color: #F40;">TEXT</span></td>
+      </tr>
+      <tr>
+        <td><code>@text-sub-color</code></td>
+        <td><code>#666</code></td>
+        <td>辅色</td>
+        <td><span class="swatch" style="color: #666;">TEXT</span></td>
+      </tr>
+      <tr>
+        <td><code>@text-em-color</code></td>
+        <td><code>#D40000</code></td>
+        <td>着重色</td>
+        <td><span class="swatch" style="color: #D40000;">TEXT</span></td>
+      </tr>
+      <tr>
+        <td><code>@text-link-color</code></td>
+        <td><code>#047</code></td>
+        <td>链接色</td>
+        <td><span class="swatch" style="color: #047;">TEXT</span></td>
+      </tr>
+      <tr>
+        <td><code>@title-font-size</code></td>
+        <td><code>24px</code></td>
+        <td colspan="2">标题文字大小</td>
+      </tr>
+      <tr>
+        <td><code>@tab-font-size</code></td>
+        <td><code>18px</code></td>
+        <td colspan="2">标签文字大小</td>
+      </tr>
+      <tr>
+        <td><code>@big-font-size</code></td>
+        <td><code>16px</code></td>
+        <td colspan="2">大号文字</td>
+      </tr>
+      <tr>
+        <td><code>@normal-font-size</code></td>
+        <td><code>14px</code></td>
+        <td colspan="2">中号文字</td>
+      </tr>
+      <tr>
+        <td><code>@small-font-size</code></td>
+        <td><code>12px</code></td>
+        <td colspan="2">小号文字</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>间距</h3>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <td class="span3"><code>@page-padding-width</code></td>
+        <td><code>10px</code></td>
+        <td>页边距</td>
+      </tr>
+      <tr>
+        <td><code>@list-margin-width</code></td>
+        <td><code>30px</code></td>
+        <td>列表间距</td>
+      </tr>
+      <tr>
+        <td><code>@first-list-margin-width</code></td>
+        <td><code>20px</code></td>
+        <td>第一个列表的顶部间距</td>
+      </tr>
+      <tr>
+        <td><code>@list-item-margin-width</code></td>
+        <td><code>10px</code></td>
+        <td>列表中各项目间距</td>
+      </tr>
+      <tr>
+        <td><code>@group-list-margin-width</code></td>
+        <td><code>20px</code></td>
+        <td>分组列表间距</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>屏幕尺寸</h3>
+  <table class="table table-bordered table-striped">
+    <tbody>
+      <tr>
+        <td class="3"><code>@screen-min-width</code></td>
+        <td><code>320px</code></td>
+        <td>最小宽度</td>
+      </tr>
+      <tr>
+        <td><code>@screen-min-height</code></td>
+        <td><code>480px</code></td>
+        <td>最小高度</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- MIXINS
+================================================== -->
+<section id="mixins">
+  <div class="page-header">
+    <h1>函数<small></small></h1>
+  </div>
+  <h2>关于函数</h2>
+  <div class="row">
+    <div class="span4">
+      <h3>简单函数</h3>
+<pre class="prettyprint">
+.element {
+  .clearfix();
+}
+</pre>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>带参函数</h3>
+<pre class="prettyprint">
+.element {
+  .border-radius(4px);
+}
+</pre>
+    </div><!-- /span4 -->
+  </div><!-- /row -->
+  <h2>使用函数</h2>
+  <h3>工具</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">函数名</th>
+        <th>参数</th>
+        <th>用途</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.clearfix()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>清除浮动</td>
+      </tr>
+      <tr>
+        <td><code>.none()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>隐藏元素<code>display:none</code></td>
+      </tr>
+      <tr>
+        <td><code>.no-spacing()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>清除元素边距</td>
+      </tr>
+      <tr>
+        <td><code>.margin-center()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>元素和文字居中</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>CSS3 属性</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">函数名</th>
+        <th>参数</th>
+        <th>用途</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.border-radius()</code></td>
+        <td><code>@x</code></td>
+        <td>设置圆角</td>
+      </tr>
+      <tr>
+        <td><code>.transform()</code></td>
+        <td><code>@x</code></td>
+        <td>设置CSS3的变换</td>
+      </tr>
+      <tr>
+        <td><code>.translate()</code></td>
+        <td><code>@x:0, @y:0, @origin:0 0, @duration:0s</code></td>
+        <td>设置CSS3的平移</td>
+      </tr>
+      <tr>
+        <td><code>.animation()</code></td>
+        <td><code>@name, @duration, @func:linear, @count:1</code></td>
+        <td>设置CSS3的动画</td>
+      </tr>
+      <tr>
+        <td><code>.rotate()</code></td>
+        <td><code>@degrees</code></td>
+        <td>旋转元素</td>
+      </tr>
+      <tr>
+        <td><code>.box-shadow()</code></td>
+        <td><code>@r, @b, @x, @y, @c</code></td>
+        <td>设置元素阴影</td>
+      </tr>
+      <tr>
+        <td><code>.solid-arrow()</code></td>
+        <td><code>@width, @height, @color, @bgcolor:transparent, @rotate:0deg</code></td>
+        <td>描绘实体箭头</td>
+      </tr>
+      <tr>
+        <td><code>.border-arrow()</code></td>
+        <td><code>@width, @height, @color, @border-width:1px, @rotate:0deg</code></td>
+        <td>描绘边框箭头</td>
+      </tr>
+      <tr>
+        <td><code>.btn-with-arrow()</code></td>
+        <td><code>@w, @h, @aw, @b:1px</code></td>
+        <td>描绘带有左箭头的按钮，DOM结构：
+<pre class="prettyprint">
+&lt;div&gt;
+    &lt;span&gt;&lt;em&gt;&lt;/em&gt;&lt;/span&gt;
+    &lt;a&gt;带箭头的按钮&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+		</td>
+      </tr>
+      <tr>
+        <td><code>.stretch-side()</code></td>
+        <td><code>@background, @space-width:9999px</code></td>
+        <td>延伸元素背景</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+
+<!-- COMPILING LESS
+================================================== -->
+<section id="compiling">
+  <div class="page-header">
+    <h1>编译</h1>
+  </div>
+  <div class="alert alert-info">
+    <strong>注意:</strong> 请勿随意改动和覆盖组件库里的样式
+  </div>
+  <h2>可以用作编译的工具</h2>
+  <div class="row">
+    <div class="span4">
+      <h3>命令行</h3>
+      <p>通过Node安装LESS命令行工具，并运行如下命令：</p>
+        <pre>$ lessc component.less > component.css</pre>
+      <p>使用 <code>--compress</code> 命令参数可以对CSS文件进行压缩</p>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>Javascript</h3>
+      <p><a href="../../libs/less/1.3.0/less.js">下载最新的Less.js</a> 在 <code>&lt;head&gt;</code>引入这个JS</p>
+<pre class="prettyprint">
+&lt;link rel="stylesheet/less" href="/path/to/component.less"&gt;
+&lt;script src="/path/to/less.js"&gt;&lt;/script&gt;
+</pre>
+      <p>详细功能请参见Wiki内的教程</p>
+    </div><!-- /span4 -->
+  </div><!-- /row -->
+</section>
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world.</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/js/widgets.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+  </body>
+</html>

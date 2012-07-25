@@ -1,0 +1,68 @@
+    <!-- scroller
+    ================================================== -->
+    <section id="scroller">
+      <div class="page-header">
+        <h1>{{_i}}滚动模块{{/i}} <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>{{_i}}关于{{/i}}</h3>
+          <p>{{_i}}提供类似于iscroller的滚动效果{{/i}}</p>
+          <a href="../../modules/scroller/scroller.js" class="btn">{{_i}}查看文件{{/i}}</a>
+          <hr>
+          <h3>{{_i}}动画DEMO{{/i}}</h3>
+          <a href="examples/scroller.html" class="btn btn-primary">{{_i}}访问DEMO{{/i}}</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>{{_i}}用法{{/i}}</h2>
+          <p>{{_i}}在javascript中调用：{{/i}}</p>
+<pre class="prettyprint">
+var scroller = require('scroller'),
+    thisScroller = scroller('#wrapper', options);
+</pre>
+          <h3>{{_i}}参数列表{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">{{_i}}键名{{/i}}</th>
+               <th style="width: 100px;">{{_i}}类型{{/i}}</th>
+               <th style="width: 100px;">{{_i}}默认值{{/i}}</th>
+               <th>{{_i}}描述{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>{{_i}}<code>selector</code>{{/i}}</td>
+               <td>{{_i}}string(css selector){{/i}}</td>
+               <td>{{_i}}空串{{/i}}</td>
+               <td>{{_i}}响应事件的容器{{/i}}</td>
+             </tr>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>{{_i}}direction{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}滚动的方向，可支持<code>V</code>垂直方向和<code>H</code>水平方向{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}isBar{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}true{{/i}}</td>
+               <td>{{_i}}是否显示滚动条{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+          
+ 		  <!-- 方法 -->
+          <h3{{_i}}>方法{{/i}}</h3>
+          <h4>{{_i}}.refresh(){{/i}}</h4>
+          <p>{{_i}}刷新滚动高度和滚动条{{/i}}</p>
+<pre class="prettyprint">
+thatScroller.refresh();
+</pre>
+        </div>
+      </div>
+    </section>

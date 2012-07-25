@@ -1,0 +1,28 @@
+<!-- COMPILING LESS
+================================================== -->
+<section id="compiling">
+  <div class="page-header">
+    <h1>{{_i}}编译{{/i}}</h1>
+  </div>
+  <div class="alert alert-info">
+    {{_i}}<strong>注意:</strong> 请勿随意改动和覆盖组件库里的样式{{/i}}
+  </div>
+  <h2>{{_i}}可以用作编译的工具{{/i}}</h2>
+  <div class="row">
+    <div class="span4">
+      <h3>{{_i}}命令行{{/i}}</h3>
+      <p>{{_i}}通过Node安装LESS命令行工具，并运行如下命令：{{/i}}</p>
+        <pre>$ lessc component.less > component.css</pre>
+      <p>{{_i}}使用 <code>--compress</code> 命令参数可以对CSS文件进行压缩{{/i}}</p>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>{{_i}}Javascript{{/i}}</h3>
+      <p>{{_i}}<a href="../../libs/less/1.3.0/less.js">下载最新的Less.js</a> 在 <code>&lt;head&gt;</code>引入这个JS{{/i}}</p>
+<pre class="prettyprint">
+&lt;link rel="stylesheet/less" href="/path/to/component.less"&gt;
+&lt;script src="/path/to/less.js"&gt;&lt;/script&gt;
+</pre>
+      <p>{{_i}}详细功能请参见Wiki内的教程{{/i}}</p>
+    </div><!-- /span4 -->
+  </div><!-- /row -->
+</section>

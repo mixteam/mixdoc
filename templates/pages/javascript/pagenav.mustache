@@ -1,0 +1,119 @@
+    <!-- Pagenav
+    ================================================== -->
+    <section id="pagenav">
+      <div class="page-header">
+        <h1>{{_i}}分页模块{{/i}} <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>{{_i}}关于{{/i}}</h3>
+          <p>{{_i}}提供分页操作{{/i}}</p>
+          <a href="../component/pagenav/js/pagenav.js" class="btn">{{_i}}查看文件{{/i}}</a>
+          <hr>
+          <h3>{{_i}}DOM样式{{/i}}</h3>
+          <p>{{_i}}请参见HTML组件 之 <a href="components.html#pagenav">分页/翻页</a>{{/i}}</p>
+		  <hr>
+          <h3>{{_i}}动画DEMO{{/i}}</h3>
+          <a href="examples/pagenav.html" class="btn btn-primary">{{_i}}访问DEMO{{/i}}</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>{{_i}}用法{{/i}}</h2>
+          <p>{{_i}}在javascript中调用：{{/i}}</p>
+<pre class="prettyprint">
+var PageNav = require('pagenav'),
+    thisPageNav = new pageNav(options);
+    ;
+</pre>
+          <h3>{{_i}}参数列表{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">{{_i}}键名{{/i}}</th>
+               <th style="width: 100px;">{{_i}}类型{{/i}}</th>
+               <th style="width: 100px;">{{_i}}默认值{{/i}}</th>
+               <th>{{_i}}描述{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>{{_i}}selector{{/i}}</td>
+               <td>{{_i}}string(css selector){{/i}}</td>
+               <td>{{_i}}空字符串{{/i}}</td>
+               <td>{{_i}}绑定容器的selector{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}pageCount{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}1{{/i}}</td>
+               <td>{{_i}}分页总数{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}objId{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}分页对象{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}preFix{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}前缀{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}disableHash{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}是否对location.hash进行变更{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+          
+          <h3{{_i}}>方法{{/i}}</h3>
+          <h4>{{_i}}.init(options){{/i}}</h4>
+          <p>{{_i}}可以重新初始化对象{{/i}}</p>
+<pre class="prettyprint">
+thatPageNav.init(options);
+</pre>
+          
+ 		  <!-- 事件 -->
+		  <h3>{{_i}}事件{{/i}}</h3>
+          <p>{{_i}}{{/i}}</p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">{{_i}}事件名{{/i}}</th>
+               <th>{{_i}}描述{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>{{_i}}hashchange{{/i}}</td>
+               <td>{{_i}}作用在document上，监听全局的分页改变{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}P:switchPage{{/i}}</td>
+               <td>{{_i}}作用在某个分页对象上，监听该对象的分页改变{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+
+<pre class="prettyprint">
+window.addEventListener('hashchange', function(e) {
+	// 全局分页变更
+});
+</pre>
+
+<pre class="prettyprint">
+thatPageNav.pContainer().on('P:switchPage', function(e, page) {
+	// 对象分页变更
+	// 响应此事件需要把disableHash设置为true
+});
+</pre>
+
+        </div>
+      </div>
+    </section>

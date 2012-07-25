@@ -1,0 +1,123 @@
+<!-- Pagenav
+================================================== -->
+<section id="pagenav">
+  <div class="page-header">
+    <h1>{{_i}}分页/翻页<small> <a href="../component/pagenav/less/pagenav.less">tab.less</a></small>{{/i}}</h1>
+  </div>
+
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}分页样式{{/i}}</h3>
+      <div id="tbh5v0" class="example">
+			<div class="c-pnav-con">
+				<ul>
+					<li class="c-pnav-disli">上一页</li>
+					<li><div class="c-pnav-arrow c-pnav-down"><span>1/3</span><span></span></div></li>
+					<li>
+						<select class="c-pnav-select">
+							<option>第1页</option>
+							<option>第2页</option>
+							<option>第3页</option>
+						</select>
+					</li>
+					<li class="c-pnav-enli">下一页</li>
+				</ul>
+			</div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>{{_i}}用法{{/i}}</h3>
+    <p>{{_i}}
+    	用于<code>div</code>标签，
+    	引入<a href="../component/pagenav/js/pagenav.js">pagenav.js</a>，
+    	设定id和<code>c-pnav-con</code>的类名。具体使用方法参见<a href="javascript.html#pagenav">JS模块 之 分页模块</a>{{/i}}</p>
+<pre>
+&lt;div id="pageNavDemo" class="c-pnav-con"&gt;&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}翻页样式{{/i}}</h3>
+      <div id="tbh5v0" class="example">
+      	<div class="c-pnav-demo">
+	        <div class="c-pnav-left">
+	            <span></span>
+	        </div>
+	        <ul class="c-pnav-list">
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li class="cur"></li>
+	            <li></li>
+	        </ul>
+	        <div class="c-pnav-right">
+	            <span></span>
+	        </div>
+	     </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>{{_i}}DOM结构{{/i}}</h3>
+<pre>
+&lt;div class="c-pnav-left"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;ul class="c-pnav-list"&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li class="cur"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="c-pnav-right"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}下拉样式{{/i}}</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-pnav-wrapper">
+            <a class="down">
+                <!--箭头-->
+                <div>
+                    <span>
+                    </span>
+                </div>
+            </a>
+        </div>
+        <br />
+        <div class="c-pnav-wrapper">
+            <a class="up">
+                <!--箭头-->
+                <div>
+                    <span>
+                    </span>
+                </div>
+            </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>{{_i}}DOM结构{{/i}}</h3>
+<pre>
+&lt;div class="c-pnav-wrapper"&gt;
+    &lt;a class="[down|up]" href="#"&gt;
+        &lt;!--箭头--&gt;
+        &lt;div&gt;
+            &lt;span&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+
+</section>

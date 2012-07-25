@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Components · Taobao H5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--Le Less-->
+    <link rel="stylesheet" type="text/css" href="assets/css/tbh5v0.css" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">首页</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">简介</a>
+              </li>
+              <li class="">
+                <a href="./var-func.html">变量&amp;函数</a>
+              </li>
+              <li class="">
+                <a href="./base-less.html">Global&amp;Base LESS</a>
+              </li>
+              <li class="active">
+                <a href="./components.html">HTML组件</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">JS模块</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./qa.html">Q&A</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <h1>HTML组件</h1>
+  <p class="lead">源代码：请单独参见以下各个组件</p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#innernav">内页导航条</a</li>
+      <li><a href="#footer">底部信息</a</li>
+      <li><a href="#topcate">顶部下拉</a</li>
+      <li><a href="#button">按钮</a></li>
+      <li><a href="#filter">筛选器</a></li>
+      <li><a href="#form">表单</a></li>
+      <li><a href="#icon">图标</a></li>
+      <li><a href="#list">列表</a></li>
+      <li><a href="#loading">加载动画</a></li>
+      <li><a href="#more">更多按钮</a></li>
+      <li><a href="#message">信息提示</a></li>
+      <li><a href="#photo">图片格式</a></li>
+      <li><a href="#tab">选项卡</a></li>
+      <li><a href="#pagenav">分页/翻页</a></li>
+      <li><a href="#float">浮层</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Inner Navigator
+================================================== -->
+<section id="innernav">
+  <div class="page-header">
+    <h1>内页导航条<small>用于页面顶部导航 <a href="../component/innernav/less/innernav.less">innernav.less</a></small></h1>
+  </div>
+  <div class="row">
+    <div class="span0">
+      <h3>基础样式</h3>
+      <div id="tbh5v0" class="example">
+		<header>
+			<div class="c-inav">
+				<section>
+					<div class="back">
+						<span><em></em></span><a>我的淘宝</a>
+					</div>
+				</section>
+				<section>
+					<span>我的淘宝</span>
+				</section>
+				<section>
+					<div class="other">
+						<a>分类</a>
+					</div>						
+				</section>
+			</div>
+		</header>
+      </div>
+    </div>
+    
+    <div class="span8">
+    	<h3>基础DOM结构</h3>
+    	<p>如果不需要右边的按钮，请保持<code>div.c-inav > section:last-child</code>为空元素</p>
+<pre>
+&lt;header&gt;
+    &lt;div class="c-inav"&gt;
+        &lt;section&gt;
+            &lt;div c&lt;ass="back"&gt;
+                &lt;span&gt;&lt;em&gt;&lt;/em&gt;&lt;/span&gt;&lt;a href="about:blank"&gt;我的淘宝&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;span&gt;我的淘宝&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;div class="other"&gt;
+                &lt;a href="about:blank"&gt;分类&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+</pre> 
+    </div>
+  </div>
+  <br />
+    
+	<div class="row">
+		<div class="span0">
+	      <h3>扩展样式</h3>
+	      <div id="tbh5v0" class="example">
+			<header>
+				<div class="c-inav">
+					<section>
+						<div class="back">
+							<span><em></em></span><a href="about:blank">我的淘宝</a>
+						</div>
+					</section>
+					<section>
+						<div class="main">
+							<a href="about:blank" class="highlight">宝贝收藏</a>
+							<a href="about:blank">店铺收藏</a>
+						</div>
+					</section>
+					<section>
+						<div class="other">
+							<a href="about:blank">分类</a>
+						</div>						
+					</section>
+				</div>
+			</header>
+	      </div>
+		</div>
+	    <div class="span8">
+	    	<h3>扩展样式DOM结构</h3>
+	    	<p>用以下DOM结构替换<code>div.c-inav > section:nth-child(2)</code>中的HTML</p>
+<pre>
+&lt;div class="main"&gt;
+    &lt;a href="about:blank" class="highlight"&gt;宝贝收藏&lt;/a&gt;
+    &lt;a href="about:blank"&gt;店铺收藏&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+		</div>
+	</div>
+    <br />
+    
+    <div class="row">
+    	<div class="span0">
+	      <h3>子菜单样式</h3>
+	      <div id="tbh5v0" class="example">
+			<header>
+				<div class="c-inav">
+					<section>
+						<div class="back">
+							<span><em></em></span><a>返回</a>
+						</div>
+					</section>
+					<section>
+						<span>全部宝贝 <em class="up"></em></span>
+					</section>
+					<section>
+						<div class="other">
+							<a>分类筛选</a>
+						</div>
+					</section>
+				</div>
+				<div class="c-inav-sub">
+					<div class="arrow"><em></em></div>
+					<ul>
+						<li>全部</li>
+						<li>天猫</li>
+						<li>促销</li>
+						<li>我的</li>
+					</ul>
+				</div>
+			</header>
+	      </div>
+    	</div>
+		<div class="span8">
+    		<h3>子菜单DOM结构</h3>
+    		<p>用以下DOM结构追加在<code>div.c-inav</code>后</p>
+<pre>
+&lt;div class="c-inav-sub"&gt;
+    &lt;div class="arrow"&gt;&lt;em&gt;&lt;/em&gt;&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;全部&lt;/li&gt;
+        &lt;li&gt;天猫&lt;/li&gt;
+        &lt;li&gt;促销&lt;/li&gt;
+        &lt;li&gt;我的&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+</section>
+
+<!-- Footer
+================================================== -->
+<section id="footer">
+  <div class="page-header">
+    <h1>底部信息<small>用于页面底部 <a href="../component/foot/less/footer.less">footer.less</a></small></h1>
+  </div>
+  <div class="row">
+    <div class="span0">
+    
+      <h3>基础样式</h3>
+      <div id="tbh5v0" class="example">
+		<footer class="footer">
+			<section class="footer-t">
+				<p class="user-info">
+					<span><a href="#footer">用户名1</a></span><span><a href="#footer">退出</a></span>
+				</p>
+				<p class="gotop"><a id="J_GoTop" href="#footer">top<b></b></a></p>
+			</section>
+			<nav class="footer-l">
+				<a href="#footer" title="">标准版</a><a href="#footer" title="">电脑版</a>
+			</nav>
+			<p class="copyright">&copy;2012 浙B2-20080224<a class="cr-sv" href="#footer" id="J_service">客服</a></p>
+		</footer>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>基础DOM结构</h3>
+<pre>
+&lt;footer class="footer"&gt;
+    &lt;section class="footer-t"&gt;
+        &lt;p class="user-info"&gt;
+            &lt;span&gt;&lt;a href="#"&gt;用户名1&lt;/a&gt;&lt;/span&gt;&lt;span&gt;&lt;a href="#"&gt;退出&lt;/a&gt;&lt;/span&gt;
+        &lt;/p&gt;
+        &lt;p class="gotop"&gt;&lt;a id="J_GoTop" href="#"&gt;top&lt;b&gt;&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;nav class="footer-l"&gt;
+        &lt;a href="#" title=""&gt;标准版&lt;/a&gt;&lt;a href="http://www.taobao.com/index.php?from=wap&sprefer=pmm302" title=""&gt;电脑版&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;p class="copyright"&gt;&copy;2012 浙B2-20080224&lt;a class="cr-sv" href="#" id="J_service"&gt;客服&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt;
+</pre> 
+    </div>
+</section>
+
+<!-- Top Dropdown Navigator
+================================================== -->
+<section id="topcate">
+  <div class="page-header">
+    <h1>顶部下拉<small>用于内页导航条需要下拉的情况 <a href="../component/topcate/less/topcate.less">topcate.less</a></small></h1>
+  </div>
+  <div class="row">
+  	<div class="span0">
+  		<h3>基础样式<small>下拉后的状态</small></h3>
+  		<div id="tbh5v0">
+			<div id="swipeTop" class="c-tcate">
+				<div id="swipeTopCont" class="c-tcate-cont"></div>
+			</div>
+			<header>
+				<div class="c-inav">
+					<section>
+						<div class="back">
+							<span><em></em></span><a>我的淘宝</a>
+						</div>
+					</section>
+					<section>
+						<span>我的淘宝</span>
+					</section>
+					<section>
+						<div class="other">
+							<a>分类</a>
+						</div>						
+					</section>
+				</div>
+			</header>
+		</div>
+  	</div>
+  	
+  	<div class="span8">
+  		<h3>基础DOM结构</h3>
+<pre>
+&lt;div id="swipeTop" class="c-tcate"&gt;
+	&lt;!-- 顶部DOM 
+		例如 &lt;div class="c-tab"&gt;&lt;/div&gt;
+	--&gt;
+    &lt;div id="swipeTopCont" class="c-tcate-cont"&gt;
+	&lt;!--  内容DOM 
+		例如 &lt;div class="c-tcate-cont-div"&gt;&lt;/div&gt;
+	--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+  		<h3>用法</h3>
+  		<p>同<a href="#innernav">内页导航条</a>位于同一层级。
+  		具体使用方法请详见<a href="javascript.html#swipetop">JS模块 之 顶部下拉</a></p>
+<pre>
+&lt;header&gt;
+    &lt;div class="c-inav"&gt;
+        &lt;!-- 省略	--&gt;
+    &lt;/div&gt;
+&lt;/header&gt
+&lt;div id="swipeTop" class="c-tcate"&gt;
+    &lt;!-- 省略	--&gt;
+&lt;/div&gt;
+</pre>
+  	</div>
+  </div>
+</section>
+
+<!-- Button
+================================================== -->
+<section id="button">
+  <div class="page-header">
+    <h1>按钮<small>支持的标签为<code>a、button</code> <a href="../component/btn/less/btn.less">btn.less</a></small></h1>    
+  </div>
+  <div class="row">
+  	<div class="span12">
+  		<div id="tbh5v0">
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span3">
+	          <col class="span6">
+	          <col class="span3">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+	            <th>展现</th>
+	            <th>描述</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td>
+	              <code>c-btn-nomal</code>
+	            </td>
+	            <td>
+	              <a class="c-btn-nomal">确定</a>
+	            </td>
+	            <td>普通白色按钮</td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-btn-grey</code>
+	            </td>
+	            <td>
+	              <a class="c-btn-grey">确定</a>
+	            </td>
+	            <td>普通灰色按钮</td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-btn-oran</code>
+	            </td>
+	            <td>
+	              <a class="c-btn-oran">确定</a>
+	            </td>
+	            <td>普通橙色按钮</td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-btn-blue</code>
+	            </td>
+	            <td>
+	              <a class="c-btn-blue">确定</a>
+	            </td>
+	            <td>普通蓝色按钮</td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-btn-grey-small</code>
+	            </td>
+	            <td>
+	              <a class="c-btn-grey-small">确定</a>
+	            </td>
+	            <td>小号灰色按钮</td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-btn-oran-small</code>
+	            </td>
+	            <td>
+	              <a class="c-btn-oran-small">确定</a>
+	            </td>
+	            <td>小号橙色按钮</td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-btn-oran-big</code>
+	            </td>
+	            <td>
+	              <a class="c-btn-oran-big">确定</a>
+	            </td>
+	            <td>通栏橙色按钮</td>
+	          </tr>
+	          <tr>
+	            <td>
+<pre>
+&lt;a class="c-btn-tmall-buy"&gt;
+    &lt;span&gt;立即购买&lt;/span&gt;
+&lt;/a&gt;
+</pre>
+	            </td>
+	            <td>
+	              <a class="c-btn-tmall-buy"><span>立即购买</span></a>
+	            </td>
+	            <td>天猫专用按钮</td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+</section>
+
+<!-- filter
+================================================== -->
+<section id="filter">
+  <div class="page-header">
+    <h1>筛选器<small>用于宝贝筛选 <a href="../component/filter/less/filter.less">filter.less</a></small></h1>    
+  </div>
+  <div class="row">
+    <div class="span0">
+      <h3>基础样式</h3>
+      <p>当前选中的筛选器需要添加<code>cur</code>类名</p>
+      <div id="tbh5v0" class="example">
+        <div class="c-filter">    
+            <ul>
+                <li class="good cur"> <a title="">好评<span>(999+)</span></a></li>
+                <li class="normal"><a title="">中评<span>(999+)</span></a></li>
+                <li class="bad"><a title="">差评<span>(999+)</span></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    	<h3>基础DOM结构</h3>
+<pre>
+&lt;div class="c-filter"&gt;    
+    &lt;ul&gt;
+        &lt;li class="good cur"&gt; &lt;a title=""&gt;好评&lt;span&gt;(999+)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="normal"&gt;&lt;a title=""&gt;中评&lt;span&gt;(999+)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="bad"&gt;&lt;a title=""&gt;差评&lt;span&gt;(999+)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+  </div>
+</section>
+
+<!-- Form
+================================================== -->
+<section id="form">
+  <div class="page-header">
+    <h1>表单元素<small> <a href="../component/form/less/form.less">form.less</a></small></h1>    
+  </div>
+  <div class="row">
+  	<div class="span12">
+  		<div id="tbh5v0">
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span3">
+	          <col class="span3">
+	          <col class="span6">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名/代码</th>
+				<th>展现</th>
+	            <th>描述</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <!-- 单选按钮 -->
+	          <tr>
+	            <td>
+					<code>c-form-radio-normal</code>
+	            </td>
+	            <td>
+              		<input type="radio" value="" name="radio-normal-btn" class="c-form-radio-normal" checked/>
+              		<input type="radio" value="" name="radio-normal-btn" class="c-form-radio-normal"/>
+              		<input type="radio" value="" name="radio-normal-btn" class="c-form-radio-normal" disabled/>
+	            </td>
+	            <td rowspan="3">
+	            	
+	            		单选框
+<pre>
+&lt;input type="radio" class="classname" value=""/&gt;
+</pre>
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-radio</code>        		
+	          	</td>
+	          	<td>
+              		<input type="radio" value="" name="radio-btn" class="c-form-radio" checked/>
+              		<input type="radio" value="" name="radio-btn" class="c-form-radio"/>
+              		<input type="radio" value="" name="radio-btn" class="c-form-radio" disabled/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-radio-blue</code>
+	          	</td>
+	          	<td>
+              		<input type="radio" value="" name="radio-blue-btn" class="c-form-radio-blue" checked/>
+              		<input type="radio" value="" name="radio-blue-btn" class="c-form-radio-blue"/>
+              		<input type="radio" value="" name="radio-blue-btn" class="c-form-radio-blue" disabled/>
+	          	</td>
+	          </tr>
+	          <!-- 复选按钮 -->
+	          <tr>
+	            <td>
+	            	<code>c-form-checkbox-normal</code>
+	            </td>
+	            <td>
+              		<input type="checkbox" value="" name="checkbox-normal-btn" class="c-form-checkbox-normal" checked/>
+              		<input type="checkbox" value="" name="checkbox-normal-btn" class="c-form-checkbox-normal"/>
+              		<input type="checkbox" value="" name="checkbox-normal-btn" class="c-form-checkbox-normal" disabled/>
+	            </td>
+	            <td rowspan="3">
+	            	
+	            		复选框
+<pre>
+&lt;input type="checkbox" class="classname" value=""/&gt;
+</pre>
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-checkbox</code>         		
+	          	</td>
+	          	<td>
+              		<input type="checkbox" value="" name="checkbox-btn" class="c-form-checkbox" checked/>
+              		<input type="checkbox" value="" name="checkbox-btn" class="c-form-checkbox"/>
+              		<input type="checkbox" value="" name="checkbox-btn" class="c-form-checkbox" disabled/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-checkbox-blue</code>
+	          	</td>
+	          	<td>
+              		<input type="checkbox" value="" name="checkbox-blue-btn" class="c-form-checkbox-blue" checked/>
+              		<input type="checkbox" value="" name="checkbox-blue-btn" class="c-form-checkbox-blue"/>
+              		<input type="checkbox" value="" name="checkbox-blue-btn" class="c-form-checkbox-blue" disabled/>
+	          	</td>
+	          </tr>
+	          <!-- 文本框 -->
+	          <tr>
+	            <td>
+					<code>c-form-txt-normal</code>
+	            </td>
+	            <td>
+              		<input type="text" value="" class="c-form-txt-normal" placeholder="普通文本框"/>
+	            </td>
+	            <td rowspan="5">
+	            	
+	            		文本框
+<pre>
+&lt;input type="text" class="classname" value=""/&gt;
+</pre>
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-txt-percent</code>
+	          	</td>
+	          	<td>
+	          		<input type="text" value="" class="c-form-txt-percent" placeholder="通栏文本框"/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>error</code>类名
+	          	</td>
+	          	<td>
+	          		<input type="text" value="收货人姓名" class="c-form-txt-normal error" placeholder="出错提示"/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>disabled</code>属性
+	          	</td>
+	          	<td>
+	          		<input type="text" value="收货人姓名" class="c-form-txt-normal" placeholder="禁止状态" disabled/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-txt-small</code>
+	          	</td>
+	          	<td>
+	          		<input type="text" value="" class="c-form-txt-small" placeholder="数字框"/>
+	          	</td>
+	          </tr>
+	          <!-- 搜索框 -->
+	          <tr>
+	          	<td>
+	          		<code>c-form-search</code>
+	          	</td>
+	          	<td>
+	          		<div class="c-form-search"><input type="search" value="搜索框" /><button><span/></button></div>
+	          	</td>
+	            <td>
+	            	
+	            		搜索框
+<pre>
+&lt;div class="classname"&gt;
+    &lt;input type="search" value="a" /&gt;
+    &lt;button&gt;&lt;span/&gt;&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+	            </td>
+	          </tr>
+	          <!-- 选择框 -->
+	          <tr>
+	          	<td>
+	          		<code>c-form-select-normal</code>
+	          	</td>
+	          	<td>
+					<div class="c-form-select-normal">
+					    <select>
+					        <option>选项1</option>
+					        <option>选项2</option>
+					        <option>选项3</option>
+					        <option>选项4</option>
+					    </select>
+					</div>
+	          	</td>
+	            <td rowspan="2">
+	            	
+	            		选择框
+<pre>
+&lt;div class="classname"&gt;
+    &lt;select&gt;
+        &lt;option&gt;选项1&lt;/option&gt;
+        &lt;option&gt;选项2&lt;/option&gt;
+        &lt;option&gt;选项3&lt;/option&gt;
+        &lt;option&gt;选项4&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</pre>
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-select-page</code>
+	          	</td>
+	          	<td>
+					<div class="c-form-select-page">
+					    <select>
+					        <option>页码1</option>
+					        <option>页码2</option>
+					        <option>页码3</option>
+					        <option>页码4</option>
+					    </select>
+					</div>
+	          	</td>
+	          </tr>
+	          <!-- 选项卡 -->
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-2</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-2">一二<span></span></a>
+	          	</td>
+	            <td rowspan="5">
+	            	
+	            		选项卡
+<pre>
+&lt;a class="classname"&gt;
+    选项卡
+    &lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;
+</pre>
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-5</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-5">一二三四五<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-9</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-9">一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-18</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-18">一二三四五六七八九一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>selected</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-18 selected">一二三四五六七八九一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>disabled</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-18 disabled">一二三四五六七八九一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+</section>
+
+<!-- Icon
+================================================== -->
+<section id="icon">
+  <div class="page-header">
+    <h1>图标<small>支持的标签为<code>a、span</code> <a href="../component/icon/less/icon.less">icon.less</a></small></h1>    
+  </div>
+  <div class="row">
+  	<!-- 商家推广 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>商家推广</h3>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-pt</code></td>
+	          	<td><span class="c-icon-pt"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-ps</code></td>
+	          	<td><span class="c-icon-ps"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-pj</code></td>
+	          	<td><span class="c-icon-pj"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-pz</code></td>
+	          	<td><span class="c-icon-pz"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-pf</code></td>
+	          	<td><span class="c-icon-pf"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  	
+  	<!-- 消费者保障 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>消费者保障</h3>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-dz</code></td>
+	          	<td><span class="c-icon-dz"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-dr</code></td>
+	          	<td><span class="c-icon-dr"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-dm</code></td>
+	          	<td><span class="c-icon-dm"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-dh</code></td>
+	          	<td><span class="c-icon-dh"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-dt</code></td>
+	          	<td><span class="c-icon-dt"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-ds</code></td>
+	          	<td><span class="c-icon-ds"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-de</code></td>
+	          	<td><span class="c-icon-de"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+
+  	<!-- 打分评价 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>打分评价</h3>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-fg</code></td>
+	          	<td><span class="c-icon-fg"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-fm</code></td>
+	          	<td><span class="c-icon-fm"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-fb</code></td>
+	          	<td><span class="c-icon-fb"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+  
+  <div class="row">
+  	<!-- 买家评价 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>买家评价</h3>
+  		  <p>买家级别分为4级，每级1～5个星，类名为<code>c-icon-b-{level}-{number}</code></p>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-b1</code></td>
+	          	<td><span class="c-icon-b1"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-b2</code></td>
+	          	<td><span class="c-icon-b2"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-b3</code></td>
+	          	<td><span class="c-icon-b3"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-b4</code></td>
+	          	<td><span class="c-icon-b4"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+
+  	<!-- 卖家评价 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>卖家评价</h3>
+  		  <p>卖家级别分为4级，每级1～5个星，类名为<code>c-icon-c-{level}-{number}</code></p>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-c1</code></td>
+	          	<td><span class="c-icon-c1"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-c2</code></td>
+	          	<td><span class="c-icon-c2"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-c3</code></td>
+	          	<td><span class="c-icon-c3"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-c4</code></td>
+	          	<td><span class="c-icon-c4"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  	
+  	<!-- 小星星 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>小星星</h3>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-g1</code></td>
+	          	<td><span class="c-icon-g1"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-g2</code></td>
+	          	<td><span class="c-icon-g2"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-g3</code></td>
+	          	<td><span class="c-icon-g3"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-g4</code></td>
+	          	<td><span class="c-icon-g4"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-g5</code></td>
+	          	<td><span class="c-icon-g5"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+  
+  <div class="row">
+  	<!-- 大星星 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>大星星</h3>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-gb1</code></td>
+	          	<td><span class="c-icon-gb1"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-gb2</code></td>
+	          	<td><span class="c-icon-gb2"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-gb3</code></td>
+	          	<td><span class="c-icon-gb3"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-gb4</code></td>
+	          	<td><span class="c-icon-gb4"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-gb5</code></td>
+	          	<td><span class="c-icon-gb5"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  	
+  	<!-- 旺旺状态 -->
+  	<div class="span4">
+  		<div id="tbh5v0">
+  		  <h3>旺旺状态</h3>
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span2">
+	          <col class="span2">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+				<th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	          	<td><code>c-icon-w1</code></td>
+	          	<td><span class="c-icon-w1"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-w2</code></td>
+	          	<td><span class="c-icon-w2"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-w3</code></td>
+	          	<td><span class="c-icon-w3"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-w4</code></td>
+	          	<td><span class="c-icon-w4"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-w5</code></td>
+	          	<td><span class="c-icon-w5"></span></td>
+	          </tr>
+	          <tr>
+	          	<td><code>c-icon-w6</code></td>
+	          	<td><span class="c-icon-w6"></span></td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+</section>
+
+<!-- List
+================================================== -->
+<section id="list">
+  <div class="page-header">
+    <h1>列表<small> <a href="../component/list/less/list.less">list.less</a></small></h1>
+  </div>
+  <!-- 排序功能 -->
+  <div class="row">
+    <div class="span0">
+      <h3>排序功能样式</h3>
+      <div id="tbh5v0" class="example">
+		<ul class="c-list-sort">
+			<li class="highlight"><label>人气</label></li>
+			<li class="sort-asc">
+				<label>价格</label>
+				<span>
+					<em></em>
+					<em></em>
+				</span>
+			</li>
+			<li><label>信用</label></li>
+			<li><label>评价</label></li>
+		</ul>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;ul class="c-list-sort"&gt;
+    &lt;li class="highlight"&gt;&lt;label&gt;人气&lt;/label&gt;&lt;/li&gt;
+    &lt;li class="sort-asc"&gt;
+        &lt;label&gt;价格&lt;/label&gt;
+        &lt;span&gt;
+            &lt;em&gt;&lt;/em&gt;
+            &lt;em&gt;&lt;/em&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;信用&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;评价&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  <!-- 普通列表 -->
+  <div class="row">
+    <div class="span0">
+      <h3>普通列表样式<small>支持的标签为<code>a、div</code></small></h3>
+      	<div id="tbh5v0" class="example">
+			<a href="about:blank" class="c-list-normal">
+				<label>Anna sui/安娜苏</label>
+				<span class="arrow"></span>
+			</a>
+		</div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;a href="about:blank" class="c-list-normal"&gt;
+    &lt;label&gt;Anna sui/安娜苏&lt;/label&gt;
+    &lt;span class="arrow"&gt;&lt;/span&gt;
+&lt;/a&gt;
+</pre>
+    	</div>
+    </div>
+  <div class="row">
+    <div class="span0">
+      	<div id="tbh5v0" class="example">
+			<div class="c-list-normal">
+				<label>F4-3 新奥尔良烤翅 烧烤 烤鸡腌料 KFC腌料148克装 中辣腌料</label>
+				<span class="text"><em>1</em>件</span>
+			</div>
+		</div>
+    </div>
+    
+    <div class="span8">
+<pre>
+&lt;div class="c-list-normal"&gt;
+    &lt;label&gt;F4-3 新奥尔良烤翅 烧烤 烤鸡腌料 KFC腌料148克装 中辣腌料&lt;/label&gt;
+    &lt;span class="text"&gt;&lt;em&gt;1&lt;/em&gt;件&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  <!-- 分组列表标准样式 -->
+  <div class="row">
+    <div class="span0">
+      <h3>分组列表标准样式<small>支持的标签为<code>ul</code></small></h3>
+      	<div id="tbh5v0" class="example">
+			<ul class="c-list-group">
+				<li><a href="about:blank"><label>三个月订单(88)</label><span class="arrow"></span></a></li>
+				<li class="highlight"><label>我的购物车(0)</label><span class="arrow"></span></li>
+				<li><label>我的收藏(0)</label></li>
+				<li><label>我买过的(125)</label><span class="arrow"></span></li>
+			</ul>
+		</div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;ul class="c-list-group"&gt;
+	&lt;!-- li内可以添加一个a --&gt;
+    &lt;li&gt;&lt;a href="about:blank"&gt;&lt;label&gt;三个月订单(88)&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="highlight"&gt;&lt;label&gt;我的购物车(0)&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;我的收藏(0)&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;我买过的(125)&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  <!-- 分组列表扩展样式 -->
+  <div class="row">
+    <div class="span0">
+      <h3>分组列表扩展样式<small>支持的标签为<code>ul</code></small></h3>
+      	<div id="tbh5v0" class="example">
+			<ul class="c-list-ext-group">
+				<li><a href="about:blank"><em>8</em><label>笔待确认收货订单(物流状态)<span>（测试测试测试测试测试测试）</span></label><span class="arrow"></span></a></li>
+				<li class="highlight"><em>3</em><label>笔待付款订单</label><span class="arrow"></span></li>
+				<li><em>2</em><label>笔待发货订单<span>（测试测试测试测试测试测试）</span></label><span class="arrow"></span></li>
+				<li><em>30</em><label>笔待评价订单</label></li>
+				<li><em>1</em><label>笔退款订单</label><span class="arrow"></span></li>
+			</ul>
+		</div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;ul class="c-list-ext-group"&gt;
+    &lt;li&gt;&lt;a href="about:blank"&gt;&lt;em&gt;8&lt;/em&gt;&lt;label&gt;笔待确认收货订单(物流状态)&lt;span&gt;（测试测试测试测试测试测试）&lt;/span&gt;&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="highlight"&gt;&lt;em&gt;3&lt;/em&gt;&lt;label&gt;笔待付款订单&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;2&lt;/em&gt;&lt;label&gt;笔待发货订单&lt;span&gt;（测试测试测试测试测试测试）&lt;/span&gt;&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;30&lt;/em&gt;&lt;label&gt;笔待评价订单&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;1&lt;/em&gt;&lt;label&gt;笔退款订单&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    	</div>
+    </div>
+</section>
+
+<!-- Loading
+================================================== -->
+<section id="loading">
+  <div class="page-header">
+    <h1>加载动画<small>支持的标签为<code>p</code> <a href="../component/more/less/more.less">more.less</a></small></h1>    
+  </div>
+  <div class="row">
+  	<div class="span4">
+  	<h3>基础代码</h3>
+<pre>
+&lt;p class="classname"&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;
+</pre>  	
+  	</div>
+  	<div class="span8">
+  		<div id="tbh5v0">
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span4">
+	          <col class="span4">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+	            <th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td>
+	              <code>c-loading</code>
+	            </td>
+	            <td style="background:#ffffff">
+					<p class="c-loading"><span></span></p>
+	            </td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-loading loader-grey</code>
+	            </td>
+	            <td style="background:#eeeeee">
+					<p class="c-loading loader-grey"><span></span></p>
+	            </td>
+	          </tr>
+	          <tr>
+	            <td>
+	              <code>c-loading loader-dark</code>
+	            </td>
+	            <td style="background:#333333">
+					<p class="c-loading loader-dark"><span></span></p>
+	            </td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+</section>
+
+<!-- More
+================================================== -->
+<section id="more">
+  <div class="page-header">
+    <h1>更多按钮<small>支持的标签为<code>div</code> <a href="../component/more/less/more.less">more.less</a></small></h1>    
+  </div>
+  <div class="row">
+  	<div class="span12">
+  		<div id="tbh5v0">
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span6">
+	          <col class="span6">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>代码</th>
+	            <th>展现</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td>
+<pre>
+&lt;div class="c-more-module"&gt;
+    &lt;span class="c-more-btn"&gt;加载更多&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+	            </td>
+	            <td>
+					<div class="c-more-module">
+		            	<span class="c-more-btn">加载更多</span>
+					</div>
+	            </td>
+	          </tr>
+	          <tr>
+	            <td>
+<pre>
+&lt;div class="c-more-module"&gt;
+    &lt;p&gt;加载更多&lt;i class="arrow"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+	            </td>
+	            <td>
+					<div class="c-more-nomal">
+		            	<p>加载更多<i class="arrow"></i></p>
+					</div>
+	            </td>
+	          </tr>
+	          <tr>
+	            <td>
+<pre>
+&lt;div class="c-more-module"&gt;
+    &lt;p class="active"&gt;加载更多&lt;i class="arrow"&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+	            </td>
+	            <td>
+					<div class="c-more-nomal">
+		            	<p class="active">加载更多<i class="arrow"></i></p>
+					</div>
+	            </td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+</section>
+
+<!-- List
+================================================== -->
+<section id="message">
+  <div class="page-header">
+    <h1>信息提示<small> 用于全屏信息提示 <a href="../component/msg/less/msg.less">msg.less</a></small></h1>
+  </div>
+
+  <div class="row">
+    <div class="span0">
+      <h3>基本样式</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-msg">    
+            <section class="c-msg-tip">
+                <h1>警告提示</h1>
+                <div class="error">该信息由物流公司提供，如有疑问请咨询天天快递官网 </div>
+            </section>
+            <section class="c-msg-img warn"></section>
+            <section class="c-msg-info"><p>提示信息文案内容</p><p>相关操作</p></section>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-msg"&gt;    
+    &lt;section class="c-msg-tip"&gt;
+        &lt;h1&gt;警告提示&lt;/h1&gt;
+        &lt;div class="error"&gt;该信息由物流公司提供，如有疑问请咨询天天快递官网 &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="c-msg-img warn"&gt;&lt;/section&gt;
+    &lt;section class="c-msg-info"&gt;&lt;p&gt;提示信息文案内容&lt;/p&gt;&lt;p&gt;相关操作&lt;/p&gt;&lt;/section&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>基本样式</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-msg">    
+            <section class="c-msg-tip">
+                <h1>正确提示</h1>
+                <div class="error">该信息由物流公司提供，如有疑问请咨询天天快递官网 </div>
+            </section>
+            <section class="c-msg-img ok"></section>
+            <section class="c-msg-info"><p>提示信息文案内容</p><p>相关操作</p></section>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-msg"&gt;    
+    &lt;section class="c-msg-tip"&gt;
+        &lt;h1&gt;正确提示&lt;/h1&gt;
+        &lt;div class="error"&gt;该信息由物流公司提供，如有疑问请咨询天天快递官网 &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="c-msg-img ok"&gt;&lt;/section&gt;
+    &lt;section class="c-msg-info"&gt;&lt;p&gt;提示信息文案内容&lt;/p&gt;&lt;p&gt;相关操作&lt;/p&gt;&lt;/section&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>基本样式</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-msg">    
+            <section class="c-msg-tip">
+                <h1>错误提示</h1>
+                <div class="error">该信息由物流公司提供，如有疑问请咨询天天快递官网 </div>
+            </section>
+            <section class="c-msg-img error"></section>
+            <section class="c-msg-info"><p>提示信息文案内容</p><p>相关操作</p></section>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-msg"&gt;    
+    &lt;section class="c-msg-tip"&gt;
+        &lt;h1&gt;错误提示&lt;/h1&gt;
+        &lt;div class="error"&gt;该信息由物流公司提供，如有疑问请咨询天天快递官网 &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class="c-msg-img error"&gt;&lt;/section&gt;
+    &lt;section class="c-msg-info"&gt;&lt;p&gt;提示信息文案内容&lt;/p&gt;&lt;p&gt;相关操作&lt;/p&gt;&lt;/section&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+
+</section>
+
+<!-- Photo
+================================================== -->
+<section id="photo">
+  <div class="page-header">
+    <h1>图片格式<small>支持的标签为<code>div、img</code> <a href="../component/photo/less/photo.less">photo.less</a></small></h1>    
+  </div>
+  <div class="row">
+  	<div class="span12">
+  		<div id="tbh5v0">
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span6">
+	          <col class="span6">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>类名</th>
+	            <th>大小</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td>
+	            	<code>c-photo-50</code>
+	            </td>
+	            <td>高50，宽50</td>
+	          </tr>
+	          <tr>
+	            <td>
+	            	<code>c-photo-80</code>
+	            </td>
+	            <td>高80，宽80</td>
+	          </tr>
+	          <tr>
+	            <td>
+	            	<code>c-photo-90</code>
+	            </td>
+	            <td>高90，宽90</td>
+	          </tr>
+	          <tr>
+	            <td>
+	            	<code>c-photo-145</code>
+	            </td>
+	            <td>高145，宽145</td>
+	          </tr>
+	          <tr>
+	            <td>
+	            	<code>c-photo-220</code>
+	            </td>
+	            <td>高220，宽220</td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+</section>
+
+<!-- Tab
+================================================== -->
+<section id="tab">
+  <div class="page-header">
+    <h1>选项卡<small> <a href="../component/tab/less/tab.less">tab.less</a></small></h1>
+  </div>
+
+  <div class="row">
+    <div class="span0">
+      <h3>基本样式</h3>
+      <div id="tbh5v0" class="example">
+		<div class="c-tab">
+			<ul class="tab-2">
+				<li class="cur">近三个月订单</li>
+				<li><a href="" title="">三个月期订单</a></li>
+			</ul>
+		</div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-tab"&gt;
+    &lt;ul class="tab-2"&gt;
+        &lt;li class="cur"&gt;近三个月订单&lt;/li&gt;
+        &lt;li&gt;&lt;a href="" title=""&gt;三个月期订单&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>基本样式</h3>
+      <div id="tbh5v0" class="example">
+            <div class="c-tab">
+				<ul class="tab-3">
+					<li><a href="" title="">手机话费</a></li>
+					<li class="cur">QQ充值</a></li>
+					<li><a href="" title="">游戏点卡</a></li>
+				</ul>
+			</div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-tab"&gt;
+    &lt;ul class="tab-3"&gt;
+        &lt;li&gt;&lt;a href="" title=""&gt;手机话费&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="cur"&gt;QQ充值&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="" title=""&gt;游戏点卡&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>基本样式</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-tab">
+			<ul class="tab-4">
+				<li><a href="" title="">首页</a></li>
+				<li><a href="" title="">分类</a></li>
+				<li class="cur"><a href="" title="">评价</a></li>
+                <li><a href="" title="">特惠</a></li>
+			</ul>
+		</div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-tab"&gt;
+    &lt;ul class="tab-4"&gt;
+        &lt;li&gt;&lt;a href="" title=""&gt;首页&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="" title=""&gt;分类&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="cur"&gt;&lt;a href="" title=""&gt;评价&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="" title=""&gt;特惠&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+
+</section>
+
+<!-- Pagenav
+================================================== -->
+<section id="pagenav">
+  <div class="page-header">
+    <h1>分页/翻页<small> <a href="../component/pagenav/less/pagenav.less">tab.less</a></small></h1>
+  </div>
+
+  <div class="row">
+    <div class="span0">
+      <h3>分页样式</h3>
+      <div id="tbh5v0" class="example">
+			<div class="c-pnav-con">
+				<ul>
+					<li class="c-pnav-disli">上一页</li>
+					<li><div class="c-pnav-arrow c-pnav-down"><span>1/3</span><span></span></div></li>
+					<li>
+						<select class="c-pnav-select">
+							<option>第1页</option>
+							<option>第2页</option>
+							<option>第3页</option>
+						</select>
+					</li>
+					<li class="c-pnav-enli">下一页</li>
+				</ul>
+			</div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>用法</h3>
+    <p>
+    	用于<code>div</code>标签，
+    	引入<a href="../component/pagenav/js/pagenav.js">pagenav.js</a>，
+    	设定id和<code>c-pnav-con</code>的类名。具体使用方法参见<a href="javascript.html#pagenav">JS模块 之 分页模块</a></p>
+<pre>
+&lt;div id="pageNavDemo" class="c-pnav-con"&gt;&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>翻页样式</h3>
+      <div id="tbh5v0" class="example">
+      	<div class="c-pnav-demo">
+	        <div class="c-pnav-left">
+	            <span></span>
+	        </div>
+	        <ul class="c-pnav-list">
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li class="cur"></li>
+	            <li></li>
+	        </ul>
+	        <div class="c-pnav-right">
+	            <span></span>
+	        </div>
+	     </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-pnav-left"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;ul class="c-pnav-list"&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li class="cur"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="c-pnav-right"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>下拉样式</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-pnav-wrapper">
+            <a class="down">
+                <!--箭头-->
+                <div>
+                    <span>
+                    </span>
+                </div>
+            </a>
+        </div>
+        <br />
+        <div class="c-pnav-wrapper">
+            <a class="up">
+                <!--箭头-->
+                <div>
+                    <span>
+                    </span>
+                </div>
+            </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-pnav-wrapper"&gt;
+    &lt;a class="[down|up]" href="#"&gt;
+        &lt;!--箭头--&gt;
+        &lt;div&gt;
+            &lt;span&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+
+</section>
+
+<!-- List
+================================================== -->
+<section id="float">
+  <div class="page-header">
+    <h1>浮层<small> <a href="../component/float/less/float.less">float.less</a></small></h1>
+  </div>
+
+  <div class="row">
+    <div class="span0">
+      <h3>气泡浮层</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-float-shortcutLayer">
+            <div class="shtxt">您可以点击下面的按钮新增快捷方式到桌面！</div>
+            <div class="shclose"></div>
+            <div class="xjt"><span><em></em></span></div> 
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-float-shortcutLayer"&gt;
+    &lt;div class="shtxt"&gt;您可以点击下面的按钮新增快捷方式到桌面！&lt;/div&gt;
+    &lt;div class="shclose"&gt;&lt;/div&gt;
+    &lt;div class="xjt"&gt;&lt;span&gt;&lt;em&gt;&lt;/em&gt;&lt;/span&gt;&lt;/div&gt; 
+&lt;/div&gt;
+</pre>
+    </div>
+  </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>顶部弹出浮层</h3>
+      <div id="tbh5v0" class="example">
+	        <div class="c-float-fingPop">
+	            <div class="innerC">
+	                <div class="fingerImg"></div>
+	                <div class="ftxt">请以两指滑动回到页面顶端对付对付对付</div>
+	            </div>
+	        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-float-fingPop"&gt;
+    &lt;div class="innerC"&gt;
+        &lt;div class="fingerImg"&gt;&lt;/div&gt;
+        &lt;div class="ftxt"&gt;请以两指滑动回到页面顶端对付对付对付&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="span0">
+      <div id="tbh5v0" class="example">
+		<div class="c-float-shakePop"><span>请摇晃手机以更新列表结果</span></div>
+      </div>
+    </div>
+    
+    <div class="span8">
+<pre>
+&lt;div class="c-float-shakePop"&gt;
+    &lt;span&gt;请摇晃手机以更新列表结果&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="span0">
+      <div id="tbh5v0" class="example">
+		<div class="c-float-impWarn"><span>重要提示</span></div>
+      </div>
+    </div>
+    
+    <div class="span8">
+<pre>
+&lt;div class="c-float-impWarn"&gt;
+    &lt;span&gt;重要提示&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+    </div>
+  </div>
+  <br />
+  
+  <div class="row">
+    <div class="span0">
+      <h3>模态浮层</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-float-modePop">
+            <div class="warnMsg">购物车已满，请进行删除整理</div>
+            <div class="doBtn">
+                <button>立即整理</button>
+                <button>稍后再说</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-float-modePop"&gt;
+    &lt;div class="warnMsg"&gt;购物车已满，请进行删除整理&lt;/div&gt;
+    &lt;div class="doBtn"&gt;
+        &lt;button&gt;立即整理&lt;/button&gt;
+        &lt;button&gt;稍后再说&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+
+  <div class="row">
+    <div class="span0">
+      <h3>删除浮层</h3>
+      <div id="tbh5v0" class="example">
+        <div class="c-float-delPop">
+            <div class="deltxt">删除</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>DOM结构</h3>
+<pre>
+&lt;div class="c-float-delPop"&gt;
+    &lt;div class="deltxt"&gt;删除&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+</section>
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world.</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/js/widgets.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Taobao H5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--Le Less-->
+    <link rel="stylesheet" type="text/css" href="assets/css/tbh5v0.css" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">首页</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./index.html">简介</a>
+              </li>
+              <li class="">
+                <a href="./var-func.html">变量&amp;函数</a>
+              </li>
+              <li class="">
+                <a href="./base-less.html">Global&amp;Base LESS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">HTML组件</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">JS模块</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./qa.html">Q&A</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron masthead">
+  <div class="inner">
+    <h1>Mobile in X(MIX) H5应用框架</h1>
+  </div>
+</header>
+
+<div class="marketing">
+	<!--
+  <p class="marketing-byline">svn://svn.taobao-develop.com/repos/ued/projects/w_Wireless/base/</p>
+  	-->
+
+  <hr class="soften">
+
+  <h1>一淘UX H5团队亲情奉献</h1>
+
+</div><!-- /.marketing -->
+
+<hr class="soften">
+
+<section id="faith">
+  <div class="page-header">
+    <h1>开发约定</h1>
+  </div>
+  
+  <h2>一、文档</h2>
+
+  <h3>文档的规范遵循JSDoc。一些细节的要求</h3>
+
+  <ul>
+  	<li><p>1、文件开头第一行，须写整个文件的注释，格式如下：</p>
+<pre class="prettyprint">
+/**
+* @fileOverview This is a HelloWorld!
+* @author zhuxun
+* @version 0.5
+* @requires debug@0.5
+*/
+</pre>
+	</li>
+	<li><p>
+  	2、文档注释必须紧跟下面的代码，不出现空行，且以下代码必须有注释：构造函数（要写清楚继承或实现自某个类或接口）、可访问变量或重要变量、成员方法（要写清楚访问修饰符，以及是否覆盖了父类的方法）、类方法、以及方法体内的this上下文是具体指向的什么。
+  	</p></li>
+
+  	<li><p>3、不再采用的方法，标注为<code>@deprecated。</code></p></li>
+
+  	<li><p>4、解释重要业务逻辑，用单行注释。需要后期关注或增加的功能，采用// TODO注释。</p></li>
+
+  	<li><p>5、具体请查看这两份文档：<a href="http://code.google.com/p/jsdoc-toolkit/wiki/TagReference" target="_blank">http://code.google.com/p/jsdoc-toolkit/wiki/TagReference</a>，<a href="https://developers.google.com/closure/compiler/docs/js-for-compiler#tags" target="_blank">https://developers.google.com/closure/compiler/docs/js-for-compiler#tags</a>。</p></li>
+  </ul>
+
+  <h2>二、模块信息和依赖相关</h2>
+
+  <h3>每个模块（独立一个文件夹，以模块名命名）都包含一个模块主文件（即模块名.js），相同目录下有一个<code>package.json</code>，储存了该模块的基本信息，格式如下：</h3>
+
+<pre class="prettyprint">
+{
+    "name" : "helloworld",
+    "description" : "say hello world",
+    "author" : "zhuxun",
+    "version" : "0.5",
+    "namespace" : "mix/norjs/test",
+	"main" : "./helloworld",
+    "dependencies" : {
+        "mix/norjs/test/debug" : "0.5"
+    },
+    "stable-release" : ["0.1"] // 此项为历史稳定版本列表
+}
+
+</pre>
+
+  <h2>三、模块代码</h2>
+
+  <h3>遵循<code>CommonJS</code>，不基于<code>CMD、AMD，XMD</code>等来编写。例如<code>helloworld.js</code>：</h3>
+
+<pre class="prettyprint">
+/**
+* @fileOverview This is a HelloWorld!
+* @author zhuxun
+* @version 0.5
+* @requires debug@0.5
+*/
+
+var Debug = require('debug'),
+	debug = new Debug();
+/**
+* HelloWorld
+* @constructor
+*/
+function HelloWorld() {
+    /** @type {string} */
+    this.word = 'helloworld';
+    debug.log('create helloworld');
+}
+
+/**
+ * say the word
+ * @param {string=} word
+ * @this {HelloWorld}
+ */
+HelloWorld.prototype.say = function(word) {
+    return word || this.word;
+}
+
+module.exports = HelloWorld;
+</pre>
+
+
+  <h2>四、模块Build</h2>
+
+  <h3>目前对于模块代码的build，可以写两套方案，一套是针对<code>seajs</code>的，一套是直接调用的。
+build生成的文件位于模块目录的build文件夹下，文件命名规则可配置，默认为<code>模块名-v版本号-build器.js</code>，例如<code>hellworld-v0.1-seajs.js</code>。
+</h3>
+
+	<ul>
+		<li><p>
+		1、seajs-build：
+		</p>
+<pre class="prettyprint">
+/**
+* @fileOverview This is a HelloWorld!
+* @author zhuxun
+* @version 0.5
+* @requires debug@0.5
+*/
+
+define(
+'mix/norjs/test/helloworld@0.5', // resolve id from package.js when build
+['mix/norjs/test/debug@0.5'], // resolve deps from package.json when build
+function(require, exports, module) {
+    // 原helloworld.js的代码
+});
+
+</pre>
+		</li>
+		<li><p>
+		2、normal-build：
+		</p>
+<pre class="prettyprint">
+/**
+* @fileOverview This is a HelloWorld!
+* @author zhuxun
+* @version 0.5
+* @requires debug@0.5
+*/
+
+/*===generated by norjs build===*/
+(function(require, exports, module){
+
+/*===source code start here===*/
+// 原helloworld.js的代码
+
+/*===generated by norjs build===*/
+}).apply(
+window,
+norjs(
+    "mix/norjs/test/helloworld@0.5"
+    ,["mix/norjs/test/debug@0.5"]
+));
+
+</pre>
+		</li>
+	</ul>
+</section>
+
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world.</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/js/widgets.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!-- Inner Navigator
+================================================== -->
+<section id="innernav">
+  <div class="page-header">
+    <h1>{{_i}}内页导航条<small>用于页面顶部导航 <a href="../component/innernav/less/innernav.less">innernav.less</a></small>{{/i}}</h1>
+  </div>
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}基础样式{{/i}}</h3>
+      <div id="tbh5v0" class="example">
+		<header>
+			<div class="c-inav">
+				<section>
+					<div class="back">
+						<span><em></em></span><a>我的淘宝</a>
+					</div>
+				</section>
+				<section>
+					<span>我的淘宝</span>
+				</section>
+				<section>
+					<div class="other">
+						<a>分类</a>
+					</div>						
+				</section>
+			</div>
+		</header>
+      </div>
+    </div>
+    
+    <div class="span8">
+    	<h3>{{_i}}基础DOM结构{{/i}}</h3>
+    	<p>如果不需要右边的按钮，请保持<code>div.c-inav > section:last-child</code>为空元素</p>
+<pre>
+&lt;header&gt;
+    &lt;div class="c-inav"&gt;
+        &lt;section&gt;
+            &lt;div c&lt;ass="back"&gt;
+                &lt;span&gt;&lt;em&gt;&lt;/em&gt;&lt;/span&gt;&lt;a href="about:blank"&gt;我的淘宝&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;span&gt;我的淘宝&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;section&gt;
+            &lt;div class="other"&gt;
+                &lt;a href="about:blank"&gt;分类&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+</pre> 
+    </div>
+  </div>
+  <br />
+    
+	<div class="row">
+		<div class="span0">
+	      <h3>{{_i}}扩展样式{{/i}}</h3>
+	      <div id="tbh5v0" class="example">
+			<header>
+				<div class="c-inav">
+					<section>
+						<div class="back">
+							<span><em></em></span><a href="about:blank">我的淘宝</a>
+						</div>
+					</section>
+					<section>
+						<div class="main">
+							<a href="about:blank" class="highlight">宝贝收藏</a>
+							<a href="about:blank">店铺收藏</a>
+						</div>
+					</section>
+					<section>
+						<div class="other">
+							<a href="about:blank">分类</a>
+						</div>						
+					</section>
+				</div>
+			</header>
+	      </div>
+		</div>
+	    <div class="span8">
+	    	<h3>{{_i}}扩展样式DOM结构{{/i}}</h3>
+	    	<p>用以下DOM结构替换<code>div.c-inav > section:nth-child(2)</code>中的HTML</p>
+<pre>
+&lt;div class="main"&gt;
+    &lt;a href="about:blank" class="highlight"&gt;宝贝收藏&lt;/a&gt;
+    &lt;a href="about:blank"&gt;店铺收藏&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+		</div>
+	</div>
+    <br />
+    
+    <div class="row">
+    	<div class="span0">
+	      <h3>{{_i}}子菜单样式{{/i}}</h3>
+	      <div id="tbh5v0" class="example">
+			<header>
+				<div class="c-inav">
+					<section>
+						<div class="back">
+							<span><em></em></span><a>返回</a>
+						</div>
+					</section>
+					<section>
+						<span>全部宝贝 <em class="up"></em></span>
+					</section>
+					<section>
+						<div class="other">
+							<a>分类筛选</a>
+						</div>
+					</section>
+				</div>
+				<div class="c-inav-sub">
+					<div class="arrow"><em></em></div>
+					<ul>
+						<li>全部</li>
+						<li>天猫</li>
+						<li>促销</li>
+						<li>我的</li>
+					</ul>
+				</div>
+			</header>
+	      </div>
+    	</div>
+		<div class="span8">
+    		<h3>{{_i}}子菜单DOM结构{{/i}}</h3>
+    		<p>用以下DOM结构追加在<code>div.c-inav</code>后</p>
+<pre>
+&lt;div class="c-inav-sub"&gt;
+    &lt;div class="arrow"&gt;&lt;em&gt;&lt;/em&gt;&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;全部&lt;/li&gt;
+        &lt;li&gt;天猫&lt;/li&gt;
+        &lt;li&gt;促销&lt;/li&gt;
+        &lt;li&gt;我的&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+</section>

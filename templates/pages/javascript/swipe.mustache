@@ -1,0 +1,157 @@
+    <!-- swipe
+    ================================================== -->
+    <section id="swipe">
+      <div class="page-header">
+        <h1>{{_i}}划动事件{{/i}} <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>{{_i}}关于{{/i}}</h3>
+          <p>{{_i}}提供划动操作的事件响应{{/i}}</p>
+          <a href="../../modules/swipe/swipe.js" class="btn">{{_i}}查看文件{{/i}}</a>
+          <hr>
+          <h3>{{_i}}动画DEMO{{/i}}</h3>
+          <a href="examples/swipe.html" class="btn btn-primary">{{_i}}访问DEMO{{/i}}</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>{{_i}}用法{{/i}}</h2>
+          <p>{{_i}}在javascript中调用：{{/i}}</p>
+<pre class="prettyprint">
+var swipe = require('./swipe'),
+    thisSwipe = swipe(selector, options)
+    ;
+</pre>
+          <h3>{{_i}}参数列表{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">{{_i}}键名{{/i}}</th>
+               <th style="width: 100px;">{{_i}}类型{{/i}}</th>
+               <th style="width: 100px;">{{_i}}默认值{{/i}}</th>
+               <th>{{_i}}描述{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>{{_i}}<code>selector</code>{{/i}}</td>
+               <td>{{_i}}string(css selector){{/i}}</td>
+               <td>{{_i}}空串{{/i}}</td>
+               <td>{{_i}}响应事件的容器{{/i}}</td>
+             </tr>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>{{_i}}isPreventDefault{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}是否阻止默认事件{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}isPrecision{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}是否启用精确模式（只判断30度以内的划动）{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}lockDirection{{/i}}</td>
+               <td>{{_i}}boolean|string|Array{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}锁定只在某个方向锁定swipe事件，可支持
+               		<code>left</code> <code>right</code> <code>up</code> <code>down</code>{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}cancelMove{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}和lockDirection配合使用，当lockDirection不为false时，如果cancelMove为true，则会在划动方向出错时直接取消整个事件{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}fixScroll{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}是否修整系统滚动条滚动造成的Y轴错误的问题{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onBeforeStart{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应划动开始前的委托方法{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onStart{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应划动开始时的委托方法{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onLeft{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应左划动作时的委托方法（只在方向改变时触发一次）{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onRight{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应右划动作时的委托方法（只在方向改变时触发一次）{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onUp{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应上划动作时的委托方法（只在方向改变时触发一次）{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onDown{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应下划动作时的委托方法（只在方向改变时触发一次）{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onMove{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应划动时的委托方法{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onCancel{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应划动取消时的委托方法{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}onEnd{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应划动结束时的委托方法{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+          
+ 		  <!-- 注意点 -->
+          <h3{{_i}}>注意点{{/i}}</h3>
+          <h4>{{_i}}阻止默认事件{{/i}}</h4>
+          <p>{{_i}}在Android下，存在touchmove事件只响应一次的bug，需要通过阻止默认事件来修复这个bug。
+          		如果通过设置<code>isPreventDefault</code>为<code>true</code>来阻止事件，则会在每次响应<code>touchmove</code>时进行阻止。
+          		此时会阻止掉页面默认的滚动。也可以自行在委托事件里阻止默认事件，例如：
+          {{/i}}</p>
+<pre class="prettyprint">
+swipe('selector', {
+	// 只在左划和右划时阻止默认事件
+	onLeft : function(e, touch) {
+		e.preventDefault();
+	},
+	onRight : function(e, touch) {
+		e.preventDefault();
+	},
+});
+</pre>
+          <h4>{{_i}}onLeft, onRight, onUp, onDown{{/i}}</h4>
+          <p>{{_i}}这四个委托方法只在划动方向改变时触发一次，即当从左划变为下划时，触发onDown，依次类推，包括划动开始时的方向也会触发。
+          {{/i}}</p>
+
+        </div>
+      </div>
+    </section>

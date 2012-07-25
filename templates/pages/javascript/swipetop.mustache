@@ -1,0 +1,163 @@
+    <!-- SwipTip
+    ================================================== -->
+    <section id="swipetop">
+      <div class="page-header">
+        <h1>{{_i}}顶部下拉{{/i}} <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>{{_i}}关于{{/i}}</h3>
+          <p>{{_i}}针对内部导航栏，提供下拉的功能{{/i}}</p>
+          <a href="../../modules/swipetop/swipetop.js" class="btn">{{_i}}查看文件{{/i}}</a>
+          <hr>
+          <h3>{{_i}}DOM样式{{/i}}</h3>
+          <p>{{_i}}请参见HTML组件 之 <a href="components.html#topcate">顶部下拉</a>{{/i}}</p>
+		  <hr>
+          <h3>{{_i}}动画DEMO{{/i}}</h3>
+          <a href="examples/swipetop.html" class="btn btn-primary">{{_i}}访问DEMO{{/i}}</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>{{_i}}用法{{/i}}</h2>
+          <p>{{_i}}在javascript中调用：{{/i}}</p>
+<pre class="prettyprint">
+var SwipeTop = require('swipetop'),
+    thatSwipeTop = new SwipeTop(options, self)
+    ;
+</pre>
+          <h3>{{_i}}参数列表{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">{{_i}}键名{{/i}}</th>
+               <th style="width: 100px;">{{_i}}类型{{/i}}</th>
+               <th style="width: 100px;">{{_i}}默认值{{/i}}</th>
+               <th>{{_i}}描述{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>{{_i}}isInit{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}true{{/i}}</td>
+               <td>{{_i}}是否初始化{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}wrap{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}空串{{/i}}</td>
+               <td>{{_i}}列表容器{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}topEl{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}ttype{{/i}}</td>
+               <td>{{_i}}顶部容器id{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}header{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}header{{/i}}</td>
+               <td>{{_i}}title栏id{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}shade{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}J_shade{{/i}}</td>
+               <td>{{_i}}列表阴影id{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}hShade{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}h-Shade{{/i}}</td>
+               <td>{{_i}}header内的阴影{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}scrollArr{{/i}}</td>
+               <td>{{_i}}Array{{/i}}</td>
+               <td>{{_i}}null{{/i}}</td>
+               <td>{{_i}}顶部列表容器id集合{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}favScroll{{/i}}</td>
+               <td>{{_i}}Object{{/i}}</td>
+               <td>{{_i}}null{{/i}}</td>
+               <td>{{_i}}引入iscroll对象{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}swipeTopGap{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}60{{/i}}</td>
+               <td>{{_i}}{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}ease{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}ease{{/i}}</td>
+               <td>{{_i}}动画运动公式{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}easetime{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}500{{/i}}</td>
+               <td>{{_i}}动画持续时间{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}opacity{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}0.4{{/i}}</td>
+               <td>{{_i}}阴影透明度{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}isSwipeDown{{/i}}</td>
+               <td>{{_i}}boolean{{/i}}</td>
+               <td>{{_i}}false{{/i}}</td>
+               <td>{{_i}}header是否支持下拉{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}toptabHeight{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}50{{/i}}</td>
+               <td>{{_i}}顶部页签高度{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}headerHeight{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}50{{/i}}</td>
+               <td>{{_i}}header高度{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}surplusHeight{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}80{{/i}}</td>
+               <td>{{_i}}header和阴影的高度{{/i}}</td>
+             </tr>
+             <tr><td colspan="4"><code>self</code>HASH值</td></tr>
+             <tr>
+               <td>{{_i}}tiggerFunc{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应初始化的委托事件{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}swipeDown{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}响应下拉后的委托方法{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+          
+ 		  <!-- 用法 -->
+          <h3{{_i}}>对象方法{{/i}}</h3>
+          <h4>.showTop()</h4>
+          <p>{{_i}}显示/隐藏顶部容器。在隐藏状态下，调用方法显示顶部容器。显示状态下，调用方法隐藏顶部容器。{{/i}}</p>
+<pre class="prettyprint">
+thatSwipeTop.showTop();
+</pre>
+        </div>
+      </div>
+    </section>

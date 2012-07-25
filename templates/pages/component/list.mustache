@@ -1,0 +1,144 @@
+<!-- List
+================================================== -->
+<section id="list">
+  <div class="page-header">
+    <h1>{{_i}}列表<small> <a href="../component/list/less/list.less">list.less</a></small>{{/i}}</h1>
+  </div>
+  <!-- 排序功能 -->
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}排序功能样式{{/i}}</h3>
+      <div id="tbh5v0" class="example">
+		<ul class="c-list-sort">
+			<li class="highlight"><label>人气</label></li>
+			<li class="sort-asc">
+				<label>价格</label>
+				<span>
+					<em></em>
+					<em></em>
+				</span>
+			</li>
+			<li><label>信用</label></li>
+			<li><label>评价</label></li>
+		</ul>
+      </div>
+    </div>
+    
+    <div class="span8">
+    <h3>{{_i}}DOM结构{{/i}}</h3>
+<pre>
+&lt;ul class="c-list-sort"&gt;
+    &lt;li class="highlight"&gt;&lt;label&gt;人气&lt;/label&gt;&lt;/li&gt;
+    &lt;li class="sort-asc"&gt;
+        &lt;label&gt;价格&lt;/label&gt;
+        &lt;span&gt;
+            &lt;em&gt;&lt;/em&gt;
+            &lt;em&gt;&lt;/em&gt;
+        &lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;信用&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;评价&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  <!-- 普通列表 -->
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}普通列表样式<small>支持的标签为<code>a、div</code></small>{{/i}}</h3>
+      	<div id="tbh5v0" class="example">
+			<a href="about:blank" class="c-list-normal">
+				<label>Anna sui/安娜苏</label>
+				<span class="arrow"></span>
+			</a>
+		</div>
+    </div>
+    
+    <div class="span8">
+    <h3>{{_i}}DOM结构{{/i}}</h3>
+<pre>
+&lt;a href="about:blank" class="c-list-normal"&gt;
+    &lt;label&gt;Anna sui/安娜苏&lt;/label&gt;
+    &lt;span class="arrow"&gt;&lt;/span&gt;
+&lt;/a&gt;
+</pre>
+    	</div>
+    </div>
+  <div class="row">
+    <div class="span0">
+      	<div id="tbh5v0" class="example">
+			<div class="c-list-normal">
+				<label>F4-3 新奥尔良烤翅 烧烤 烤鸡腌料 KFC腌料148克装 中辣腌料</label>
+				<span class="text"><em>1</em>件</span>
+			</div>
+		</div>
+    </div>
+    
+    <div class="span8">
+<pre>
+&lt;div class="c-list-normal"&gt;
+    &lt;label&gt;F4-3 新奥尔良烤翅 烧烤 烤鸡腌料 KFC腌料148克装 中辣腌料&lt;/label&gt;
+    &lt;span class="text"&gt;&lt;em&gt;1&lt;/em&gt;件&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  <!-- 分组列表标准样式 -->
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}分组列表标准样式<small>支持的标签为<code>ul</code></small>{{/i}}</h3>
+      	<div id="tbh5v0" class="example">
+			<ul class="c-list-group">
+				<li><a href="about:blank"><label>三个月订单(88)</label><span class="arrow"></span></a></li>
+				<li class="highlight"><label>我的购物车(0)</label><span class="arrow"></span></li>
+				<li><label>我的收藏(0)</label></li>
+				<li><label>我买过的(125)</label><span class="arrow"></span></li>
+			</ul>
+		</div>
+    </div>
+    
+    <div class="span8">
+    <h3>{{_i}}DOM结构{{/i}}</h3>
+<pre>
+&lt;ul class="c-list-group"&gt;
+	&lt;!-- li内可以添加一个a --&gt;
+    &lt;li&gt;&lt;a href="about:blank"&gt;&lt;label&gt;三个月订单(88)&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="highlight"&gt;&lt;label&gt;我的购物车(0)&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;我的收藏(0)&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;label&gt;我买过的(125)&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    	</div>
+    </div>
+  <br />
+  <!-- 分组列表扩展样式 -->
+  <div class="row">
+    <div class="span0">
+      <h3>{{_i}}分组列表扩展样式<small>支持的标签为<code>ul</code></small>{{/i}}</h3>
+      	<div id="tbh5v0" class="example">
+			<ul class="c-list-ext-group">
+				<li><a href="about:blank"><em>8</em><label>笔待确认收货订单(物流状态)<span>（测试测试测试测试测试测试）</span></label><span class="arrow"></span></a></li>
+				<li class="highlight"><em>3</em><label>笔待付款订单</label><span class="arrow"></span></li>
+				<li><em>2</em><label>笔待发货订单<span>（测试测试测试测试测试测试）</span></label><span class="arrow"></span></li>
+				<li><em>30</em><label>笔待评价订单</label></li>
+				<li><em>1</em><label>笔退款订单</label><span class="arrow"></span></li>
+			</ul>
+		</div>
+    </div>
+    
+    <div class="span8">
+    <h3>{{_i}}DOM结构{{/i}}</h3>
+<pre>
+&lt;ul class="c-list-ext-group"&gt;
+    &lt;li&gt;&lt;a href="about:blank"&gt;&lt;em&gt;8&lt;/em&gt;&lt;label&gt;笔待确认收货订单(物流状态)&lt;span&gt;（测试测试测试测试测试测试）&lt;/span&gt;&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="highlight"&gt;&lt;em&gt;3&lt;/em&gt;&lt;label&gt;笔待付款订单&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;2&lt;/em&gt;&lt;label&gt;笔待发货订单&lt;span&gt;（测试测试测试测试测试测试）&lt;/span&gt;&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;30&lt;/em&gt;&lt;label&gt;笔待评价订单&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;em&gt;1&lt;/em&gt;&lt;label&gt;笔退款订单&lt;/label&gt;&lt;span class="arrow"&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+    	</div>
+    </div>
+</section>

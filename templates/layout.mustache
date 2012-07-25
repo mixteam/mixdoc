@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--Le Less-->
+    <link rel="stylesheet" type="text/css" href="assets/css/tbh5v0.css" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">首页</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="{{index}}">
+                <a href="./index.html">{{_i}}简介{{/i}}</a>
+              </li>
+              <li class="{{var-func}}">
+                <a href="./var-func.html">{{_i}}变量&amp;函数{{/i}}</a>
+              </li>
+              <li class="{{base-less}}">
+                <a href="./base-less.html">{{_i}}Global&amp;Base LESS{{/i}}</a>
+              </li>
+              <li class="{{components}}">
+                <a href="./components.html">{{_i}}HTML组件{{/i}}</a>
+              </li>
+              <li class="{{javascript}}">
+                <a href="./javascript.html">{{_i}}JS模块{{/i}}</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="{{qa}}">
+                <a href="./qa.html">{{_i}}Q&A{{/i}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+{{>body}}
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">{{_i}}Back to top{{/i}}</a></p>
+        <p>{{_i}}Designed and built with all the love in the world.{{/i}}</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/js/widgets.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+<!-- Form
+================================================== -->
+<section id="form">
+  <div class="page-header">
+    <h1>{{_i}}表单元素<small> <a href="../component/form/less/form.less">form.less</a></small>{{/i}}</h1>    
+  </div>
+  <div class="row">
+  	<div class="span12">
+  		<div id="tbh5v0">
+	      <table class="table table-bordered table-striped">
+	        <colgroup>
+	          <col class="span3">
+	          <col class="span3">
+	          <col class="span6">
+	        </colgroup>
+	        <thead>
+	          <tr>
+	            <th>{{_i}}类名/代码{{/i}}</th>
+				<th>{{_i}}展现{{/i}}</th>
+	            <th>{{_i}}描述{{/i}}</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	          <!-- 单选按钮 -->
+	          <tr>
+	            <td>
+					<code>c-form-radio-normal</code>
+	            </td>
+	            <td>
+              		<input type="radio" value="" name="radio-normal-btn" class="c-form-radio-normal" checked/>
+              		<input type="radio" value="" name="radio-normal-btn" class="c-form-radio-normal"/>
+              		<input type="radio" value="" name="radio-normal-btn" class="c-form-radio-normal" disabled/>
+	            </td>
+	            <td rowspan="3">
+	            	{{_i}}
+	            		单选框
+<pre>
+&lt;input type="radio" class="classname" value=""/&gt;
+</pre>
+	            	{{/i}}
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-radio</code>        		
+	          	</td>
+	          	<td>
+              		<input type="radio" value="" name="radio-btn" class="c-form-radio" checked/>
+              		<input type="radio" value="" name="radio-btn" class="c-form-radio"/>
+              		<input type="radio" value="" name="radio-btn" class="c-form-radio" disabled/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-radio-blue</code>
+	          	</td>
+	          	<td>
+              		<input type="radio" value="" name="radio-blue-btn" class="c-form-radio-blue" checked/>
+              		<input type="radio" value="" name="radio-blue-btn" class="c-form-radio-blue"/>
+              		<input type="radio" value="" name="radio-blue-btn" class="c-form-radio-blue" disabled/>
+	          	</td>
+	          </tr>
+	          <!-- 复选按钮 -->
+	          <tr>
+	            <td>
+	            	<code>c-form-checkbox-normal</code>
+	            </td>
+	            <td>
+              		<input type="checkbox" value="" name="checkbox-normal-btn" class="c-form-checkbox-normal" checked/>
+              		<input type="checkbox" value="" name="checkbox-normal-btn" class="c-form-checkbox-normal"/>
+              		<input type="checkbox" value="" name="checkbox-normal-btn" class="c-form-checkbox-normal" disabled/>
+	            </td>
+	            <td rowspan="3">
+	            	{{_i}}
+	            		复选框
+<pre>
+&lt;input type="checkbox" class="classname" value=""/&gt;
+</pre>
+	            	{{/i}}
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-checkbox</code>         		
+	          	</td>
+	          	<td>
+              		<input type="checkbox" value="" name="checkbox-btn" class="c-form-checkbox" checked/>
+              		<input type="checkbox" value="" name="checkbox-btn" class="c-form-checkbox"/>
+              		<input type="checkbox" value="" name="checkbox-btn" class="c-form-checkbox" disabled/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-checkbox-blue</code>
+	          	</td>
+	          	<td>
+              		<input type="checkbox" value="" name="checkbox-blue-btn" class="c-form-checkbox-blue" checked/>
+              		<input type="checkbox" value="" name="checkbox-blue-btn" class="c-form-checkbox-blue"/>
+              		<input type="checkbox" value="" name="checkbox-blue-btn" class="c-form-checkbox-blue" disabled/>
+	          	</td>
+	          </tr>
+	          <!-- 文本框 -->
+	          <tr>
+	            <td>
+					<code>c-form-txt-normal</code>
+	            </td>
+	            <td>
+              		<input type="text" value="" class="c-form-txt-normal" placeholder="普通文本框"/>
+	            </td>
+	            <td rowspan="5">
+	            	{{_i}}
+	            		文本框
+<pre>
+&lt;input type="text" class="classname" value=""/&gt;
+</pre>
+	            	{{/i}}
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-txt-percent</code>
+	          	</td>
+	          	<td>
+	          		<input type="text" value="" class="c-form-txt-percent" placeholder="通栏文本框"/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>error</code>类名
+	          	</td>
+	          	<td>
+	          		<input type="text" value="收货人姓名" class="c-form-txt-normal error" placeholder="出错提示"/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>disabled</code>属性
+	          	</td>
+	          	<td>
+	          		<input type="text" value="收货人姓名" class="c-form-txt-normal" placeholder="禁止状态" disabled/>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-txt-small</code>
+	          	</td>
+	          	<td>
+	          		<input type="text" value="" class="c-form-txt-small" placeholder="数字框"/>
+	          	</td>
+	          </tr>
+	          <!-- 搜索框 -->
+	          <tr>
+	          	<td>
+	          		<code>c-form-search</code>
+	          	</td>
+	          	<td>
+	          		<div class="c-form-search"><input type="search" value="搜索框" /><button><span/></button></div>
+	          	</td>
+	            <td>
+	            	{{_i}}
+	            		搜索框
+<pre>
+&lt;div class="classname"&gt;
+    &lt;input type="search" value="a" /&gt;
+    &lt;button&gt;&lt;span/&gt;&lt;/button&gt;
+&lt;/div&gt;
+</pre>
+	            	{{/i}}
+	            </td>
+	          </tr>
+	          <!-- 选择框 -->
+	          <tr>
+	          	<td>
+	          		<code>c-form-select-normal</code>
+	          	</td>
+	          	<td>
+					<div class="c-form-select-normal">
+					    <select>
+					        <option>选项1</option>
+					        <option>选项2</option>
+					        <option>选项3</option>
+					        <option>选项4</option>
+					    </select>
+					</div>
+	          	</td>
+	            <td rowspan="2">
+	            	{{_i}}
+	            		选择框
+<pre>
+&lt;div class="classname"&gt;
+    &lt;select&gt;
+        &lt;option&gt;选项1&lt;/option&gt;
+        &lt;option&gt;选项2&lt;/option&gt;
+        &lt;option&gt;选项3&lt;/option&gt;
+        &lt;option&gt;选项4&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</pre>
+	            	{{/i}}
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-select-page</code>
+	          	</td>
+	          	<td>
+					<div class="c-form-select-page">
+					    <select>
+					        <option>页码1</option>
+					        <option>页码2</option>
+					        <option>页码3</option>
+					        <option>页码4</option>
+					    </select>
+					</div>
+	          	</td>
+	          </tr>
+	          <!-- 选项卡 -->
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-2</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-2">一二<span></span></a>
+	          	</td>
+	            <td rowspan="5">
+	            	{{_i}}
+	            		选项卡
+<pre>
+&lt;a class="classname"&gt;
+    选项卡
+    &lt;span&gt;&lt;/span&gt;
+&lt;/a&gt;
+</pre>
+	            	{{/i}}
+	            </td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-5</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-5">一二三四五<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-9</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-9">一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		<code>c-form-sku-18</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-18">一二三四五六七八九一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>selected</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-18 selected">一二三四五六七八九一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	          <tr>
+	          	<td>
+	          		追加<code>disabled</code>
+	          	</td>
+	          	<td>
+					<a class="c-form-sku-18 disabled">一二三四五六七八九一二三四五六七八九<span></span></a>
+	          	</td>
+	          </tr>
+	        </tbody>
+	      </table>
+	    </div>
+  	</div>
+  </div>
+</section>

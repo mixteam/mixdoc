@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Base · Taobao H5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--Le Less-->
+    <link rel="stylesheet" type="text/css" href="assets/css/tbh5v0.css" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">首页</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">简介</a>
+              </li>
+              <li class="">
+                <a href="./var-func.html">变量&amp;函数</a>
+              </li>
+              <li class="active">
+                <a href="./base-less.html">Global&amp;Base LESS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">HTML组件</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">JS模块</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./qa.html">Q&A</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <h1>Global &amp; Base LESS</h1>
+  <p class="lead">源代码：<a href="../global.less">global.less</a>，<a href="../component/base/less/base.less">base.less</a></p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#global">Global.less</a></li>
+      <li><a href="#base">Base.less</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- global
+================================================== -->
+<section id="global">
+  <div class="page-header">
+    <h1>global.less <small></small></h1>
+  </div>
+
+  <h2>Global唯一干的事情就是导入 <a href="../_reset.less">_reset.less</a> 文件</h2>
+
+<pre>
+/*CSS Reset*/
+*{margin:0; padding:0;}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+table{border-collapse: collapse;border-spacing: 0;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;}
+ul,ol,li{list-style: none;}
+em,i{font-style: normal;}
+img{border: none;}
+input,img{vertical-align:middle;}
+body{color: #000; font-family: arial; background: #FFF;}
+.clearfix{&:after{display: block; content: ''; clear: both; visibility: hidden;}}
+.none{display: none;}
+.no-spacing{margin: 0;padding: 0;}
+.margin-center{	margin: 0 auto;	text-align: center;}
+</pre>
+
+</section>
+
+<!-- base
+================================================== -->
+<section id="base">
+  <div class="page-header">
+    <h1>base.less <small></small></h1>
+  </div>
+  
+  <h2>base导入了 <a href="../_var.less">_var.less</a> 文件以及 <a href="../_func.less">_func.less</a> 文件</h2>
+
+  <h3>最外层DOM树</h3>
+  <div class="row">
+    <div class="span8">
+      <table class="table table-bordered table-striped">
+        <colgroup>
+          <col class="span4">
+          <col class="span4">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>标签</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>body</code>
+            </td>
+            <td>
+              HTML的body
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>div#tbh5v0</code>
+            </td>
+            <td>
+              做为命名空间
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>div.screen-wrap[.fullscreen|landscape]</code>
+            </td>
+            <td>
+              实际屏幕区域
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="span4">
+<pre class="prettyprint">
+&lt;body&gt;
+  &lt;div id="tbh5v0"&gt;
+    &lt;div class="screen-wrap fullscreen"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+    </div>
+  </div>
+
+  <h3>基础函数</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">函数名</th>
+        <th>参数</th>
+        <th colspan="2">用途</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#tbh5v0 > .c-base-linear()</td>
+        <td class="muted">None</td>
+        <td colspan="2">渐变背景色</td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-page-padding()</td>
+        <td class="muted">@padding:@page-padding-width</td>
+        <td colspan="2">页面边距（上下左右）</td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-page-padding-fix()</td>
+        <td class="muted">@padding:@page-padding-width</td>
+        <td colspan="2">页面边距（左右）</td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-fullwidth()</td>
+        <td class="muted">@padding:@page-padding-width</td>
+        <td colspan="2">让元素宽度充满屏幕（不再有边距）</td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-list-space()</td>
+        <td class="muted">None</td>
+        <td colspan="2">设置列表的间距</td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-group-list-space()</td>
+        <td class="muted">None</td>
+        <td colspan="2">设置分组列表的间距</td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-title-text()</td>
+        <td class="muted">None</td>
+        <td>标题字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@title-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-tab-text()</td>
+        <td class="muted">None</td>
+        <td>标签字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@tab-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-tab-highlight-text()</td>
+        <td class="muted">None</td>
+        <td>标签高亮字体 </td>
+        <td>颜色<code>@text-highlight-color</code> 大小<code>@tab-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-group-list-text()</td>
+        <td class="muted">None</td>
+        <td>分组列表字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@big-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-p-title-text()</td>
+        <td class="muted">None</td>
+        <td>段落标题字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@big-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-p-main-text()</td>
+        <td class="muted">None</td>
+        <td>段落主文字字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@normal-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-p-sub-text()</td>
+        <td class="muted">None</td>
+        <td>段落辅助文字字体 </td>
+        <td>颜色<code>@text-sub-color</code> 大小<code>@normal-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-append-text()</td>
+        <td class="muted">None</td>
+        <td>附加文字字体 </td>
+        <td>颜色<code>@text-sub-color</code> 大小<code>@small-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-em-text()</td>
+        <td class="muted">None</td>
+        <td>强调文字字体 </td>
+        <td>颜色<code>@text-em-color</code> 大小<code>@normal-font-size</code></td>
+      </tr>
+      <tr>
+        <td>#tbh5v0 > .c-base-link-text()</td>
+        <td class="muted">None</td>
+        <td>链接文字字体 </td>
+        <td>颜色<code>@text-link-color</code> 大小<code>@normal-font-size</code></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world.</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/js/widgets.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+  </body>
+</html>

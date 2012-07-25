@@ -1,0 +1,167 @@
+<!-- base
+================================================== -->
+<section id="base">
+  <div class="page-header">
+    <h1>{{_i}}base.less <small></small>{{/i}}</h1>
+  </div>
+  
+  <h2>{{_i}}base导入了 <a href="../_var.less">_var.less</a> 文件以及 <a href="../_func.less">_func.less</a> 文件{{/i}}</h2>
+
+  <h3>{{_i}}最外层DOM树{{/i}}</h3>
+  <div class="row">
+    <div class="span8">
+      <table class="table table-bordered table-striped">
+        <colgroup>
+          <col class="span4">
+          <col class="span4">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>{{_i}}标签{{/i}}</th>
+            <th>{{_i}}描述{{/i}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <code>body</code>
+            </td>
+            <td>
+              {{_i}}HTML的body{{/i}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>div#tbh5v0</code>
+            </td>
+            <td>
+              {{_i}}做为命名空间{{/i}}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <code>div.screen-wrap[.fullscreen|landscape]</code>
+            </td>
+            <td>
+              {{_i}}实际屏幕区域{{/i}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="span4">
+<pre class="prettyprint">
+&lt;body&gt;
+  &lt;div id="tbh5v0"&gt;
+    &lt;div class="screen-wrap fullscreen"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+    </div>
+  </div>
+
+  <h3>{{_i}}基础函数{{/i}}</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">{{_i}}函数名{{/i}}</th>
+        <th>{{_i}}参数{{/i}}</th>
+        <th colspan="2">{{_i}}用途{{/i}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-linear(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td colspan="2">{{_i}}渐变背景色{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-page-padding(){{/i}}</td>
+        <td class="muted">{{_i}}@padding:@page-padding-width{{/i}}</td>
+        <td colspan="2">{{_i}}页面边距（上下左右）{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-page-padding-fix(){{/i}}</td>
+        <td class="muted">{{_i}}@padding:@page-padding-width{{/i}}</td>
+        <td colspan="2">{{_i}}页面边距（左右）{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-fullwidth(){{/i}}</td>
+        <td class="muted">{{_i}}@padding:@page-padding-width{{/i}}</td>
+        <td colspan="2">{{_i}}让元素宽度充满屏幕（不再有边距）{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-list-space(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td colspan="2">{{_i}}设置列表的间距{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-group-list-space(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td colspan="2">{{_i}}设置分组列表的间距{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-title-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}标题字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@title-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-tab-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}标签字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@tab-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-tab-highlight-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}标签高亮字体 </td>
+        <td>颜色<code>@text-highlight-color</code> 大小<code>@tab-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-group-list-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}分组列表字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@big-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-p-title-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}段落标题字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@big-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-p-main-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}段落主文字字体 </td>
+        <td>颜色<code>@text-main-color</code> 大小<code>@normal-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-p-sub-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}段落辅助文字字体 </td>
+        <td>颜色<code>@text-sub-color</code> 大小<code>@normal-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-append-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}附加文字字体 </td>
+        <td>颜色<code>@text-sub-color</code> 大小<code>@small-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-em-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}强调文字字体 </td>
+        <td>颜色<code>@text-em-color</code> 大小<code>@normal-font-size</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td>{{_i}}#tbh5v0 > .c-base-link-text(){{/i}}</td>
+        <td class="muted">{{_i}}None{{/i}}</td>
+        <td>{{_i}}链接文字字体 </td>
+        <td>颜色<code>@text-link-color</code> 大小<code>@normal-font-size</code>{{/i}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

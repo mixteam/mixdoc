@@ -1,0 +1,129 @@
+<!-- MIXINS
+================================================== -->
+<section id="mixins">
+  <div class="page-header">
+    <h1>{{_i}}函数<small></small>{{/i}}</h1>
+  </div>
+  <h2>{{_i}}关于函数{{/i}}</h2>
+  <div class="row">
+    <div class="span4">
+      <h3>{{_i}}简单函数{{/i}}</h3>
+<pre class="prettyprint">
+.element {
+  .clearfix();
+}
+</pre>
+    </div><!-- /span4 -->
+    <div class="span4">
+      <h3>{{_i}}带参函数{{/i}}</h3>
+<pre class="prettyprint">
+.element {
+  .border-radius(4px);
+}
+</pre>
+    </div><!-- /span4 -->
+  </div><!-- /row -->
+  <h2>{{_i}}使用函数{{/i}}</h2>
+  <h3>{{_i}}工具{{/i}}</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">{{_i}}函数名{{/i}}</th>
+        <th>{{_i}}参数{{/i}}</th>
+        <th>{{_i}}用途{{/i}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.clearfix()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>{{_i}}清除浮动{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.none()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>{{_i}}隐藏元素<code>display:none</code>{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.no-spacing()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>{{_i}}清除元素边距{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.margin-center()</code></td>
+        <td><em class="muted">none</em></td>
+        <td>{{_i}}元素和文字居中{{/i}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>{{_i}}CSS3 属性{{/i}}</h3>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th class="span4">{{_i}}函数名{{/i}}</th>
+        <th>{{_i}}参数{{/i}}</th>
+        <th>{{_i}}用途{{/i}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.border-radius()</code></td>
+        <td><code>@x</code></td>
+        <td>{{_i}}设置圆角{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.transform()</code></td>
+        <td><code>@x</code></td>
+        <td>{{_i}}设置CSS3的变换{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.translate()</code></td>
+        <td><code>@x:0, @y:0, @origin:0 0, @duration:0s</code></td>
+        <td>{{_i}}设置CSS3的平移{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.animation()</code></td>
+        <td><code>@name, @duration, @func:linear, @count:1</code></td>
+        <td>{{_i}}设置CSS3的动画{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.rotate()</code></td>
+        <td><code>@degrees</code></td>
+        <td>{{_i}}旋转元素{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.box-shadow()</code></td>
+        <td><code>@r, @b, @x, @y, @c</code></td>
+        <td>{{_i}}设置元素阴影{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.solid-arrow()</code></td>
+        <td><code>@width, @height, @color, @bgcolor:transparent, @rotate:0deg</code></td>
+        <td>{{_i}}描绘实体箭头{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.border-arrow()</code></td>
+        <td><code>@width, @height, @color, @border-width:1px, @rotate:0deg</code></td>
+        <td>{{_i}}描绘边框箭头{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.btn-with-arrow()</code></td>
+        <td><code>@w, @h, @aw, @b:1px</code></td>
+        <td>{{_i}}描绘带有左箭头的按钮，DOM结构：
+<pre class="prettyprint">
+&lt;div&gt;
+    &lt;span&gt;&lt;em&gt;&lt;/em&gt;&lt;/span&gt;
+    &lt;a&gt;带箭头的按钮&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+		{{/i}}</td>
+      </tr>
+      <tr>
+        <td><code>.stretch-side()</code></td>
+        <td><code>@background, @space-width:9999px</code></td>
+        <td>{{_i}}延伸元素背景{{/i}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+

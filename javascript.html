@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript · Taobao H5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!--Le Less-->
+    <link rel="stylesheet" type="text/css" href="assets/css/tbh5v0.css" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">首页</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">简介</a>
+              </li>
+              <li class="">
+                <a href="./var-func.html">变量&amp;函数</a>
+              </li>
+              <li class="">
+                <a href="./base-less.html">Global&amp;Base LESS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">HTML组件</a>
+              </li>
+              <li class="active">
+                <a href="./javascript.html">JS模块</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="./qa.html">Q&A</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+	<h1>Javascript 模块</h1>
+	<p class="lead">源代码：请单独参见以下各个模块</p>
+	<div class="subnav">
+	<ul class="nav nav-pills">
+		<li><a href="#seajs">使用seajs</a></li>
+		<li><a href="#swipetop">顶部下拉</a></li>
+		<li><a href="#pagenav">分页模块</a></li>
+		<li><a href="#swipe">划动事件</a></li>
+		<li><a href="#scroller">滚动模块</a></li>
+		<li><a href="#linkfocus">焦点框模拟</a></li>
+		<li><a href="#tranlation">平移动画</a></li>
+	</ul>
+</div>
+</header>
+
+<!-- Seajs
+================================================== -->
+<section id="seajs">
+  <div class="page-header">
+    <h1>使用seajs <small><a href="../../libs/seajs/1.2.0/sea-debug.js">1.2.0版本下载</a></small></h1>   
+  </div>
+  
+  <h2>目前所有JS模块，都兼容CommonJS，且必须使用seajs <code>require</code>这些模块。</h2>
+  <h2>seajs相关教程，请访问官方网站：<a href="http://seajs.org/" target="_blank">seajs.org</a></h2>
+</section>
+
+    <!-- SwipTip
+    ================================================== -->
+    <section id="swipetop">
+      <div class="page-header">
+        <h1>顶部下拉 <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>关于</h3>
+          <p>针对内部导航栏，提供下拉的功能</p>
+          <a href="../../modules/swipetop/swipetop.js" class="btn">查看文件</a>
+          <hr>
+          <h3>DOM样式</h3>
+          <p>请参见HTML组件 之 <a href="components.html#topcate">顶部下拉</a></p>
+		  <hr>
+          <h3>动画DEMO</h3>
+          <a href="examples/swipetop.html" class="btn btn-primary">访问DEMO</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>用法</h2>
+          <p>在javascript中调用：</p>
+<pre class="prettyprint">
+var SwipeTop = require('swipetop'),
+    thatSwipeTop = new SwipeTop(options, self)
+    ;
+</pre>
+          <h3>参数列表</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">键名</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 100px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>isInit</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>是否初始化</td>
+             </tr>
+             <tr>
+               <td>wrap</td>
+               <td>string</td>
+               <td>空串</td>
+               <td>列表容器</td>
+             </tr>
+             <tr>
+               <td>topEl</td>
+               <td>string</td>
+               <td>ttype</td>
+               <td>顶部容器id</td>
+             </tr>
+             <tr>
+               <td>header</td>
+               <td>string</td>
+               <td>header</td>
+               <td>title栏id</td>
+             </tr>
+             <tr>
+               <td>shade</td>
+               <td>string</td>
+               <td>J_shade</td>
+               <td>列表阴影id</td>
+             </tr>
+             <tr>
+               <td>hShade</td>
+               <td>string</td>
+               <td>h-Shade</td>
+               <td>header内的阴影</td>
+             </tr>
+             <tr>
+               <td>scrollArr</td>
+               <td>Array</td>
+               <td>null</td>
+               <td>顶部列表容器id集合</td>
+             </tr>
+             <tr>
+               <td>favScroll</td>
+               <td>Object</td>
+               <td>null</td>
+               <td>引入iscroll对象</td>
+             </tr>
+             <tr>
+               <td>swipeTopGap</td>
+               <td>number</td>
+               <td>60</td>
+               <td></td>
+             </tr>
+             <tr>
+               <td>ease</td>
+               <td>string</td>
+               <td>ease</td>
+               <td>动画运动公式</td>
+             </tr>
+             <tr>
+               <td>easetime</td>
+               <td>number</td>
+               <td>500</td>
+               <td>动画持续时间</td>
+             </tr>
+             <tr>
+               <td>opacity</td>
+               <td>number</td>
+               <td>0.4</td>
+               <td>阴影透明度</td>
+             </tr>
+             <tr>
+               <td>isSwipeDown</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>header是否支持下拉</td>
+             </tr>
+             <tr>
+               <td>toptabHeight</td>
+               <td>number</td>
+               <td>50</td>
+               <td>顶部页签高度</td>
+             </tr>
+             <tr>
+               <td>headerHeight</td>
+               <td>number</td>
+               <td>50</td>
+               <td>header高度</td>
+             </tr>
+             <tr>
+               <td>surplusHeight</td>
+               <td>number</td>
+               <td>80</td>
+               <td>header和阴影的高度</td>
+             </tr>
+             <tr><td colspan="4"><code>self</code>HASH值</td></tr>
+             <tr>
+               <td>tiggerFunc</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应初始化的委托事件</td>
+             </tr>
+             <tr>
+               <td>swipeDown</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应下拉后的委托方法</td>
+             </tr>
+            </tbody>
+          </table>
+          
+ 		  <!-- 用法 -->
+          <h3>对象方法</h3>
+          <h4>.showTop()</h4>
+          <p>显示/隐藏顶部容器。在隐藏状态下，调用方法显示顶部容器。显示状态下，调用方法隐藏顶部容器。</p>
+<pre class="prettyprint">
+thatSwipeTop.showTop();
+</pre>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Pagenav
+    ================================================== -->
+    <section id="pagenav">
+      <div class="page-header">
+        <h1>分页模块 <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>关于</h3>
+          <p>提供分页操作</p>
+          <a href="../component/pagenav/js/pagenav.js" class="btn">查看文件</a>
+          <hr>
+          <h3>DOM样式</h3>
+          <p>请参见HTML组件 之 <a href="components.html#pagenav">分页/翻页</a></p>
+		  <hr>
+          <h3>动画DEMO</h3>
+          <a href="examples/pagenav.html" class="btn btn-primary">访问DEMO</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>用法</h2>
+          <p>在javascript中调用：</p>
+<pre class="prettyprint">
+var PageNav = require('pagenav'),
+    thisPageNav = new pageNav(options);
+    ;
+</pre>
+          <h3>参数列表</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">键名</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 100px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>selector</td>
+               <td>string(css selector)</td>
+               <td>空字符串</td>
+               <td>绑定容器的selector</td>
+             </tr>
+             <tr>
+               <td>pageCount</td>
+               <td>number</td>
+               <td>1</td>
+               <td>分页总数</td>
+             </tr>
+             <tr>
+               <td>objId</td>
+               <td>string</td>
+               <td>undefined</td>
+               <td>分页对象</td>
+             </tr>
+             <tr>
+               <td>preFix</td>
+               <td>string</td>
+               <td>undefined</td>
+               <td>前缀</td>
+             </tr>
+             <tr>
+               <td>disableHash</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>是否对location.hash进行变更</td>
+             </tr>
+            </tbody>
+          </table>
+          
+          <h3>方法</h3>
+          <h4>.init(options)</h4>
+          <p>可以重新初始化对象</p>
+<pre class="prettyprint">
+thatPageNav.init(options);
+</pre>
+          
+ 		  <!-- 事件 -->
+		  <h3>事件</h3>
+          <p></p>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 150px;">事件名</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>hashchange</td>
+               <td>作用在document上，监听全局的分页改变</td>
+             </tr>
+             <tr>
+               <td>P:switchPage</td>
+               <td>作用在某个分页对象上，监听该对象的分页改变</td>
+             </tr>
+            </tbody>
+          </table>
+
+<pre class="prettyprint">
+window.addEventListener('hashchange', function(e) {
+	// 全局分页变更
+});
+</pre>
+
+<pre class="prettyprint">
+thatPageNav.pContainer().on('P:switchPage', function(e, page) {
+	// 对象分页变更
+	// 响应此事件需要把disableHash设置为true
+});
+</pre>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- swipe
+    ================================================== -->
+    <section id="swipe">
+      <div class="page-header">
+        <h1>划动事件 <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>关于</h3>
+          <p>提供划动操作的事件响应</p>
+          <a href="../../modules/swipe/swipe.js" class="btn">查看文件</a>
+          <hr>
+          <h3>动画DEMO</h3>
+          <a href="examples/swipe.html" class="btn btn-primary">访问DEMO</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>用法</h2>
+          <p>在javascript中调用：</p>
+<pre class="prettyprint">
+var swipe = require('./swipe'),
+    thisSwipe = swipe(selector, options)
+    ;
+</pre>
+          <h3>参数列表</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">键名</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 100px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td><code>selector</code></td>
+               <td>string(css selector)</td>
+               <td>空串</td>
+               <td>响应事件的容器</td>
+             </tr>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>isPreventDefault</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>是否阻止默认事件</td>
+             </tr>
+             <tr>
+               <td>isPrecision</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>是否启用精确模式（只判断30度以内的划动）</td>
+             </tr>
+             <tr>
+               <td>lockDirection</td>
+               <td>boolean|string|Array</td>
+               <td>false</td>
+               <td>锁定只在某个方向锁定swipe事件，可支持
+               		<code>left</code> <code>right</code> <code>up</code> <code>down</code></td>
+             </tr>
+             <tr>
+               <td>cancelMove</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>和lockDirection配合使用，当lockDirection不为false时，如果cancelMove为true，则会在划动方向出错时直接取消整个事件</td>
+             </tr>
+             <tr>
+               <td>fixScroll</td>
+               <td>boolean</td>
+               <td>false</td>
+               <td>是否修整系统滚动条滚动造成的Y轴错误的问题</td>
+             </tr>
+             <tr>
+               <td>onBeforeStart</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应划动开始前的委托方法</td>
+             </tr>
+             <tr>
+               <td>onStart</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应划动开始时的委托方法</td>
+             </tr>
+             <tr>
+               <td>onLeft</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应左划动作时的委托方法（只在方向改变时触发一次）</td>
+             </tr>
+             <tr>
+               <td>onRight</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应右划动作时的委托方法（只在方向改变时触发一次）</td>
+             </tr>
+             <tr>
+               <td>onUp</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应上划动作时的委托方法（只在方向改变时触发一次）</td>
+             </tr>
+             <tr>
+               <td>onDown</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应下划动作时的委托方法（只在方向改变时触发一次）</td>
+             </tr>
+             <tr>
+               <td>onMove</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应划动时的委托方法</td>
+             </tr>
+             <tr>
+               <td>onCancel</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应划动取消时的委托方法</td>
+             </tr>
+             <tr>
+               <td>onEnd</td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>响应划动结束时的委托方法</td>
+             </tr>
+            </tbody>
+          </table>
+          
+ 		  <!-- 注意点 -->
+          <h3>注意点</h3>
+          <h4>阻止默认事件</h4>
+          <p>在Android下，存在touchmove事件只响应一次的bug，需要通过阻止默认事件来修复这个bug。
+          		如果通过设置<code>isPreventDefault</code>为<code>true</code>来阻止事件，则会在每次响应<code>touchmove</code>时进行阻止。
+          		此时会阻止掉页面默认的滚动。也可以自行在委托事件里阻止默认事件，例如：
+          </p>
+<pre class="prettyprint">
+swipe('selector', {
+	// 只在左划和右划时阻止默认事件
+	onLeft : function(e, touch) {
+		e.preventDefault();
+	},
+	onRight : function(e, touch) {
+		e.preventDefault();
+	},
+});
+</pre>
+          <h4>onLeft, onRight, onUp, onDown</h4>
+          <p>这四个委托方法只在划动方向改变时触发一次，即当从左划变为下划时，触发onDown，依次类推，包括划动开始时的方向也会触发。
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- scroller
+    ================================================== -->
+    <section id="scroller">
+      <div class="page-header">
+        <h1>滚动模块 <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>关于</h3>
+          <p>提供类似于iscroller的滚动效果</p>
+          <a href="../../modules/scroller/scroller.js" class="btn">查看文件</a>
+          <hr>
+          <h3>动画DEMO</h3>
+          <a href="examples/scroller.html" class="btn btn-primary">访问DEMO</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>用法</h2>
+          <p>在javascript中调用：</p>
+<pre class="prettyprint">
+var scroller = require('scroller'),
+    thisScroller = scroller('#wrapper', options);
+</pre>
+          <h3>参数列表</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">键名</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 100px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td><code>selector</code></td>
+               <td>string(css selector)</td>
+               <td>空串</td>
+               <td>响应事件的容器</td>
+             </tr>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>direction</td>
+               <td>string</td>
+               <td>false</td>
+               <td>滚动的方向，可支持<code>V</code>垂直方向和<code>H</code>水平方向</td>
+             </tr>
+             <tr>
+               <td>isBar</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>是否显示滚动条</td>
+             </tr>
+            </tbody>
+          </table>
+          
+ 		  <!-- 方法 -->
+          <h3>方法</h3>
+          <h4>.refresh()</h4>
+          <p>刷新滚动高度和滚动条</p>
+<pre class="prettyprint">
+thatScroller.refresh();
+</pre>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- linkfocus
+    ================================================== -->
+    <section id="linkfocus">
+      <div class="page-header">
+        <h1>焦点框模拟 <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>关于</h3>
+          <p>提供有蒙层效果的点击焦点框反馈（支持Android）</p>
+          <a href="../../modules/linkfocus/linkfocus.js" class="btn">查看文件</a>
+          <hr>
+          <h3>动画DEMO</h3>
+          <a href="examples/linkfocus.html" class="btn btn-primary">访问DEMO</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>用法</h2>
+          <p>在javascript中调用：</p>
+<pre class="prettyprint">
+var linkfocus = require('linkfocus'),
+    thisLinkfocus = linkfocus(selector);
+</pre>
+          <h3>参数列表</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">键名</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 100px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td><code>selector</code></td>
+               <td>boolean|string(css selector)</td>
+               <td>空串</td>
+               <td>需要模拟焦点的元素CSS选择器。如果需要在android下屏蔽焦点框，请传入false。</td>
+             </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- tranlation
+    ================================================== -->
+    <section id="tranlation">
+      <div class="page-header">
+        <h1>平移动画 <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>关于</h3>
+          <p>元素X、Y轴平移动画</p>
+          <a href="../../modules/translation/translation.js" class="btn">查看文件</a>
+          <hr>
+          <h3>动画DEMO</h3>
+          <a href="examples/translation.html" class="btn btn-primary">访问DEMO</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>用法</h2>
+          <p>在javascript中调用：</p>
+<pre class="prettyprint">
+var translation = require('translation'),
+    thisTranslation = translation(el, options, callback);
+</pre>
+          <h3>参数列表</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">键名</th>
+               <th style="width: 100px;">类型</th>
+               <th style="width: 100px;">默认值</th>
+               <th>描述</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td><code>el</code></td>
+               <td>DOMElement</td>
+               <td>undefined</td>
+               <td>需要平移的DOM元素</td>
+             </tr>
+             <tr>
+               <td><code>callback</code></td>
+               <td>function</td>
+               <td>undefined</td>
+               <td>动画结束后的回调</td>
+             </tr>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>x</td>
+               <td>number</td>
+               <td>0</td>
+               <td>X轴平移距离</td>
+             </tr>
+             <tr>
+               <td>y</td>
+               <td>number</td>
+               <td>0</td>
+               <td>Y轴平移距离</td>
+             </tr>
+             <tr>
+               <td>duration</td>
+               <td>string</td>
+               <td>0.6s</td>
+               <td>动画时间</td>
+             </tr>
+             <tr>
+               <td>origin</td>
+               <td>string</td>
+               <td>0 0</td>
+               <td>动画原点</td>
+             </tr>
+             <tr>
+               <td>delay</td>
+               <td>string</td>
+               <td>0s</td>
+               <td>动画延时</td>
+             </tr>
+             <tr>
+               <td>ease</td>
+               <td>string</td>
+               <td>linear</td>
+               <td>动画运动轨迹</td>
+             </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world.</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="assets/js/widgets.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/application.js"></script>
+  </body>
+</html>

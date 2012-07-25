@@ -1,0 +1,90 @@
+    <!-- tranlation
+    ================================================== -->
+    <section id="tranlation">
+      <div class="page-header">
+        <h1>{{_i}}平移动画{{/i}} <small></small></h1>
+      </div>
+      <div class="row">
+      
+        <div class="span3 columns">
+          <h3>{{_i}}关于{{/i}}</h3>
+          <p>{{_i}}元素X、Y轴平移动画{{/i}}</p>
+          <a href="../../modules/translation/translation.js" class="btn">{{_i}}查看文件{{/i}}</a>
+          <hr>
+          <h3>{{_i}}动画DEMO{{/i}}</h3>
+          <a href="examples/translation.html" class="btn btn-primary">{{_i}}访问DEMO{{/i}}</a>
+        </div>
+        
+        <div class="span9 columns">
+          <!-- 用法 --> 
+          <h2>{{_i}}用法{{/i}}</h2>
+          <p>{{_i}}在javascript中调用：{{/i}}</p>
+<pre class="prettyprint">
+var translation = require('translation'),
+    thisTranslation = translation(el, options, callback);
+</pre>
+          <h3>{{_i}}参数列表{{/i}}</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+             <tr>
+               <th style="width: 100px;">{{_i}}键名{{/i}}</th>
+               <th style="width: 100px;">{{_i}}类型{{/i}}</th>
+               <th style="width: 100px;">{{_i}}默认值{{/i}}</th>
+               <th>{{_i}}描述{{/i}}</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>{{_i}}<code>el</code>{{/i}}</td>
+               <td>{{_i}}DOMElement{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}需要平移的DOM元素{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}<code>callback</code>{{/i}}</td>
+               <td>{{_i}}function{{/i}}</td>
+               <td>{{_i}}undefined{{/i}}</td>
+               <td>{{_i}}动画结束后的回调{{/i}}</td>
+             </tr>
+             <tr><td colspan="4"><code>options</code>HASH值</td></tr>
+             <tr>
+               <td>{{_i}}x{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}0{{/i}}</td>
+               <td>{{_i}}X轴平移距离{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}y{{/i}}</td>
+               <td>{{_i}}number{{/i}}</td>
+               <td>{{_i}}0{{/i}}</td>
+               <td>{{_i}}Y轴平移距离{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}duration{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}0.6s{{/i}}</td>
+               <td>{{_i}}动画时间{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}origin{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}0 0{{/i}}</td>
+               <td>{{_i}}动画原点{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}delay{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}0s{{/i}}</td>
+               <td>{{_i}}动画延时{{/i}}</td>
+             </tr>
+             <tr>
+               <td>{{_i}}ease{{/i}}</td>
+               <td>{{_i}}string{{/i}}</td>
+               <td>{{_i}}linear{{/i}}</td>
+               <td>{{_i}}动画运动轨迹{{/i}}</td>
+             </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>

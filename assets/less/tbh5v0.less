@@ -1,0 +1,74 @@
+@import '../../../component/btn/less/btn';
+@import '../../../component/filter/less/filter';
+@import '../../../component/float/less/float';
+@import '../../../component/form/less/form';
+@import '../../../component/foot/less/footer';
+@import '../../../component/icon/less/icon';
+@import '../../../component/innernav/demo';
+@import '../../../component/list/less/list';
+@import '../../../component/more/less/more';
+@import '../../../component/msg/less/msg';
+@import '../../../component/photo/less/photo';
+@import '../../../component/tab/less/tab';
+@import '../../../component/table/less/table';
+@import '../../../component/title/less/title';
+@import '../../../component/topcate/less/topcate';
+@import '../../../component/pagenav/less/pagenav';
+
+* {font-family:"微软雅黑";}
+
+// hack bootstrap
+.span0 {
+	width: @screen-min-width!important;
+	min-width: @screen-min-width!important;
+}
+
+h2 code {
+	font-size:24px;
+}
+
+#tbh5v0 {
+	section {padding-top:0;}
+	ul, ol {margin:0;}
+	select, input[type="file"] {
+		line-height: auto;
+	}
+	select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+		display: inherit;
+		padding-top:0;
+		padding-bottom:0;
+		paddiing-right:inherit;
+		margin-bottom: 0;
+	}
+	label, input, button, select, textarea {
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+	}
+	.footer {
+		padding:0;
+		border-top:0;
+	}
+}
+
+
+// hack component
+#tbh5v0 {
+	header, 
+	.c-inav-sub ul,
+	.c-tcate,
+	.footer,
+	.footer .footer-t {
+		&:before, &:after {width:0!important;}
+	}
+}
+
+#tbh5v0 .c-tcate {
+	height: 350px;
+	position: relative;
+	top:0px;
+}
+
+#button #tbh5v0 a[class*="c-btn"] {
+	margin:5px;
+}
