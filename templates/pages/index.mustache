@@ -52,7 +52,7 @@
 
   <h2>{{_i}}二、模块信息和依赖相关{{/i}}</h2>
 
-  <h3>{{_i}}每个模块（独立一个文件夹，以模块名命名）都包含一个模块主文件（即模块名.js），相同目录下有一个<code>package.json</code>，储存了该模块的基本信息，格式如下：{{/i}}</h3>
+  <h3>{{_i}}每个模块（独立一个文件夹，以模块名命名）都包含一个模块主文件，位于模块目录下的<code>src</code>文件夹（即模块名.js），相同目录下有一个<code>package.json</code>，储存了该模块的基本信息，格式如下：{{/i}}</h3>
 
 <pre class="prettyprint">
 {
@@ -60,10 +60,10 @@
     "description" : "say hello world",
     "author" : "zhuxun",
     "version" : "0.5",
-    "namespace" : "mix/norjs/test",
-	"main" : "./helloworld",
+    "namespace" : "mix/core/norjs/test",
+	  "main" : "./helloworld",
     "dependencies" : {
-        "mix/norjs/test/debug" : "0.5"
+        "mix/core/norjs/test/debug" : "0.5"
     },
     "stable-release" : ["0.1"] // 此项为历史稳定版本列表
 }
@@ -109,13 +109,13 @@ module.exports = HelloWorld;
 
   <h2>{{_i}}四、模块Build{{/i}}</h2>
 
-  <h3>{{_i}}目前对于模块代码的build，可以写两套方案，一套是针对<code>seajs</code>的，一套是直接调用的。
-build生成的文件位于模块目录的build文件夹下，文件命名规则可配置，默认为<code>模块名-v版本号-build器.js</code>，例如<code>hellworld-v0.1-seajs.js</code>。
+  <h3>{{_i}}目前对于模块代码的build，可以写两套方案，一套是针对<code>CMD</code>的，一套是针对<code>script</code>直接引入的。
+build生成的文件位于模块目录的build文件夹下，文件命名规则可配置，完成命名为<code>模块名-v版本号-模式.js</code>，例如<code>hellworld-v0.1-cmd.js</code>。
 {{/i}}</h3>
 
 	<ul>
 		<li><p>
-		{{_i}}1、seajs-build：{{/i}}
+		{{_i}}1、build/cmd-mod：{{/i}}
 		</p>
 <pre class="prettyprint">
 /**
@@ -126,8 +126,8 @@ build生成的文件位于模块目录的build文件夹下，文件命名规则�
 */
 
 define(
-'mix/norjs/test/helloworld@0.5', // resolve id from package.js when build
-['mix/norjs/test/debug@0.5'], // resolve deps from package.json when build
+'mix/core/norjs/test/helloworld@0.5', // resolve id from package.js when build
+['mix/core/norjs/test/debug@0.5'], // resolve deps from package.json when build
 function(require, exports, module) {
     // 原helloworld.js的代码
 });
@@ -135,7 +135,7 @@ function(require, exports, module) {
 </pre>
 		</li>
 		<li><p>
-		{{_i}}2、normal-build：{{/i}}
+		{{_i}}2、build/normal-mod：{{/i}}
 		</p>
 <pre class="prettyprint">
 /**
@@ -155,8 +155,8 @@ function(require, exports, module) {
 }).apply(
 window,
 norjs(
-    "mix/norjs/test/helloworld@0.5"
-    ,["mix/norjs/test/debug@0.5"]
+    "mix/core/norjs/test/helloworld@0.5",
+    ["mix/core/norjs/test/debug@0.5"]
 ));
 
 </pre>
