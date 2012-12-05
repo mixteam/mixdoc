@@ -1,4 +1,4 @@
-# MIX 向导手册
+# Mixjs入门手册 **quick guide**
 
 MIX 是Mobile In X的缩写，它寓意着移动前端技术的一种集合。我们推出MIX框架（平台），是希望为移动前端提供便捷，同时不失为强大的开发框架（平台）。它有形形色色的最佳实践组成，包括从许多成熟的前端架构中汲取精华。
 
@@ -51,7 +51,7 @@ MIX代码的编译和部署依赖于[SPM](https://github.com/seajs/spm)（@玉�
 
 **Nginx/Apache/node-express**
 
-为了本地调试，还需要能配置一个WEB容器。[Nginx](http://nginx.org/)、[Apache](http://www.apache.org/)以及Node的[express]()都可以是你的首选，这里就不再详细展开，请童鞋们参照官方手册或民间攻略安装和配置。
+为了本地调试，还需要能配置一个WEB容器。[Nginx](http://nginx.org/)、[Apache](http://www.apache.org/)以及Node的[express](http://expressjs.com/)都可以是你的首选，这里就不再详细展开，请童鞋们参照官方手册或民间攻略安装和配置。
 
 *至此，需要依赖的开发环境已经安装妥当，接下去，让我们先Hello World吧！*
 
@@ -74,7 +74,7 @@ MIX代码的编译和部署依赖于[SPM](https://github.com/seajs/spm)（@玉�
 
 完成后所有的MIX模块都已经编译并上传自SPM源服务器了。你可以通过类似`http://{path_to_spm_sources}/mix/core/base/class/1.0.0/class.js`这样的地址，来访问源服务器上的某个模块的js文件。
 
-## 初始化Hello World项目。
+## 初始化Hello World项目
 
 新建一个项目目录，名为`helloworld`，并在当前项目路径下执行如下命令：
 

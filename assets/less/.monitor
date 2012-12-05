@@ -1,0 +1,4 @@
+[lessc ./site, move /Y ./site.css ../css/site.css]
+./site.less
+./func.less
+./marked.less
