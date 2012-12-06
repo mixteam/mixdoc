@@ -14,26 +14,46 @@
 		return s.split(PATH_REGEX);
 	}
 
-	var name, page, anchor, basePath,
+	$.getHtml = function(url, success) {
+		$.ajax({
+			url : url,
+			type : 'GET',
+			success : success,
+			error : function() {
+				alert('加载失败');
+			}
+		});
+	}
 
-		categoryUrl, pageUrl,
-		navUl, logoUl, cateUl, articleEl, dropdownUl
+	var hashParam, 
+		basePath,
+		winEl = $(win),
+		navUl, 
+		logoUl, 
+		cateUl, 
+		articleEl, 
+		dropdownUl
 		;
 
 	function parseHash() {
 		var hash = location.hash.replace('#', ''),
 			params = $.splitPath(hash);
 
-		name = params[0];
-		page = $.joinPath(params[1], params[2]);
-		anchor = params[3] || '';
-		basePath = $.joinPath('pages', name);
+		return {
+			name : params[0],
+			page : $.joinPath(params[1], params[2]),
+			section : params[3] || ''
+		}
 	}
 
 	function loadCategory(callback) {
-		var url = $.joinPath(basePath, 'category.html');
+		var name = hashParam.name,
+			page = hashParam.page,
+			section = hashParam.section,
+			url = $.joinPath(basePath, 'category.html')
+			;
 
-		$.get(url, function(html) {
+		$.getHtml(url, function(html) {
 			var dom = $(html),
 				topLis = dom.children('li')
 				;
@@ -63,7 +83,7 @@
 							.addClass('link');
 
 						if (!page || page === '/' || subLinkHref === page) {
-							page = subLinkHref;
+							page = hashParam.page = subLinkHref;
 							subLi.addClass('active');
 							topLi.addClass('active');
 						}
@@ -73,7 +93,7 @@
 						.addClass('link');
 					
 					if (!page || page === '/' || linkHref === page) {
-						page = linkHref;
+						page = hashParam.page = linkHref;
 						topLi.addClass('active');
 					}
 				}
@@ -87,9 +107,13 @@
 	}
 
 	function loadContent(callback) {
-		var url = $.joinPath(basePath, page + '.html');
+		var name = hashParam.name,
+			page = hashParam.page,
+			section = hashParam.section,
+			url = $.joinPath(basePath, page + '.html')
+			;
 
-		$.get(url, function(html) {
+		$.getHtml(url, function(html) {
 			var dom = $('<div>' + html + '</div>'),
 				hEls = dom.find('h2, h3'),
 				menu = $('<ul></ul>')
@@ -103,6 +127,25 @@
 			// fix href= "http://xxxx"
 			dom.find('a[href^="http"]').each(function() {
 				$(this).attr('target', '_blank');
+			});
+
+			// fix img
+			dom.find('img').each(function() {
+				var el = this,
+					img = $(el),
+					figure = $('<figure><img></img><figcaption></figcaption></figure>')
+					;
+
+				figure.find('img')
+					.attr({
+						src : $.joinPath(basePath, page, '..', img.attr('src')),
+						alt : img.attr('alt')
+					});
+
+				figure.find('figcaption')
+					.text(img.attr('alt'));
+
+				img.replaceWith(figure);
 			});
 
 			Object.each(hEls, function(el, idx) {
@@ -137,15 +180,16 @@
 	}
 
 	function bindEvents() {
-		navUl.on('click', 'li a', function(e) {
-			var el = this
-				anchor = $(el)
+		winEl.on('hashchange', function(e) {
+			var hash = parseHash()
 				;
 
-			navUl.find('.active').removeClass('active');
-			anchor.parent().addClass('active');
-
-			setTimeout(init, 100);
+			if (hash.name !== hashParam.name) {
+				init();
+			} else if (hash.page !== hashParam.page) {
+				hashParam.page = hash.page;
+				loadContent();
+			}
 		});
 
 		cateUl.on('click', 'a.toggle', function(e) {
@@ -174,41 +218,67 @@
 					li.addClass('active');
 				}
 			});
-
-			page = anchor.attr('href').replace('#' + name + '/', '');
-			loadContent();
 		});
 
 		articleEl.on('click', 'a.top', function(e) {
 			win.scrollTo(0, 0);
 		});
 
-		var indropmenu = false;
 		dropdownUl.on('mousemove', function(e) {
-			indropmenu = true;
+			dropdownUl.attr('open', 'true');
 		}).on('mouseout', function(e) {
-			indropmenu = false;
+			dropdownUl.attr('open', 'false');
 
-			$(win).one('scroll', function() {
-				console.log(indropmenu);
-				!indropmenu && dropdownUl.parent().removeClass('open');
+			winEl.one('scroll', function() {
+				if (dropdownUl.attr('open') !== 'true')  {
+					dropdownUl.parent().removeClass('open');
+				}
 			});
 		}).prev('a').on('click', function(e) {
 			var el = this,
 				anchor = $(el)
 				;
-
 			anchor.parent().toggleClass('open');
 		});
 
 	}
 
 	function init() {
-		parseHash();
+		var hash = parseHash(),
+			name = hash.name,
+			page = hash.page,
+			section = hash.section
+			;
+
+		hashParam = hash;
+		basePath = $.joinPath('pages', name);
+
 		logoUl.addClass(name);
+
+		navUl.find('a').each(function() {
+			var el = this,
+				anchor = $(el),
+				href = anchor.attr('href')
+				;
+
+			if (href.indexOf('#' + name) > 0) {
+				anchor.parent().addClass('active')
+					.siblings('.active').removeClass('active');
+			}
+		});
+
 		loadCategory(function() {
 			loadContent(function() {
-				bindEvents();
+				articleEl.find('a.top').each(function() {
+					var el = this,
+						anchor = $(el),
+						id = anchor.attr('id')
+						;
+
+					if (id === $.joinPath(name, page, section)) {
+						win.scrollTo(0, anchor.offset().top);
+					}
+				});
 			});
 		});
 	}
@@ -221,6 +291,7 @@
 		dropdownUl =  $('section.dropdown ul.dropdown-menu');
 
 		init();
+		bindEvents();
 	});
 
 })(window, Zepto)

@@ -283,7 +283,3 @@ Helloworld是每个开发者的进阶之路，我们不能满足于显示`Hello 
 大功告成，同样`spm upload`后，访问`http://localhost/mix/demos/helloworld/#hellomix/M.J`地址，并刷新。你会看到如同M.J那样的神奇一幕！
 
 **如果你对上面的一切觉得繁琐，那么你可以偷懒下，直接浏览MIX框架下`demos/helloworld`即可**
-
-## 小甜点
-
-###文件监控

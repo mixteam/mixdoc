@@ -1,5 +1,0 @@
-* [Mixjs入门手册](tutorial/quick-guide.html)
-* [API](#)
-	* [core.base.Class](api/core_base_class.html)
-	* [core.base.Message](api/core_base_message.html)
-	* [core.base.reset](api/core_base_reset.html)

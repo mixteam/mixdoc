@@ -871,6 +871,7 @@ section.content article hr{background:none;border:medium none;border-bottom:1px 
 section.content article p tt,section.content article p code{background:#f8f8ff;border:1px solid #dedede;padding:0 0.2em;}
 section.content article a.totop{text-indent:-9999999px;background:url("../images/anchor.png") no-repeat top left;margin-right:7px;display:block;width:13px;border-bottom:1px solid #cccccc;}
 section.content article a.anchor{text-indent:-9999999px;background:url("../images/anchor.png") no-repeat top right;display:block;width:13px;border-bottom:1px solid #cccccc;}
+section.content article figure{-webkit-margin-start:200px;-webkit-margin-end:200px;background:#FFF;border:1px solid #dddddd;-webkit-box-shadow:0px 0px 4px 0px rgba(0, 0, 0, 0.2);padding:10px;}section.content article figure figcaption{padding-top:5px;font-size:14px;color:#666;text-align:center;}
 #screen-wrap{width:100%;min-width:320px;}
 header{min-width:320px;margin:auto;padding:0 200px;box-sizing:border-box;height:60px;display:-webkit-box;-webkit-box-align:center;background:#0c3366;}header .logo{width:76px;height:100%;background:url("../images/logo.png") transparent no-repeat 0 center;margin-right:20px;}
 header ul.nav{display:block;margin-bottom:0;}header ul.nav li a{height:60px;border-radius:0;box-sizing:border-box;margin-top:0;margin-bottom:0;padding:12px 20px;}header ul.nav li a span:first-child{font-size:12px;color:#DDD;}
@@ -884,14 +885,14 @@ section.brief .row-fluid>div:last-child{padding-left:40px;}
 section.brief .row-fluid:after{content:" ";width:990px;margin:auto;height:60px;background:url("../images/line.png") no-repeat 0 100%;}
 section.brief .caption{font-size:18px;color:#555;margin:10px 0;}section.brief .caption span{font-size:13px;color:#999;display:inline-block;padding:0 5px;}
 section.brief article{line-height:1.5em;font-size:13px;color:#A9A9A9;text-indent:2em;}
-section.category{width:200px;height:100%;box-sizing:border-box;position:absolute;border-right:1px solid #DDD;top:0;left:0;background:#dfdfdf;z-index:9;}section.category .logo{width:100%;height:60px;background:transparent no-repeat 20px center;}section.category .logo.mixjs{background-image:url("../images/logo-js.png");}
-section.category .logo.mixcss{background-image:url("../images/logo-css.png");}
-section.category .logo.mixtools{background-image:url("../images/logo-tools.png");}
-section.category .logo.mixtest{background-image:url("../images/logo-test.png");}
-section.category .logo.mixgit{background-image:url("../images/logo-git.png");}
-section.category .logo.mixrepo{background-image:url("../images/logo-repo.png");}
+section.category{width:200px;height:100%;box-sizing:border-box;position:absolute;border-right:1px solid #DDD;top:0;left:0;background:#dfdfdf;z-index:9;}section.category .logo{width:100%;height:60px;background:url("../images/logo1.png") no-repeat 20px center;}section.category .logo.js{background-image:url("../images/logo-js.png");}
+section.category .logo.css{background-image:url("../images/logo-css.png");}
+section.category .logo.tools{background-image:url("../images/logo-tools.png");}
+section.category .logo.test{background-image:url("../images/logo-test.png");}
+section.category .logo.git{background-image:url("../images/logo-git.png");}
+section.category .logo.repo{background-image:url("../images/logo-repo.png");}
 section.category .categroup>li>a{width:100%;height:25px;line-height:25px;color:#555;font-size:15px;margin-bottom:10px;padding-left:20px;padding-right:10px;box-sizing:border-box;}section.category .categroup>li>a b.caret{float:right;margin-top:12px;border-top:4px solid #555;}
-section.category .catelist{height:0;overflow:hidden;position:relative;-webkit-transition:height 0.35s ease;}section.category .catelist>li>a{width:100%;font-size:13px;color:#999;padding-top:4px;padding-bottom:4px;padding-left:30px;padding-right:10px;margin-top:1px;margin-bottom:1px;border-radius:0;box-sizing:border-box;}section.category .catelist>li>a:hover{color:#005580;}
+section.category .catelist{height:0;overflow:hidden;position:relative;-webkit-transition:height 0.35s ease;margin-bottom:0;}section.category .catelist>li>a{width:100%;font-size:13px;color:#999;padding-top:4px;padding-bottom:4px;padding-left:30px;padding-right:10px;margin-top:1px;margin-bottom:1px;border-radius:0;box-sizing:border-box;}section.category .catelist>li>a:hover{color:#005580;}
 section.category .catelist>li>a:before{content:"●";position:relative;right:10px;}
 section.category .categroup>li.active>a b.caret{border-top:0px;border-bottom:4px solid #555;}
 section.category .categroup>li.active .catelist{height:auto;}
