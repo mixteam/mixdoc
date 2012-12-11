@@ -1,6 +1,6 @@
-* [Mixcss文档](tutorial/quick-guide.html)
+* [Mix CSS入门手册](tutorial/quick-guide.html)
 * [开发文档](#)
 	* [Less生成CSS冗余测试](tutorial/redundancy_of_css_generated_by_less.html)
 	* [bootStrap分析文档](tutorial/analysis_of_bootStrap.html)
-* [Mixcss组件文档](#)
+* [组件入门](#)
 	* [button](component/button.html)
