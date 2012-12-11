@@ -87,7 +87,13 @@ section.banner {
 	@bgcolor: rgb(220,220,228);
 
 	.content();
-	background: #DCDCE4 url("../images/banner.png") no-repeat center 0;
+	background: url("../images/banner-logo-text.png") 700px 70px no-repeat,
+				url("../images/banner-logo-img.png") 355px 0 no-repeat,
+				url("../images/banner.jpg") center 0 no-repeat,
+				#DCDCE4
+				;
+	
+				
 	height: 300px;
 
 	ul {
@@ -97,10 +103,22 @@ section.banner {
 		padding: 0;
 		display: inline-block;
 		left: 500px;
-		top: 200px;
+		top: 130px;
 
 		li {
+			@color: rgb(152,152,165);
 
+			font-size: 16px;
+			color: darken(@color, 10%);
+			padding-top: 8px;
+			padding-bottom: 2px;
+			border-bottom: 1px solid rgb(205,205,217);
+
+			em {
+				color: @color;
+				font-style: normal;
+				font-weight: bold;
+			}
 		}
 	}
 }
@@ -156,6 +174,12 @@ section.brief {
 			li {
 				padding: 0;
 				text-indent: 0;
+			}
+
+			a.more {
+				float: right;
+				display: inline-block;
+				margin: 5px 10px;
 			}
 		}
 	}
