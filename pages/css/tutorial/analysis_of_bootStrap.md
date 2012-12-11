@@ -151,13 +151,13 @@ class分为：
 
 ![基本结构图](../assets/images/2012-12-11-01.JPG)
 
-基础LESS：
+**基础LESS**
 
 	.base{
 	    text-align:e("base");
 	}
 
-a1.less:
+**a1.less**
 	
 	@import "base";
 
@@ -165,7 +165,7 @@ a1.less:
 	    text-align:e("a1");
 	}
 
-a2.less
+**a2.less**
 
 	@import "base";
 
@@ -173,7 +173,7 @@ a2.less
 	    text-align:e("a2");
 	}
 
-a.less
+**a.less**
 
 	@import "a1";
 	@import "a2";
@@ -182,7 +182,7 @@ a.less
 	    text-align: e("a");
 	}
 	
-b1.less
+**b1.less**
 
 	@import "base";
 
@@ -190,7 +190,7 @@ b1.less
 	    text-align:e("b1");
 	}
 
-b2.less
+**b2.less**
 	
 	@import "base";
 
@@ -198,7 +198,7 @@ b2.less
 	    text-align:e("b2");
 	}
 	
-b.less
+**b.less**
 
 	@import "b1";
 	@import "b2";
@@ -207,7 +207,7 @@ b.less
 	    text-align: e("b");
 	}
 	
-c.less
+**c.less**
 
 	@import "base";
 
@@ -215,7 +215,7 @@ c.less
 	    text-align:e("c");
 	}
 	
-output.less
+**output.less**
 	
 	@import "a";
 	@import "b";
@@ -224,7 +224,7 @@ output.less
 	    text-align:e("output");
 	}
 
-最终生成的CSS文件如下：
+**最终生成的CSS文件如下**
 
 	.base{text-align:base;}
 	.a1{text-align:a1;}
@@ -353,14 +353,14 @@ bootStrap中的这种方式降低了一定的自由度。对设计的要求较�
 
 ####技巧(tricks)
 
-1.通配符。
+**通配符**
 
 	[class^="icon-"],
 	[class*=" icon-"] {
 	 	display: inline-block;
 
 
-2.Mix in
+**Mixin**
 	
 	input[type="button"] {
 	  &.btn-block {
