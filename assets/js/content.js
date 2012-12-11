@@ -70,7 +70,7 @@
 			Object.each(topLis, function(el) {
 				var topLi = $(el),
 					link = topLi.children('a'),
-					linkHref = link.attr('href').replace('.html', ''),
+					linkHref = link.attr('href').replace(/\.\w+$/, ''),
 					subUl = topLi.children('ul'),
 					subLis = subUl.children('li')
 					;
@@ -85,7 +85,7 @@
 					Object.each(subLis, function(el) {
 						var subLi = $(el),
 							subLink = subLi.children('a'),
-							subLinkHref = subLink.attr('href').replace('.html', '')
+							subLinkHref = subLink.attr('href').replace(/\.\w+$/, '')
 							;
 
 						subLink.attr('href', '#' + name + '/' + subLinkHref)
@@ -121,6 +121,8 @@
 			section = hashParam.section,
 			url = $.joinPath(basePath, page)
 			;
+
+		if (page === '#') return;
 
 		$.getHtml(url, function(html) {
 			var dom = $('<div>' + html + '</div>'),
@@ -164,7 +166,7 @@
 					id = name + '/' + page + '/' + idx 
 					;
 
-				header.append('<span><a class="top" id="' + id + '" name="' + id + '">#</a></span>')
+				header.append('<span><a class="top" id="' + id + '" name="' + id + '">TOP</a></span>')
 
 				menuLi.find('a').text(title)
 					.attr('href', '#' + id);
@@ -262,7 +264,7 @@
 		hashParam = hash;
 		basePath = $.joinPath('pages', name);
 
-		logoUl.addClass(name);
+		logoUl.attr('class', 'logo ' + name);
 
 		navUl.find('a').each(function() {
 			var el = this,
