@@ -1,7 +1,8 @@
 (function (win, $, undef){
 
 	var PATH_SEP = '/',
-		PATH_REGEX = /[\/\\]+/g
+		PATH_REGEX = /[\/\\]+/g,
+		hasMarked = !!win['marked']
 		;
 
 	$.joinPath = function() {
@@ -15,10 +16,18 @@
 	}
 
 	$.getHtml = function(url, success) {
+		url = url + (hasMarked ? '.md' : '.html');
+
 		$.ajax({
 			url : url,
 			type : 'GET',
-			success : success,
+			success : function(text) {
+				if (hasMarked){
+					success(marked(text))
+				} else {
+					success(text);
+				}
+			},
 			error : function() {
 				alert('加载失败');
 			}
@@ -50,7 +59,7 @@
 		var name = hashParam.name,
 			page = hashParam.page,
 			section = hashParam.section,
-			url = $.joinPath(basePath, 'category.html')
+			url = $.joinPath(basePath, 'category')
 			;
 
 		$.getHtml(url, function(html) {
@@ -110,7 +119,7 @@
 		var name = hashParam.name,
 			page = hashParam.page,
 			section = hashParam.section,
-			url = $.joinPath(basePath, page + '.html')
+			url = $.joinPath(basePath, page)
 			;
 
 		$.getHtml(url, function(html) {
