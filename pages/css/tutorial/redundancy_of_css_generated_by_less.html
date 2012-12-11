@@ -1,8 +1,8 @@
-<h1>�����ṹ�����԰汾1.3.0��</h1>
+<h1>基本结构（测试版本1.3.0）</h1>
 <ref name="2.JPG"></ref>
 
-<h1>����һ��������Ϊclass</h1>
-<p>����LESS��
+<h1>测试一：基础库为class</h1>
+<p>基础LESS：
 
 </p>
 <pre><code>.base{
@@ -75,7 +75,7 @@
 .output{
     text-align:e(&quot;output&quot;);
 }</code></pre>
-<p>�������ɵ�CSS�ļ����£�
+<p>最终生成的CSS文件如下：
 
 </p>
 <pre><code>.base{text-align:base;}
@@ -92,13 +92,13 @@
 .c{text-align:c;}
 .output{text-align:output;}</code></pre>
 <blockquote>
-<p>����class�ᱻ������д
+<p>基础class会被多次重写
 
 
 </p>
 </blockquote>
-<h1>���Զ���������Ϊfunc.</h1>
-<p>����LESS��
+<h1>测试二：基础库为func.</h1>
+<p>基础LESS：
 
 </p>
 <pre><code>.baseMain(){
@@ -108,7 +108,7 @@
 .basePartial(){
     text-align:e(&quot;basePartial func&quot;);
 }</code></pre>
-<p>ֻ��a1.less��ʹ�ã�
+<p>只在a1.less中使用：
 
 </p>
 <pre><code>@import &quot;base&quot;;
@@ -117,11 +117,11 @@
     text-align:e(&quot;a1&quot;);
     .baseMain();
 }</code></pre>
-<p>��a2.less\b1.less\b2.less��û�е�����Щfunc��������
+<p>在a2.less\b1.less\b2.less中没有调用这些func，但是有
 
 </p>
 <pre><code>@import &quot;base&quot;;</code></pre>
-<p>�������ɵ�CSS�ļ����£�
+<p>最终生成的CSS文件如下：
 
 </p>
 <pre><code>.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
@@ -132,11 +132,11 @@
 .b{text-align:b;}
 .c{text-align:c;}
 .output{text-align:output;}</code></pre>
-<p>���Կ���.a1����ʽ��������4��base Main func����ʽ��<strong>�������ֺ�base.less �����õĴ�����ͬ�������ں����ĵ��ô����ǲ�ͬ��</strong>��
+<p>可以看到.a1的样式中生成了4个base Main func的样式。<strong>这个数字和base.less 被引用的次数相同，和其内函数的调用次数是不同的</strong>。
 
 </p>
-<h1>�����������Ӷ�base.less ���ã���֤���Զ�</h1>
-<p>���Զ���ֻ��a2.less\b1.less\b2.less������base.less��������a.less/b.less�����Ӷ�base.less�����ã�Ԥ��Ӧ�û�����6��base Main func����ʽ������:
+<h1>测试三：添加多base.less 引用，验证测试二</h1>
+<p>测试二中只有a2.less\b1.less\b2.less调用了base.less，现在在a.less/b.less中添加对base.less的引用，预期应该会生成6个base Main func的样式。如下:
 
 </p>
 <p>a.less
@@ -159,7 +159,7 @@
 .b{
     text-align: e(&quot;b&quot;);
 }</code></pre>
-<p>��������css���£�
+<p>最终生成css如下：
 
 </p>
 <pre><code>.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
@@ -170,14 +170,14 @@
 .b{text-align:b;}
 .c{text-align:c;}
 .output{text-align:output;}</code></pre>
-<p>�պ�6��baseMain func����Ԥ�ڡ�
+<p>刚好6个baseMain func，如预期。
 
 </p>
-<h1>�����ģ����㺯�����ã�����import</h1>
-<p>�ڲ��Զ��Ͳ���������������base.less�еĺ�������a1.less��������ֻ��import������������b.less�е���base.less�е�.basePartial()��������base.less�ĺ������ú�import���������£�
+<h1>测试四：单点函数调用，多点import</h1>
+<p>在测试二和测试三中真正调用base.less中的函数的是a1.less，其他的只是import进来。现在在b.less中调用base.less中的.basePartial()函数。对base.less的函数调用和import的情况如下：
 
 </p>
-<p>��base.less �ĵ���
+<p>对base.less 的调用
 
 </p>
 <p>a1.less
@@ -200,14 +200,14 @@
     text-align: e(&quot;b&quot;);
     .basePartial();
 }</code></pre>
-<p>import  base.less ���ļ�����a1.less��b.less�⻹��b1.less��b2.less���ܹ�4���ļ���
+<p>import  base.less 的文件除了a1.less、b.less外还有b1.less、b2.less，总共4个文件。
 
 
 </p>
-<p>����Ԥ�ڣ�����.basePartial()��.baseMain()�Ĵ�����base.less ��import�����Ĵ���ϢϢ���ء���������Ӧ����4.
+<p>按照预期，出现.basePartial()和.baseMain()的次数和base.less 被import进来的次数息息相关。这个次数应该是4.
 
 </p>
-<p>�����������£�
+<p>输出结果如下：
 
 </p>
 <pre><code>.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
@@ -218,11 +218,11 @@
 .b{text-align:b;text-align:basePartial func;text-align:basePartial func;text-align:basePartial func;text-align:basePartial func;}
 .c{text-align:c;}
 .output{text-align:output;}</code></pre>
-<p>���Կ�������baseMain �� basePartial �ĵ��þ�Ϊ4��
+<p>可以看到的是baseMain 和 basePartial 的调用均为4次
 
 </p>
-<h1>����</h1>
-<p>���Ի���lessҪ�㹻���£�һ������import�����Ĵ����ܶ��Ժ�������css�ļ���Ҳ������������Ҫ���ǣ��������������ܶࡣ
+<h1>结论</h1>
+<p>所以基础less要足够精致，一旦当被import进来的次数很多以后，生成css文件的也会变大，最重要的是，这里面的冗余很多。
 
 
 

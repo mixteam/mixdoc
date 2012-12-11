@@ -1,13 +1,11 @@
-
-
-#»ù±¾½á¹¹£¨²âÊÔ°æ±¾1.3.0£©
+#åŸºæœ¬ç»“æ„ï¼ˆæµ‹è¯•ç‰ˆæœ¬1.3.0ï¼‰
 
 	
 <ref name="2.JPG"></ref>
 
-#²âÊÔÒ»£º»ù´¡¿âÎªclass
+#æµ‹è¯•ä¸€ï¼šåŸºç¡€åº“ä¸ºclass
 
-»ù´¡LESS£º
+åŸºç¡€LESSï¼š
 
 	.base{
 	    text-align:e("base");
@@ -80,7 +78,7 @@ output.less
 	    text-align:e("output");
 	}
 
-×îÖÕÉú³ÉµÄCSSÎÄ¼şÈçÏÂ£º
+æœ€ç»ˆç”Ÿæˆçš„CSSæ–‡ä»¶å¦‚ä¸‹ï¼š
 
 	.base{text-align:base;}
 	.a1{text-align:a1;}
@@ -97,13 +95,13 @@ output.less
 	.output{text-align:output;}
 	
 	
-> »ù´¡class»á±»¶à´ÎÖØĞ´
+> åŸºç¡€classä¼šè¢«å¤šæ¬¡é‡å†™
 
 
-#²âÊÔ¶ş£º»ù´¡¿âÎªfunc.
+#æµ‹è¯•äºŒï¼šåŸºç¡€åº“ä¸ºfunc.
 
 
-»ù´¡LESS£º
+åŸºç¡€LESSï¼š
 
 	.baseMain(){
 	    text-align:e("baseMain func");
@@ -113,7 +111,7 @@ output.less
 	    text-align:e("basePartial func");
 	}
 
-Ö»ÔÚa1.lessÖĞÊ¹ÓÃ£º
+åªåœ¨a1.lessä¸­ä½¿ç”¨ï¼š
 
 	@import "base";
 
@@ -123,12 +121,12 @@ output.less
 	}
 
 
-ÔÚa2.less\b1.less\b2.lessÖĞÃ»ÓĞµ÷ÓÃÕâĞ©func£¬µ«ÊÇÓĞ
+åœ¨a2.less\b1.less\b2.lessä¸­æ²¡æœ‰è°ƒç”¨è¿™äº›funcï¼Œä½†æ˜¯æœ‰
 	
 	@import "base";
 
 
-×îÖÕÉú³ÉµÄCSSÎÄ¼şÈçÏÂ£º
+æœ€ç»ˆç”Ÿæˆçš„CSSæ–‡ä»¶å¦‚ä¸‹ï¼š
 
 	.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
 	.a2{text-align:a2;}
@@ -139,11 +137,11 @@ output.less
 	.c{text-align:c;}
 	.output{text-align:output;}
 	
-¿ÉÒÔ¿´µ½.a1µÄÑùÊ½ÖĞÉú³ÉÁË4¸öbase Main funcµÄÑùÊ½¡£**Õâ¸öÊı×ÖºÍbase.less ±»ÒıÓÃµÄ´ÎÊıÏàÍ¬£¬ºÍÆäÄÚº¯ÊıµÄµ÷ÓÃ´ÎÊıÊÇ²»Í¬µÄ**¡£
+å¯ä»¥çœ‹åˆ°.a1çš„æ ·å¼ä¸­ç”Ÿæˆäº†4ä¸ªbase Main funcçš„æ ·å¼ã€‚**è¿™ä¸ªæ•°å­—å’Œbase.less è¢«å¼•ç”¨çš„æ¬¡æ•°ç›¸åŒï¼Œå’Œå…¶å†…å‡½æ•°çš„è°ƒç”¨æ¬¡æ•°æ˜¯ä¸åŒçš„**ã€‚
 
-#²âÊÔÈı£ºÌí¼Ó¶àbase.less ÒıÓÃ£¬ÑéÖ¤²âÊÔ¶ş
+#æµ‹è¯•ä¸‰ï¼šæ·»åŠ å¤šbase.less å¼•ç”¨ï¼ŒéªŒè¯æµ‹è¯•äºŒ
 
-²âÊÔ¶şÖĞÖ»ÓĞa2.less\b1.less\b2.lessµ÷ÓÃÁËbase.less£¬ÏÖÔÚÔÚa.less/b.lessÖĞÌí¼Ó¶Ôbase.lessµÄÒıÓÃ£¬Ô¤ÆÚÓ¦¸Ã»áÉú³É6¸öbase Main funcµÄÑùÊ½¡£ÈçÏÂ:
+æµ‹è¯•äºŒä¸­åªæœ‰a2.less\b1.less\b2.lessè°ƒç”¨äº†base.lessï¼Œç°åœ¨åœ¨a.less/b.lessä¸­æ·»åŠ å¯¹base.lessçš„å¼•ç”¨ï¼Œé¢„æœŸåº”è¯¥ä¼šç”Ÿæˆ6ä¸ªbase Main funcçš„æ ·å¼ã€‚å¦‚ä¸‹:
 
 a.less
 
@@ -165,7 +163,7 @@ b.less
 	    text-align: e("b");
 	}
 
-×îÖÕÉú³ÉcssÈçÏÂ£º
+æœ€ç»ˆç”Ÿæˆcsså¦‚ä¸‹ï¼š
 
 	.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
 	.a2{text-align:a2;}
@@ -177,13 +175,13 @@ b.less
 	.output{text-align:output;}
 
 
-¸ÕºÃ6¸öbaseMain func£¬ÈçÔ¤ÆÚ¡£
+åˆšå¥½6ä¸ªbaseMain funcï¼Œå¦‚é¢„æœŸã€‚
 
-#²âÊÔËÄ£ºµ¥µãº¯Êıµ÷ÓÃ£¬¶àµãimport
+#æµ‹è¯•å››ï¼šå•ç‚¹å‡½æ•°è°ƒç”¨ï¼Œå¤šç‚¹import
 
-ÔÚ²âÊÔ¶şºÍ²âÊÔÈıÖĞÕæÕıµ÷ÓÃbase.lessÖĞµÄº¯ÊıµÄÊÇa1.less£¬ÆäËûµÄÖ»ÊÇimport½øÀ´¡£ÏÖÔÚÔÚb.lessÖĞµ÷ÓÃbase.lessÖĞµÄ.basePartial()º¯Êı¡£¶Ôbase.lessµÄº¯Êıµ÷ÓÃºÍimportµÄÇé¿öÈçÏÂ£º
+åœ¨æµ‹è¯•äºŒå’Œæµ‹è¯•ä¸‰ä¸­çœŸæ­£è°ƒç”¨base.lessä¸­çš„å‡½æ•°çš„æ˜¯a1.lessï¼Œå…¶ä»–çš„åªæ˜¯importè¿›æ¥ã€‚ç°åœ¨åœ¨b.lessä¸­è°ƒç”¨base.lessä¸­çš„.basePartial()å‡½æ•°ã€‚å¯¹base.lessçš„å‡½æ•°è°ƒç”¨å’Œimportçš„æƒ…å†µå¦‚ä¸‹ï¼š
 
-¶Ôbase.less µÄµ÷ÓÃ
+å¯¹base.less çš„è°ƒç”¨
 
 a1.less
 	
@@ -207,12 +205,12 @@ b.less
 	}
 
 
-import  base.less µÄÎÄ¼ş³ıÁËa1.less¡¢b.lessÍâ»¹ÓĞb1.less¡¢b2.less£¬×Ü¹²4¸öÎÄ¼ş¡£
+import  base.less çš„æ–‡ä»¶é™¤äº†a1.lessã€b.lesså¤–è¿˜æœ‰b1.lessã€b2.lessï¼Œæ€»å…±4ä¸ªæ–‡ä»¶ã€‚
 
 
-°´ÕÕÔ¤ÆÚ£¬³öÏÖ.basePartial()ºÍ.baseMain()µÄ´ÎÊıºÍbase.less ±»import½øÀ´µÄ´ÎÊıÏ¢Ï¢Ïà¹Ø¡£Õâ¸ö´ÎÊıÓ¦¸ÃÊÇ4.
+æŒ‰ç…§é¢„æœŸï¼Œå‡ºç°.basePartial()å’Œ.baseMain()çš„æ¬¡æ•°å’Œbase.less è¢«importè¿›æ¥çš„æ¬¡æ•°æ¯æ¯ç›¸å…³ã€‚è¿™ä¸ªæ¬¡æ•°åº”è¯¥æ˜¯4.
 
-Êä³ö½á¹ûÈçÏÂ£º
+è¾“å‡ºç»“æœå¦‚ä¸‹ï¼š
 
 	.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
 	.a2{text-align:a2;}
@@ -224,11 +222,11 @@ import  base.less µÄÎÄ¼ş³ıÁËa1.less¡¢b.lessÍâ»¹ÓĞb1.less¡¢b2.less£¬×Ü¹²4¸öÎÄ¼ş¡£
 	.output{text-align:output;}
 
 
-¿ÉÒÔ¿´µ½µÄÊÇbaseMain ºÍ basePartial µÄµ÷ÓÃ¾ùÎª4´Î
+å¯ä»¥çœ‹åˆ°çš„æ˜¯baseMain å’Œ basePartial çš„è°ƒç”¨å‡ä¸º4æ¬¡
 
-#½áÂÛ
+#ç»“è®º
 
-ËùÒÔ»ù´¡lessÒª×ã¹»¾«ÖÂ£¬Ò»µ©µ±±»import½øÀ´µÄ´ÎÊıºÜ¶àÒÔºó£¬Éú³ÉcssÎÄ¼şµÄÒ²»á±ä´ó£¬×îÖØÒªµÄÊÇ£¬ÕâÀïÃæµÄÈßÓàºÜ¶à¡£
+æ‰€ä»¥åŸºç¡€lessè¦è¶³å¤Ÿç²¾è‡´ï¼Œä¸€æ—¦å½“è¢«importè¿›æ¥çš„æ¬¡æ•°å¾ˆå¤šä»¥åï¼Œç”Ÿæˆcssæ–‡ä»¶çš„ä¹Ÿä¼šå˜å¤§ï¼Œæœ€é‡è¦çš„æ˜¯ï¼Œè¿™é‡Œé¢çš„å†—ä½™å¾ˆå¤šã€‚
 
 
 
