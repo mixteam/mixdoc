@@ -225,7 +225,7 @@ import  base.less 的文件除了a1.less、b.less外还有b1.less、b2.less，�
 
 可以看到的是baseMain 和 basePartial 的调用均为4次
 
-#结论
+##结论
 
 所以基础less要足够精致，一旦当被import进来的次数很多以后，生成css文件的也会变大，最重要的是，这里面的冗余很多。
 
