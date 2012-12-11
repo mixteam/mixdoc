@@ -1,7 +1,7 @@
 #基本结构（测试版本1.3.0）
 
 	
-<ref name="2.JPG"></ref>
+![基本结构图](assets/images/2012-12-11-01.JPG)
 
 #测试一：基础库为class
 
