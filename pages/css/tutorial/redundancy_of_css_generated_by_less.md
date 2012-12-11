@@ -80,7 +80,7 @@
 	    text-align:e("output");
 	}
 
-最终生成的CSS文件如下：
+**最终生成的CSS文件如下**
 
 	.base{text-align:base;}
 	.a1{text-align:a1;}
@@ -97,7 +97,7 @@
 	.output{text-align:output;}
 	
 	
-> 基础class会被多次重写
+> 即：基础class会被多次重写
 
 
 ###测试二：基础库为func.
