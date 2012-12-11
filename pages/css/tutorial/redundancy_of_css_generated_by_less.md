@@ -7,13 +7,13 @@
 ##测试
 ###测试一：基础库为class
 
-基础LESS：
+**基础LESS**
 
 	.base{
 	    text-align:e("base");
 	}
 
-a1.less:
+**a1.less**
 	
 	@import "base";
 
@@ -21,7 +21,7 @@ a1.less:
 	    text-align:e("a1");
 	}
 
-a2.less
+**a2.less**
 
 	@import "base";
 
@@ -29,7 +29,7 @@ a2.less
 	    text-align:e("a2");
 	}
 
-a.less
+**a.less**
 
 	@import "a1";
 	@import "a2";
@@ -38,7 +38,7 @@ a.less
 	    text-align: e("a");
 	}
 	
-b1.less
+**b1.less**
 
 	@import "base";
 
@@ -46,7 +46,7 @@ b1.less
 	    text-align:e("b1");
 	}
 
-b2.less
+**b2.less**
 	
 	@import "base";
 
@@ -54,7 +54,7 @@ b2.less
 	    text-align:e("b2");
 	}
 	
-b.less
+**b.less**
 
 	@import "b1";
 	@import "b2";
@@ -63,7 +63,7 @@ b.less
 	    text-align: e("b");
 	}
 	
-c.less
+**c.less**
 
 	@import "base";
 
@@ -71,7 +71,7 @@ c.less
 	    text-align:e("c");
 	}
 	
-output.less
+**output.less**
 	
 	@import "a";
 	@import "b";
@@ -103,7 +103,7 @@ output.less
 ###测试二：基础库为func.
 
 
-基础LESS：
+**基础LESS**
 
 	.baseMain(){
 	    text-align:e("baseMain func");
@@ -113,7 +113,7 @@ output.less
 	    text-align:e("basePartial func");
 	}
 
-只在a1.less中使用：
+**只在a1.less中使用**
 
 	@import "base";
 
@@ -145,7 +145,7 @@ output.less
 
 测试二中只有a2.less\b1.less\b2.less调用了base.less，现在在a.less/b.less中添加对base.less的引用，预期应该会生成6个base Main func的样式。如下:
 
-a.less
+**a.less**
 
 	@import "base";
 	@import "a1";
@@ -155,7 +155,7 @@ a.less
 	    text-align: e("a");
 	}
 
-b.less
+**b.less**
 	
 	@import "base";
 	@import "b1";
@@ -165,7 +165,7 @@ b.less
 	    text-align: e("b");
 	}
 
-最终生成css如下：
+**最终生成css如下**
 
 	.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
 	.a2{text-align:a2;}
@@ -185,7 +185,7 @@ b.less
 
 对base.less 的调用
 
-a1.less
+**a1.less**
 	
 	@import "base";
 
@@ -195,7 +195,7 @@ a1.less
 	}
 	
 
-b.less
+**b.less**
 	
 	@import "base";
 	@import "b1";
