@@ -147,7 +147,7 @@ class分为：
 
 假设文件结构如下图:
 
-![基本结构图](assets/images/2012-12-11-01.JPG)
+![基本结构图](../assets/images/2012-12-11-01.JPG)
 
 基础LESS：
 
