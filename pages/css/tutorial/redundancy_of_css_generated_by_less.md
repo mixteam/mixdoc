@@ -3,7 +3,8 @@
 	
 ![基本结构图](../assets/images/2012-12-11-01.JPG)
 
-#测试一：基础库为class
+#测试
+##测试一：基础库为class
 
 基础LESS：
 
@@ -98,7 +99,7 @@ output.less
 > 基础class会被多次重写
 
 
-#测试二：基础库为func.
+##测试二：基础库为func.
 
 
 基础LESS：
@@ -139,7 +140,7 @@ output.less
 	
 可以看到.a1的样式中生成了4个base Main func的样式。**这个数字和base.less 被引用的次数相同，和其内函数的调用次数是不同的**。
 
-#测试三：添加多base.less 引用，验证测试二
+##测试三：添加多base.less 引用，验证测试二
 
 测试二中只有a2.less\b1.less\b2.less调用了base.less，现在在a.less/b.less中添加对base.less的引用，预期应该会生成6个base Main func的样式。如下:
 
@@ -177,7 +178,7 @@ b.less
 
 刚好6个baseMain func，如预期。
 
-#测试四：单点函数调用，多点import
+##测试四：单点函数调用，多点import
 
 在测试二和测试三中真正调用base.less中的函数的是a1.less，其他的只是import进来。现在在b.less中调用base.less中的.basePartial()函数。对base.less的函数调用和import的情况如下：
 
