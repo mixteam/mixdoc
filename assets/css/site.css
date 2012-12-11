@@ -878,13 +878,13 @@ header ul.nav{display:block;margin-bottom:0;}header ul.nav li a{height:60px;bord
 header ul.nav li a span:last-child{font-size:10px;color:#008acb;}
 header ul.nav li a:hover span{color:#005580;}
 header ul.nav li.active a{background-color:#133f79;}header ul.nav li.active a span{color:#FFF;}
-section.banner{min-width:320px;margin:auto;padding:0 200px;box-sizing:border-box;background:#dcdce4 url("../images/banner.png") no-repeat center 0;height:300px;}
+section.banner{min-width:320px;margin:auto;padding:0 200px;box-sizing:border-box;background:#dcdce4 url("../images/banner.png") no-repeat center 0;height:300px;}section.banner ul{list-style:none;position:relative;margin:0;padding:0;display:inline-block;left:500px;top:200px;}
 section.brief{min-width:320px;margin:auto;padding:0 200px;box-sizing:border-box;margin-top:80px;}section.brief .row-fluid>div:first-child{padding-right:40px;}
 section.brief .row-fluid>div:nth-child(2){padding-left:20px;padding-right:20px;}
 section.brief .row-fluid>div:last-child{padding-left:40px;}
 section.brief .row-fluid:after{content:" ";width:990px;margin:auto;height:60px;background:url("../images/line.png") no-repeat 0 100%;}
-section.brief .caption{font-size:18px;color:#555;margin:10px 0;}section.brief .caption span{font-size:13px;color:#999;display:inline-block;padding:0 5px;}
-section.brief article{line-height:1.5em;font-size:13px;color:#A9A9A9;text-indent:2em;}
+section.brief .row-fluid .caption{font-size:18px;color:#555;margin:10px 0;}section.brief .row-fluid .caption span{font-size:13px;color:#999;display:inline-block;padding:0 5px;}
+section.brief .row-fluid .content{line-height:1.5em;font-size:13px;color:#777;text-indent:2em;}section.brief .row-fluid .content li{padding:0;text-indent:0;}
 section.category{width:200px;height:100%;box-sizing:border-box;position:absolute;border-right:1px solid #DDD;top:0;left:0;background:#dfdfdf;z-index:9;}section.category .logo{width:100%;height:60px;background:url("../images/logo1.png") no-repeat 20px center;}section.category .logo.js{background-image:url("../images/logo-js.png");}
 section.category .logo.css{background-image:url("../images/logo-css.png");}
 section.category .logo.tools{background-image:url("../images/logo-tools.png");}
