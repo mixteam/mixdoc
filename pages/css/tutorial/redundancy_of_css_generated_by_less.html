@@ -1,0 +1,229 @@
+<h1>�����ṹ�����԰汾1.3.0��</h1>
+<ref name="2.JPG"></ref>
+
+<h1>����һ��������Ϊclass</h1>
+<p>����LESS��
+
+</p>
+<pre><code>.base{
+    text-align:e(&quot;base&quot;);
+}</code></pre>
+<p>a1.less:
+
+</p>
+<pre><code>@import &quot;base&quot;;
+
+.a1{
+    text-align:e(&quot;a1&quot;);
+}</code></pre>
+<p>a2.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+
+.a2{
+    text-align:e(&quot;a2&quot;);
+}</code></pre>
+<p>a.less
+
+</p>
+<pre><code>@import &quot;a1&quot;;
+@import &quot;a2&quot;;
+
+.a{
+    text-align: e(&quot;a&quot;);
+}</code></pre>
+<p>b1.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+
+.b1{
+    text-align:e(&quot;b1&quot;);
+}</code></pre>
+<p>b2.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+
+.b2{
+    text-align:e(&quot;b2&quot;);
+}</code></pre>
+<p>b.less
+
+</p>
+<pre><code>@import &quot;b1&quot;;
+@import &quot;b2&quot;;
+
+.b{
+    text-align: e(&quot;b&quot;);
+}</code></pre>
+<p>c.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+
+.c{
+    text-align:e(&quot;c&quot;);
+}</code></pre>
+<p>output.less
+
+</p>
+<pre><code>@import &quot;a&quot;;
+@import &quot;b&quot;;
+@import &quot;c&quot;;
+.output{
+    text-align:e(&quot;output&quot;);
+}</code></pre>
+<p>�������ɵ�CSS�ļ����£�
+
+</p>
+<pre><code>.base{text-align:base;}
+.a1{text-align:a1;}
+.base{text-align:base;}
+.a2{text-align:a2;}
+.a{text-align:a;}
+.base{text-align:base;}
+.b1{text-align:b1;}
+.base{text-align:base;}
+.b2{text-align:b2;}
+.b{text-align:b;}
+.base{text-align:base;}
+.c{text-align:c;}
+.output{text-align:output;}</code></pre>
+<blockquote>
+<p>����class�ᱻ������д
+
+
+</p>
+</blockquote>
+<h1>���Զ���������Ϊfunc.</h1>
+<p>����LESS��
+
+</p>
+<pre><code>.baseMain(){
+    text-align:e(&quot;baseMain func&quot;);
+}
+
+.basePartial(){
+    text-align:e(&quot;basePartial func&quot;);
+}</code></pre>
+<p>ֻ��a1.less��ʹ�ã�
+
+</p>
+<pre><code>@import &quot;base&quot;;
+
+.a1{
+    text-align:e(&quot;a1&quot;);
+    .baseMain();
+}</code></pre>
+<p>��a2.less\b1.less\b2.less��û�е�����Щfunc��������
+
+</p>
+<pre><code>@import &quot;base&quot;;</code></pre>
+<p>�������ɵ�CSS�ļ����£�
+
+</p>
+<pre><code>.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
+.a2{text-align:a2;}
+.a{text-align:a;}
+.b1{text-align:b1;}
+.b2{text-align:b2;}
+.b{text-align:b;}
+.c{text-align:c;}
+.output{text-align:output;}</code></pre>
+<p>���Կ���.a1����ʽ��������4��base Main func����ʽ��<strong>�������ֺ�base.less �����õĴ�����ͬ�������ں����ĵ��ô����ǲ�ͬ��</strong>��
+
+</p>
+<h1>�����������Ӷ�base.less ���ã���֤���Զ�</h1>
+<p>���Զ���ֻ��a2.less\b1.less\b2.less������base.less��������a.less/b.less�����Ӷ�base.less�����ã�Ԥ��Ӧ�û�����6��base Main func����ʽ������:
+
+</p>
+<p>a.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+@import &quot;a1&quot;;
+@import &quot;a2&quot;;
+
+.a{
+    text-align: e(&quot;a&quot;);
+}</code></pre>
+<p>b.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+@import &quot;b1&quot;;
+@import &quot;b2&quot;;
+
+.b{
+    text-align: e(&quot;b&quot;);
+}</code></pre>
+<p>��������css���£�
+
+</p>
+<pre><code>.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
+.a2{text-align:a2;}
+.a{text-align:a;}
+.b1{text-align:b1;}
+.b2{text-align:b2;}
+.b{text-align:b;}
+.c{text-align:c;}
+.output{text-align:output;}</code></pre>
+<p>�պ�6��baseMain func����Ԥ�ڡ�
+
+</p>
+<h1>�����ģ����㺯�����ã�����import</h1>
+<p>�ڲ��Զ��Ͳ���������������base.less�еĺ�������a1.less��������ֻ��import������������b.less�е���base.less�е�.basePartial()��������base.less�ĺ������ú�import���������£�
+
+</p>
+<p>��base.less �ĵ���
+
+</p>
+<p>a1.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+
+.a1{
+    text-align:e(&quot;a1&quot;);
+    .baseMain();
+}</code></pre>
+<p>b.less
+
+</p>
+<pre><code>@import &quot;base&quot;;
+@import &quot;b1&quot;;
+@import &quot;b2&quot;;
+
+.b{
+    text-align: e(&quot;b&quot;);
+    .basePartial();
+}</code></pre>
+<p>import  base.less ���ļ�����a1.less��b.less�⻹��b1.less��b2.less���ܹ�4���ļ���
+
+
+</p>
+<p>����Ԥ�ڣ�����.basePartial()��.baseMain()�Ĵ�����base.less ��import�����Ĵ���ϢϢ���ء���������Ӧ����4.
+
+</p>
+<p>�����������£�
+
+</p>
+<pre><code>.a1{text-align:a1;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;text-align:baseMain func;}
+.a2{text-align:a2;}
+.a{text-align:a;}
+.b1{text-align:b1;}
+.b2{text-align:b2;}
+.b{text-align:b;text-align:basePartial func;text-align:basePartial func;text-align:basePartial func;text-align:basePartial func;}
+.c{text-align:c;}
+.output{text-align:output;}</code></pre>
+<p>���Կ�������baseMain �� basePartial �ĵ��þ�Ϊ4��
+
+</p>
+<h1>����</h1>
+<p>���Ի���lessҪ�㹻���£�һ������import�����Ĵ����ܶ��Ժ�������css�ļ���Ҳ������������Ҫ���ǣ��������������ܶࡣ
+
+
+
+</p>
