@@ -2,7 +2,7 @@
 
 分为以下几类：
 
-##基本颜色（Grays）
+##淡色（Grays）
 
 	@black:                 #000;
 	@grayDarker:            #222;
