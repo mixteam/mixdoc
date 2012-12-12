@@ -49,7 +49,9 @@ less文件包含两部分：
 
 + 基本。基于组件，组件内部特有的函数。如button.less 文件下的.btn-base()
 	
-+ 通用。组件间提取出来，在组件之间可以使用。如__func.less 下的
++ 通用。组件间提取出来，在组件之间可以使用。
+
+如__func.less 下的
 
 	//__func.less下的函数为通用func.
 	#mc-base{
