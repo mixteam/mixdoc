@@ -4,7 +4,7 @@
 
 现在分三个命名空间.
 
-**mc-base**
+###mc-base
 
 	基础空间函数包括
 	.tab-focus()  //触屏焦点
@@ -17,7 +17,7 @@
 	.border-radius(@radius) //圆角
 	.transition(@transition)  //过渡
 		
-**font**
+###font
 	
 	分为family子空间和若干函数.
 	（1）.子空间包括
@@ -28,7 +28,7 @@
 	（2）.函数
 	.shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight)  //设置排版字体.
 	
-**gradient**
+###gradient
 
 	基础空间函数包括：
 	.horizontal(@startColor: #555, @endColor: #333)  //水平渐变.
