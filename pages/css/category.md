@@ -1,5 +1,6 @@
 * [Mix CSS入门手册](tutorial/quick-guide.md)
 * [开发文档](#)
+	* [基础文档&开发规范](tutorial/quick-guide.md)
 	* [Less生成CSS冗余测试](tutorial/redundancy_of_css_generated_by_less.md)
 	* [bootStrap分析文档](tutorial/analysis_of_bootStrap.md)
 * [组件基础依赖/规范](#)
