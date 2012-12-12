@@ -1,6 +1,5 @@
 * [Mix CSS入门手册](tutorial/quick-guide.md)
 * [开发文档](#)
-<<<<<<< HEAD
 	* [Less生成CSS冗余测试](tutorial/redundancy_of_css_generated_by_less.md)
 	* [bootStrap分析文档](tutorial/analysis_of_bootStrap.md)
 * [组件基础依赖/规范](#)
@@ -15,9 +14,3 @@
 	* [textarea](component/textarea.md)
 	* [navs](component/navs.md)
 	* [pagination](component/pagination.md)
-=======
-	* [Less生成CSS冗余测试](tutorial/redundancy_of_css_generated_by_less.md)
-	* [bootStrap分析文档](tutorial/analysis_of_bootStrap.md)
-* [组件入门](#)
-	* [button](component/button.md)
->>>>>>> origin/gp-pages
