@@ -118,8 +118,40 @@ bootstrap：
 Mobile：
 ![nav&nav bar的呈现样式](../assets/images/2012-12-13-15.JPG)
 
-****
+**和PC相比，Mobile的设计->占用空间灵活（隐藏）、简约**
 
+##Breadcrumbs
+
+bootStrap:
+![Breadcrumbs的呈现样式](../assets/images/2012-12-13-16.JPG)
+
+Mobile：
+
+**受限于点击区域，此类控件基本被导航条代替**
+
+
+##Pagination
+
+bootStrap:
+
+![Pagination的呈现样式](../assets/images/2012-12-13-17.JPG)
+
+Mobile：
+
+![Pagination的呈现样式](../assets/images/2012-12-13-18.JPG)
+
+**相比较而言，Mobile的强调点击区域、辨识度。**
+
+
+##Labels and badges
+
+bootStrap:
+
+![Labels and badges的呈现样式](../assets/images/2012-12-13-19.JPG)
+
+Mobile:
+
+![Labels and badges的呈现样式](../assets/images/2012-12-13-20.JPG)
 
 
 
