@@ -15,3 +15,4 @@
 	* [textarea](component/textarea.md)
 	* [navs](component/navs.md)
 	* [pagination](component/pagination.md)
+	* [breadcrumbs](component/breadcrumbs.md)
