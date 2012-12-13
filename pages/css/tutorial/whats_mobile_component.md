@@ -6,7 +6,7 @@
 
 + Mobile代表： H5 、 taobaoPad 、Jquery Mobile(Native)
 
-##操作方式
+##操作方式区别
 
 **一些伪类**
 
