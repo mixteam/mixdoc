@@ -83,7 +83,7 @@ bootStrap的TextArea:
 bootStrap:
 ![Checkboxes的呈现样式](../assets/images/2012-12-13-9.JPG)
 
-H5和JMobile的样式：
+Mobile的样式：
 
 ![Checkboxes的呈现样式](../assets/images/2012-12-13-10.JPG)
 
@@ -94,7 +94,7 @@ H5和JMobile的样式：
 bootStrap:
 ![select的呈现样式](../assets/images/2012-12-13-11.JPG)
 
-H5和JMobile的样式：
+Mobile的样式：
 ![select的呈现样式](../assets/images/2012-12-13-12.JPG)
 
 **同上，点击区域、辨识度。**
@@ -104,8 +104,21 @@ H5和JMobile的样式：
 bootStrap:
 ![Form混合的呈现样式](../assets/images/2012-12-13-13.JPG)
 
-H5和JMobile的混合样式：
+Mobile的混合样式：
 
+##Images&icons
+
+暂时没发现太大区别
+
+##nav&nav bar
+
+bootstrap：
+![nav&nav bar的呈现样式](../assets/images/2012-12-13-14.JPG)
+
+Mobile：
+![nav&nav bar的呈现样式](../assets/images/2012-12-13-15.JPG)
+
+****
 
 
 
