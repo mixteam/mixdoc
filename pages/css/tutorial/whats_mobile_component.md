@@ -2,8 +2,9 @@
 
 写此篇的目的，完全是因为在读bootStrap后将其部分搬到Mixcss发现诸多“水土不服”的地方，移动端的组件还是与PC上的组件有诸多不同点的。
 
-PC代表：bootStrap
-Mobile代表： H5 、 taobaoPad 、Jquery Mobile(Native)
++ PC代表：bootStrap
+
++ Mobile代表： H5 、 taobaoPad 、Jquery Mobile(Native)
 
 ##操作方式
 
