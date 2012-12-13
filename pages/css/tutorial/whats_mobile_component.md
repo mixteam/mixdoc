@@ -8,7 +8,7 @@
 
 这在一些标签的使用上就有所不同，如PC上使用hover：
 
-![hover后的样式](../assets/images/2012-12-13-01.JPG)
+![hover后的样式](../assets/images/2012-12-13-1.JPG)
 
 但是在Mobile端就不需要考虑这种情况，要考虑的情况可能是focus，disable，readonly等这些情况。
 
@@ -24,17 +24,17 @@
 
 1.下面是bootStrap的button呈现方式：
 
-![button呈现样式](../assets/images/2012-12-13-02.JPG)
+![button呈现样式](../assets/images/2012-12-13-2.JPG)
 
 再看一下H5 和 Jquery Mobile（类似Native）的按钮样式
 
 2.H5：
 
-![H5的button的呈现样式](/assets/images/2012-12-13-03.JPG)
+![H5的button的呈现样式](/assets/images/2012-12-13-3.JPG)
 
 3.Jquery Mobile（Native）：
 
-![Native的button的呈现样式](../assets/images/2012-12-13-04.JPG)
+![Native的button的呈现样式](../assets/images/2012-12-13-4.JPG)
 
 
 比较起来，H5 和 Jquery Mobile 重视手指点击区域的设计，而bootStrap基于PC，还是基于点。
