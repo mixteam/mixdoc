@@ -30,7 +30,7 @@
 
 2.H5：
 
-![H5的button的呈现样式](../assets/images/2012-12-13-03.JPG)
+![H5的button的呈现样式](/assets/images/2012-12-13-03.JPG)
 
 3.Jquery Mobile（Native）：
 
