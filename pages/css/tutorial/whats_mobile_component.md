@@ -273,4 +273,16 @@ Mobile:
 
 **展示的信息量、占用空间的区别**
 
+##Responsive##
+
+PC:
+
+![Responsive的呈现样式](../assets/images/2012-12-14-15.JPG)
+
+Mobile：
+
+**H5在这块以固定布局设计，在MixCss中尝试加入Grid流式布局**
+
+
+
 
