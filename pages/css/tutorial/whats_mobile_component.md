@@ -63,6 +63,8 @@ bootStrap的Legend:
 
 ##Form:Inputs
 
+输入框：
+
 bootStrap的Inputs:
 
 ![Inputs的呈现样式](../assets/images/2012-12-13-7.JPG)
@@ -70,6 +72,8 @@ bootStrap的Inputs:
 **和移动端的区别还是在于一些伪类，如hover，mousein，mouseout，除去这些其他和移动端基本一致。 **
 
 ##Form:TextArea
+
+文本区：
 
 bootStrap的TextArea:
 
@@ -80,6 +84,8 @@ bootStrap的TextArea:
 
 
 ##Form: Checkboxes and radios
+
+单选、复选框：
 
 bootStrap:
 ![Checkboxes的呈现样式](../assets/images/2012-12-13-9.JPG)
@@ -92,6 +98,8 @@ Mobile的样式：
 
 ##Form: select
 
+选择框：
+
 bootStrap:
 ![select的呈现样式](../assets/images/2012-12-13-11.JPG)
 
@@ -102,6 +110,8 @@ Mobile的样式：
 
 ##Form: 混合
 
+Form混合类：
+
 bootStrap:
 ![Form混合的呈现样式](../assets/images/2012-12-13-13.JPG)
 
@@ -109,9 +119,13 @@ Mobile的混合样式：
 
 ##Images&icons
 
+图片、图标类：
+
 暂时没发现太大区别
 
 ##nav&nav bar
+
+导航、导航条：
 
 bootstrap：
 ![nav&nav bar的呈现样式](../assets/images/2012-12-13-14.JPG)
@@ -123,6 +137,8 @@ Mobile：
 
 ##Breadcrumbs
 
+面包屑：
+
 bootStrap:
 ![Breadcrumbs的呈现样式](../assets/images/2012-12-13-16.JPG)
 
@@ -132,6 +148,9 @@ Mobile：
 
 
 ##Pagination
+
+分页：
+
 
 bootStrap:
 
@@ -146,6 +165,8 @@ Mobile：
 
 ##Labels and badges
 
+标签、徽章类：
+
 bootStrap:
 
 ![Labels and badges的呈现样式](../assets/images/2012-12-13-19.JPG)
@@ -154,6 +175,41 @@ Mobile:
 
 ![Labels and badges的呈现样式](../assets/images/2012-12-13-20.JPG)
 
+**没有特别的区别**
+
+##Typograghy
+
+字体，排版类：
+
+bootStrap:
+
+![Typograghy的呈现样式](../assets/images/2012-12-14-1.JPG)
+
+Mobile：
+![Typograghy的呈现样式](../assets/images/2012-12-14-2.JPG)
+
+**在字体和排版上主要还是根据设计约定，如果有针对字体的响应式设计的话，可能会有诸如em单位的使用**
+
+##Thumbnails
+
+缩略图类：
+
+bootStrap:
+
+![Thumbnails的呈现样式](../assets/images/2012-12-14-3.JPG)
+
+Mobile：
+![Thumbnails的呈现样式](../assets/images/2012-12-14-4.JPG)
+
+**Mobile在对空间利用要求更加高，紧凑，简明，突出；另外一个就是响应式，现在的H5还是固定列宽，而Bootstrap已经做了响应式的Grid布局，MixCss也尽力将响应式引入到Mobile端，特别是针对这种Thumbnails（因为它占据整个页面的主体）**
+
+##Alerts
+
+弹框类
+
+bootStrap:
+
+![Alerts的呈现样式](../assets/images/2012-12-14-3.JPG)
 
 
 
