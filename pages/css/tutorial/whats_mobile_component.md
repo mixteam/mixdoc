@@ -1,4 +1,4 @@
-#适合移动端的组件 **移动端组件**
+#适合移动端的组件（基于H5实践） **移动端组件**
 
 写此篇的目的，完全是因为在读bootStrap后将其部分搬到Mixcss发现诸多“水土不服”的地方，移动端的组件还是与PC上的组件有诸多不同点的。
 
@@ -209,7 +209,36 @@ Mobile：
 
 bootStrap:
 
-![Alerts的呈现样式](../assets/images/2012-12-14-3.JPG)
+![Alerts的呈现样式](../assets/images/2012-12-14-5.JPG)
 
+Mobile:
+
+![Alerts的呈现样式](../assets/images/2012-12-14-6.JPG)
+
+##Progress bars
+
+For loading, redirecting, or action status
+
+booStrap：
+
+![Progress bars的呈现样式](../assets/images/2012-12-14-7.JPG)
+
+Mobile：
+
+![Progress bars的呈现样式](../assets/images/2012-12-14-8.JPG)
+
+**这种等待还是被类似“菊花”的这种占用空间小，同时表达清晰的图标代替**
+
+##Media object
+
+booStrap：
+
+![Media object的呈现样式](../assets/images/2012-12-14-9.JPG)
+
+Mobile：
+
+![Media object的呈现样式](../assets/images/2012-12-14-10.JPG)
+
+**从文字排版到表达信息基本一致，只是在空间利用上有些差别**
 
 
