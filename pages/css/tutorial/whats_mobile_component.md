@@ -209,7 +209,7 @@ Mobile：
 
 **Mobile在对空间利用要求更加高，紧凑，简明，突出；另外一个就是响应式，现在的H5还是固定列宽，而Bootstrap已经做了响应式的Grid布局，MixCss也尽力将响应式引入到Mobile端，特别是针对这种Thumbnails（因为它占据整个页面的主体）**
 
-##Alerts
+##Alerts&Popup
 
 弹框类
 
