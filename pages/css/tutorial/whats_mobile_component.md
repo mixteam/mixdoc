@@ -275,6 +275,8 @@ Mobile:
 
 ##Responsive##
 
+响应式设计
+
 PC:
 
 ![Responsive的呈现样式](../assets/images/2012-12-14-15.JPG)
