@@ -6,11 +6,11 @@ MIX，Mobile In X的缩写。意为，在无线终端领域的各种解决方案
 
 ### gitpower(内网)
 
-[HOME](http://mixteam.git.assets.m.etao.net/mixjs_docs/index.html)
+[HOME](http://mixteam.git.assets.m.etao.net/mixdoc/index.html)
 
 ### github(外网)
 
-[HOME](http://mixteam.github.com/mixjs_docs/)
+[HOME](http://mixteam.github.com/mixdoc/)
 
 ## 文档规范
 
