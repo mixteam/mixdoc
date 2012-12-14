@@ -133,6 +133,12 @@ bootstrap：
 Mobile：
 ![nav&nav bar的呈现样式](../assets/images/2012-12-13-15.JPG)
 
+此外，一些list也是导航：
+![nav&nav bar之list的呈现样式](../assets/images/2012-12-13-15-1.JPG)
+
+包括一些header，也算是一种导航：
+![nav&nav bar之header的呈现样式](../assets/images/2012-12-13-15-2.JPG)
+
 **和PC相比，Mobile的设计->占用空间灵活（隐藏）、简约**
 
 ##Breadcrumbs
@@ -241,5 +247,30 @@ Mobile：
 
 **从文字排版到表达信息基本一致，只是在空间利用上有些差别**
 
+##Slider(banner)
+
+PC:
+
+![Slider的呈现样式](../assets/images/2012-12-14-11.JPG)
+
+Mobile:
+
+![Slider的呈现样式](../assets/images/2012-12-14-12.JPG)
+
+**在Slider上PC端以banner展示为主，而Mobile端除了banner展示，加入了一些滑动的手势**
+
+
+##Footer
+
+PC:
+
+![Footer的呈现样式](../assets/images/2012-12-14-14.JPG)
+
+Mobile:
+
+![Footer的呈现样式](../assets/images/2012-12-14-13.JPG)
+
+
+**展示的信息量、占用空间的区别**
 
 
