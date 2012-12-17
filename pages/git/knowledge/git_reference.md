@@ -47,7 +47,7 @@
 
 ![提交主干](images/git-refer-commit-master.png)
 
-即便当前分支是某次提交的祖父节点，git会同样操作。下图中，在master分支的祖父节点maint分支进行一次提交，生成了1800b。 这样，maint分支就不再是master分支的祖父节点。此时，[合并](#merge) (或者 [复位](rebase)) 是必须的。
+即便当前分支是某次提交的祖父节点，git会同样操作。下图中，在master分支的祖父节点maint分支进行一次提交，生成了1800b。 这样，maint分支就不再是master分支的祖父节点。此时，[合并](#merge) (或者 [复位](#rebase)) 是必须的。
 
 ![提交分支](images/git-refer-commit-maint.png)
 
@@ -55,7 +55,7 @@
 
 ![更改提交](images/git-refer-commit-amend.png)
 
-另一个例子是[分离](#detached),后文讲。
+另一个例子是[分离](#detached)，后文讲。
 
 ### [Checkout](#checkout)
 
