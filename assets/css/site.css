@@ -856,10 +856,8 @@ section.content article h2+h2{margin:0 0 0.5em;}
 section.content article h3{font-size:1.3em;line-height:1.1282em;margin:2.2em 0 0.5em;}
 section.content article h3+h3{margin:0 0 0.5em;}
 section.content article h2,section.content article h3,section.content article h4{position:relative;padding-right:40px;}
-section.content article h1 span,section.content article h2 span,section.content article h3 span,section.content article h4 span{font-size:25px;position:absolute;display:block;top:0;right:0;opacity:0.3;}
-section.content article h1 span:hover,section.content article h2 span:hover,section.content article h3 span:hover,section.content article h4 span:hover{opacity:1;}
-section.content article h1 span a,section.content article h2 span a,section.content article h3 span a,section.content article h4 span a{font-size:0.8em;color:#000;text-decoration:none;font-weight:bold;}
-section.content article h1 span a.top,section.content article h2 span a.top,section.content article h3 span a.top,section.content article h4 span a.top{cursor:pointer;font-size:12px;}
+section.content article h1 a.top,section.content article h2 a.top,section.content article h3 a.top,section.content article h4 a.top{position:absolute;display:block;top:0;right:0;cursor:pointer;font-size:12px;color:#CCC;text-decoration:none;font-weight:bold;}
+section.content article h1 a.top:hover,section.content article h2 a.top:hover,section.content article h3 a.top:hover,section.content article h4 a.top:hover{color:#666;}
 section.content article h5{font-size:1.125em;line-height:1.4em;}
 section.content article h6{font-size:1em;line-height:1.4667em;}
 section.content article pre,section.content article tt,section.content article code{font-size:14px;line-height:1.5438em;margin:0;padding:0;}
@@ -899,7 +897,7 @@ section.category .categroup>li.active>a b.caret{border-top:0px;border-bottom:4px
 section.category .categroup>li.active .catelist{height:auto;}
 section.category li.active>a.link{background-color:#CECECE;color:#656565;}
 section.content{width:100%;border-left:200px solid #dfdfdf;box-sizing:border-box;}section.content article{padding:0 30px 30px;}
-section.dropdown{position:fixed;width:60px;height:28px;box-sizing:border-box;background-color:#FFF;border:1px solid #DDD;right:30px;top:115px;}section.dropdown>a{width:100%;padding:0 5px;box-sizing:border-box;height:28px;line-height:28px;display:block;font-size:14px;}section.dropdown>a>b.caret{float:right;margin-top:12px;border-top:4px solid #555;}
+section.dropdown{position:fixed;width:60px;height:28px;box-sizing:border-box;background-color:#FFF;border:1px solid #DDD;right:30px;top:115px;z-index:9;}section.dropdown>a{width:100%;padding:0 5px;box-sizing:border-box;height:28px;line-height:28px;display:block;font-size:14px;}section.dropdown>a>b.caret{float:right;margin-top:12px;border-top:4px solid #555;}
 section.dropdown>a:hover{text-decoration:none;}
 section.dropdown.open{height:auto;border-bottom-color:#FFF;}section.dropdown.open>a>b.caret{border-top:0px;border-bottom:4px solid #555;}
 section.dropdown .dropdown-menu{border-color:#DDD;-webkit-border-radius:0px;-webkit-box-shadow:none;margin:0;}section.dropdown .dropdown-menu.pull-right{right:-1px;}
