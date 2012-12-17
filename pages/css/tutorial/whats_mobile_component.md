@@ -1,4 +1,4 @@
-#适合移动端的组件 **移动端组件**
+#适合移动端的组件（基于H5实践） **移动端组件**
 
 写此篇的目的，完全是因为在读bootStrap后将其部分搬到Mixcss发现诸多“水土不服”的地方，移动端的组件还是与PC上的组件有诸多不同点的。
 
@@ -133,6 +133,12 @@ bootstrap：
 Mobile：
 ![nav&nav bar的呈现样式](../assets/images/2012-12-13-15.JPG)
 
+此外，一些list也是导航：
+![nav&nav bar之list的呈现样式](../assets/images/2012-12-13-15-1.JPG)
+
+包括一些header，也算是一种导航：
+![nav&nav bar之header的呈现样式](../assets/images/2012-12-13-15-2.JPG)
+
 **和PC相比，Mobile的设计->占用空间灵活（隐藏）、简约**
 
 ##Breadcrumbs
@@ -203,13 +209,82 @@ Mobile：
 
 **Mobile在对空间利用要求更加高，紧凑，简明，突出；另外一个就是响应式，现在的H5还是固定列宽，而Bootstrap已经做了响应式的Grid布局，MixCss也尽力将响应式引入到Mobile端，特别是针对这种Thumbnails（因为它占据整个页面的主体）**
 
-##Alerts
+##Alerts&Popup
 
 弹框类
 
 bootStrap:
 
-![Alerts的呈现样式](../assets/images/2012-12-14-3.JPG)
+![Alerts的呈现样式](../assets/images/2012-12-14-5.JPG)
+
+Mobile:
+
+![Alerts的呈现样式](../assets/images/2012-12-14-6.JPG)
+
+##Progress bars
+
+For loading, redirecting, or action status
+
+booStrap：
+
+![Progress bars的呈现样式](../assets/images/2012-12-14-7.JPG)
+
+Mobile：
+
+![Progress bars的呈现样式](../assets/images/2012-12-14-8.JPG)
+
+**这种等待还是被类似“菊花”的这种占用空间小，同时表达清晰的图标代替**
+
+##Media object
+
+booStrap：
+
+![Media object的呈现样式](../assets/images/2012-12-14-9.JPG)
+
+Mobile：
+
+![Media object的呈现样式](../assets/images/2012-12-14-10.JPG)
+
+**从文字排版到表达信息基本一致，只是在空间利用上有些差别**
+
+##Slider(banner)
+
+PC:
+
+![Slider的呈现样式](../assets/images/2012-12-14-11.JPG)
+
+Mobile:
+
+![Slider的呈现样式](../assets/images/2012-12-14-12.JPG)
+
+**在Slider上PC端以banner展示为主，而Mobile端除了banner展示，加入了一些滑动的手势**
+
+
+##Footer
+
+PC:
+
+![Footer的呈现样式](../assets/images/2012-12-14-14.JPG)
+
+Mobile:
+
+![Footer的呈现样式](../assets/images/2012-12-14-13.JPG)
+
+
+**展示的信息量、占用空间的区别**
+
+##Responsive##
+
+响应式设计
+
+PC:
+
+![Responsive的呈现样式](../assets/images/2012-12-14-15.JPG)
+
+Mobile：
+
+**H5在这块以固定布局设计，在MixCss中尝试加入Grid流式布局**
+
 
 
 

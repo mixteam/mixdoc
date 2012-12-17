@@ -1,2 +1,5 @@
 /psd
 .idea
+/pad
+/*.sublime-project
+/*.sublime-workspace

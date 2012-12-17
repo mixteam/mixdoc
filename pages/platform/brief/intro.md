@@ -6,13 +6,13 @@ MIX，Mobile In X的缩写。意为，在无线终端领域的各种解决方案
 
 ### gitpower(内网)
 
-[HOME](http://mixteam.git.assets.m.etao.net/mixjs_docs/index.html)
+[HOME](http://mixteam.git.assets.m.etao.net/mixdoc/)
 
 ### github(外网)
 
-[HOME](http://mixteam.github.com/mixjs_docs/)
+[HOME](http://mixteam.github.com/mixdoc/)
 
-## 文档规范
+## 文档编写规范
 
 * 在pages下，选择文档内容对应的项目子目录，目前分别有platform，js，css，tools，test，repo，git。
 * 每个子目录下，有一个category.md，用于展示右侧的文档条目，采用列表的语法书写。最多缩进一级。
@@ -30,6 +30,9 @@ MIX，Mobile In X的缩写。意为，在无线终端领域的各种解决方案
 * 在子目录下建立对应的目录和文件，例如：`brief/summary.md`。
 * 普通文档只有一个一级标题，用一个`#`标注。可以有多个二级和三级标题。二级和三级标题会被自动认为是本文档的目录索引。如果需要四级标题，请使用`**四级标题**`着重语法来表示。
 * API文档只有一个一级标题，用一个`#`标注。二级标题为API的种类，比如JS中为`方法`、`事件`、`属性`，CSS中为`变量`、`函数`、`类名`。三级标题为具体的方法名或属性名等等。对于JS的方法名，必须用列表语法来书写符合[JSDoc](https://code.google.com/p/jsdoc-toolkit/w/list)的文档注释。
+* 引用图片请用相对md文件的路径，或者绝对路径。
+* 所有`[link](#)`形式的链接中的`href`都会被替换成`javascript:void(0)`。
+* 所有二级和三级标题，如果要手动设置锚点名称（默认为按照数字递增），请加上锚点链接，例如`## [Test](#test)`。
 
 **JS 举例**
 
