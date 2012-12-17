@@ -7,10 +7,15 @@ SMACSS by Jonathan Snook 官网http://smacss.com/book/
 SMACSS将规则分为以下几类：
 
 1.Base Rules
+
 2.Layout Rules
+
 3.Module Rules
+
 4.State Rules
+
 5.Theme Rules
+
 6.Changing State
 
 ##Base Rules
