@@ -97,30 +97,21 @@ section.content article {
     padding-right: 40px;
   }
 
-  h1 span, h2 span, h3 span, h4 span {
-    font-size: 25px;
+  h1 a.top, h2 a.top, h3 a.top, h4 a.top {
+    // display: none;
     position: absolute;
     display: block;
     top: 0;
     right: 0;
-    opacity: 0.3;
-  }
-
-  h1 span:hover, h2 span:hover, h3 span:hover, h4 span:hover {
-    opacity: 1;
-  }
-
-  h1 span a, h2 span a, h3 span a, h4 span a {
-    font-size: 0.8em;
-    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    color: #CCC;
     text-decoration: none;
     font-weight: bold;
   }
 
-  h1 span a.top, h2 span a.top, h3 span a.top, h4 span a.top {
-    // display: none;
-    cursor: pointer;
-    font-size: 12px;
+  h1 a.top:hover, h2 a.top:hover, h3 a.top:hover, h4 a.top:hover {
+    color: #666;
   }
 
   h2 a, h3 a {
