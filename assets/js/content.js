@@ -15,18 +15,35 @@
 		return s.split(PATH_REGEX);
 	}
 
-	$.getHtml = function(url, success) {
+	$.getHtml = function(url, callback, parseHandler, successHandler) {
+
 		url = url + (hasMarked ? '.md' : '.html');
+
+		if (arguments.length === 3){
+			successHandler = arguments[2];
+			parseHandler = null;
+		}
 
 		$.ajax({
 			url : url,
 			type : 'GET',
 			success : function(text) {
 				if (hasMarked){
-					success(marked(text))
+					var lexer, parsed;
+
+					if (parseHandler) {
+						lexer = marked.lexer(text);
+						parsed = marked.parser(parseHandler(lexer));
+					} else {
+						parsed = marked(text);
+					}
+
+					successHandler(parsed);
 				} else {
-					success(text);
+					successHandler(text);
 				}
+
+				callback && callback();
 			},
 			error : function() {
 				alert('加载失败');
@@ -56,138 +73,188 @@
 	}
 
 	function loadCategory(callback) {
-		var name = hashParam.name,
-			page = hashParam.page,
-			section = hashParam.section,
-			url = $.joinPath(basePath, 'category')
+		var url = $.joinPath(basePath, 'category')
 			;
 
-		$.getHtml(url, function(html) {
-			var dom = $(html),
-				topLis = dom.children('li')
+		$.getHtml(url, callback, loadedCategory);
+	}
+
+	function loadedCategory(html) {
+		var name = hashParam.name,
+			page = hashParam.page,
+			dom = $(html),
+			topLis = dom.children('li')
+			;
+
+		Object.each(topLis, function(el) {
+			var topLi = $(el),
+				link = topLi.children('a'),
+				linkHref = link.attr('href').replace(/\.\w+$/, ''),
+				subUl = topLi.children('ul'),
+				subLis = subUl.children('li')
 				;
 
-			Object.each(topLis, function(el) {
-				var topLi = $(el),
-					link = topLi.children('a'),
-					linkHref = link.attr('href').replace(/\.\w+$/, ''),
-					subUl = topLi.children('ul'),
-					subLis = subUl.children('li')
-					;
+			if ((!linkHref || linkHref === '#') && subUl.length) {
+				link.attr('href', 'javascript:void(0)')
+					.addClass('toggle')
+					.append('<b class="caret"></b>');
 
-				if ((!linkHref || linkHref === '#') && subUl.length) {
-					link.attr('href', 'javascript:void(0)')
-						.addClass('toggle')
-						.append('<b class="caret"></b>');
+				subUl.attr('class', 'nav nav-pills nav-stacked catelist');
 
-					subUl.attr('class', 'nav nav-pills nav-stacked catelist');
+				Object.each(subLis, function(el) {
+					var subLi = $(el),
+						subLink = subLi.children('a'),
+						subLinkHref = subLink.attr('href').replace(/\.\w+$/, '')
+						;
 
-					Object.each(subLis, function(el) {
-						var subLi = $(el),
-							subLink = subLi.children('a'),
-							subLinkHref = subLink.attr('href').replace(/\.\w+$/, '')
-							;
-
-						subLink.attr('href', '#' + name + '/' + subLinkHref)
-							.addClass('link');
-
-						if (!page || page === '/' || subLinkHref === page) {
-							page = hashParam.page = subLinkHref;
-							subLi.addClass('active');
-							topLi.addClass('active');
-						}
-					});
-				} else {
-					link.attr('href', '#' + name + '/' + linkHref)
+					subLink.attr('href', '#' + name + '/' + subLinkHref)
 						.addClass('link');
-					
-					if (!page || page === '/' || linkHref === page) {
-						page = hashParam.page = linkHref;
+
+					if (!page || page === '/' || subLinkHref === page) {
+						page = hashParam.page = subLinkHref;
+						subLi.addClass('active');
 						topLi.addClass('active');
 					}
+				});
+			} else {
+				link.attr('href', '#' + name + '/' + linkHref)
+					.addClass('link');
+				
+				if (!page || page === '/' || linkHref === page) {
+					page = hashParam.page = linkHref;
+					topLi.addClass('active');
 				}
-			});
-
-			cateUl.html(dom[0].innerHTML);
-			dom = null;
-
-			callback && callback();
+			}
 		});
+
+		cateUl.html(dom[0].innerHTML);
+		dom = null;
 	}
 
 	function loadContent(callback) {
-		var name = hashParam.name,
-			page = hashParam.page,
-			section = hashParam.section,
+		var page = hashParam.page,
 			url = $.joinPath(basePath, page)
 			;
 
 		if (page === '#') return;
 
-		$.getHtml(url, function(html) {
-			var dom = $('<div>' + html + '</div>'),
-				hEls = dom.find('h2, h3'),
-				menu = $('<ul></ul>')
+		$.getHtml(url, callback, parseContent, loadedContent);
+	}
+
+	function parseContent(lexer) {
+		var name = hashParam.name,
+			page = hashParam.page,
+			baseId = name + '/' + page + '/',
+			imgReg = /^\!\[(.*?)\]\((.*?)\)/,
+			linkReg = /\[(.*?)\]\((.*?)\)/g,
+			headerMenu = []
+			;
+
+		Object.each(lexer, function(tok) {
+			var type = tok.type,
+				depth = tok.depth,
+				text = tok.text
 				;
 
-			// fix href = "#"
-			dom.find('a[href="#"]').each(function() {
-				$(this).attr('href', 'javascript:void(0)');
-			});
+			linkReg.lastIndex = 0;
 
-			// fix href= "http://xxxx"
-			dom.find('a[href^="http"]').each(function() {
-				$(this).attr('target', '_blank');
-			});
+			switch (type) {
+				case 'heading':
+					var matches,
+						title, id
+						;
 
-			// fix img
-			dom.find('img').each(function() {
-				var el = this,
-					img = $(el),
-					figure = $('<figure><img></img><figcaption></figcaption></figure>')
-					;
+					if (depth === 2 || depth === 3) {
+						if (!(matches = linkReg.exec(text))) {
+							title = text;
+							id = baseId + headerMenu.length;
+							text = '[' + text + '](' + headerMenu.length + ')';
+						} else {
+							title = matches[1];
+							id = matches[2].replace('#', baseId);
+						}
 
-				figure.find('img')
-					.attr({
-						src : $.joinPath(basePath, page, '..', img.attr('src')),
-						alt : img.attr('alt')
-					});
+						text = title + '<a class="top" id="' + id + '" name="' + id + '">TOP</a>';
 
-				figure.find('figcaption')
-					.text(img.attr('alt'));
+						headerMenu.push('<li class="level' + (depth - 2) + '"><a href="#' + id + '">' + title + '</a></li>');
+					}
 
-				img.replaceWith(figure);
-			});
+					break;
+				case 'paragraph':
+					var matches,
+						imgAlt, imgSrc,
+						link, linkTitle, linkHref
+						;
 
-			Object.each(hEls, function(el, idx) {
-				var header = $(el),
-					title = header.text(),
-					menuLi = $('<li><a href="#"></a></li>'),
-					id = name + '/' + page + '/' + idx 
-					;
+					// fix img
+					if ((matches = text.match(imgReg))) {
+						imgAlt = matches[1];
+						imgSrc = $.joinPath(basePath, page, '..', matches[2]);
 
-				header.append('<span><a class="top" id="' + id + '" name="' + id + '">TOP</a></span>')
+						type = 'html';
+						text = [
+							'<figure>',
+								'<img alt="' + imgAlt + '" src="' + imgSrc + '" />',
+								'<figcaption>' + imgAlt + '</figcaption>',
+							'</figure>'
+						].join('');
+					}
 
-				menuLi.find('a').text(title)
-					.attr('href', '#' + id);
+					// fix link
+					while ((matches = linkReg.exec(text))) {
+						link = matches[0];
+						linkTitle = matches[1];
+						linkHref = matches[2];
 
-				if (el.tagName.toLowerCase() === 'h2') {
-					menuLi.addClass('level0');
-				} else {
-					menuLi.addClass('level1');
-				}
+						if (linkHref.indexOf('http') === 0) {
+							text = text.replace(link, '<a href="' + linkHref + '" target="_blank">' + linkTitle + '</a>');
+						} else {
+							if (linkHref === '#') {
+								linkHref = 'javascript:void(0)';
+							} else if (linkHref.indexOf('#') === 0) {
+								linkHref = linkHref.replace('#', '#' + baseId);
+							}
+							text = text.replace(link, '[' + linkTitle + '](' + linkHref + ')');
+						}
+					}
 
-				menu.append(menuLi);
-			});
+					break;
+			}
 
-			articleEl.html(dom[0].innerHTML);
-			dom = null;
 
-			dropdownUl.html(menu[0].innerHTML);
-			menu = null;
+			tok.type = type;
+			tok.text = text;
 
-			callback && callback();
 		});
+
+		lexer.splice(1, 0, {
+			type : 'html',
+			text : [
+				'<section class="dropdown">',
+					'<a href="javascript:void(0)">目录<b class="caret"></b></a>',
+					'<ul class="dropdown-menu pull-right">',
+					headerMenu.join(''),
+					'</ul>',
+				'</section>'
+			].join('')
+		});
+
+		return lexer;
+	}
+
+	function loadedContent(html) {
+		var name = hashParam.name,
+			page = hashParam.page,
+			baseId = name + '/' + page + '/',
+			dom = $('<div>' + html + '</div>')
+			;
+
+		// // use new window to open
+		// dom.find('a[href^="http"]').each(function() {
+		// 	$(this).attr('target', '_blank');
+		// });
+
+		articleEl.html(html);
 	}
 
 	function bindEvents() {
@@ -234,24 +301,6 @@
 		articleEl.on('click', 'a.top', function(e) {
 			win.scrollTo(0, 0);
 		});
-
-		dropdownUl.on('mousemove', function(e) {
-			dropdownUl.attr('open', 'true');
-		}).on('mouseout', function(e) {
-			dropdownUl.attr('open', 'false');
-
-			winEl.one('scroll', function() {
-				if (dropdownUl.attr('open') !== 'true')  {
-					dropdownUl.parent().removeClass('open');
-				}
-			});
-		}).prev('a').on('click', function(e) {
-			var el = this,
-				anchor = $(el)
-				;
-			anchor.parent().toggleClass('open');
-		});
-
 	}
 
 	function init() {
@@ -280,15 +329,37 @@
 
 		loadCategory(function() {
 			loadContent(function() {
+				var path = $.joinPath(name, page, section)
+					;
+
 				articleEl.find('a.top').each(function() {
 					var el = this,
 						anchor = $(el),
 						id = anchor.attr('id')
 						;
 
-					if (id === $.joinPath(name, page, section)) {
+					if (id === path) {
 						win.scrollTo(0, anchor.offset().top);
 					}
+				});
+
+				dropdownUl =  $('section.dropdown ul.dropdown-menu');
+
+				dropdownUl.on('mousemove', function(e) {
+					dropdownUl.attr('open', 'true');
+				}).on('mouseout', function(e) {
+					dropdownUl.attr('open', 'false');
+
+					winEl.one('scroll', function() {
+						if (dropdownUl.attr('open') !== 'true')  {
+							dropdownUl.parent().removeClass('open');
+						}
+					});
+				}).prev('a').on('click', function(e) {
+					var el = this,
+						anchor = $(el)
+						;
+					anchor.parent().toggleClass('open');
 				});
 			});
 		});
@@ -299,7 +370,6 @@
 		logoUl = $('section.category .logo');
 		cateUl = $('section.category ul.categroup');
 		articleEl = $('section.content article');
-		dropdownUl =  $('section.dropdown ul.dropdown-menu');
 
 		init();
 		bindEvents();
