@@ -290,6 +290,7 @@ Using the module approach also allows us to better understand where context chan
 当我们在不同的区域中（sections）使用这相同的Module的时候，我们的第一直觉就是根据其父元素来对其进行样式的设置。
 
 例如：
+
 	.pod { 
 		width: 100%; 
 	}
