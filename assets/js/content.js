@@ -118,6 +118,7 @@
 	function loadContent(callback) {
 		var name = hashParam.name,
 			page = hashParam.page,
+			baseId = name + '/' + page + '/',
 			section = hashParam.section,
 			url = $.joinPath(basePath, page)
 			;
@@ -133,6 +134,15 @@
 			// fix href = "#"
 			dom.find('a[href="#"]').each(function() {
 				$(this).attr('href', 'javascript:void(0)');
+			});
+
+			// fix href = "#xxxx"
+			dom.find('a[href^="#"]').each(function() {
+				var el = $(this),
+					href = el.attr('href')
+					;
+
+				el.attr('href', href.replace('#', '#' + baseId));
 			});
 
 			// fix href= "http://xxxx"
@@ -161,15 +171,23 @@
 
 			Object.each(hEls, function(el, idx) {
 				var header = $(el),
+					anchor = header.children('a'),
 					title = header.text(),
-					menuLi = $('<li><a href="#"></a></li>'),
-					id = name + '/' + page + '/' + idx 
+					menuLi,	id
 					;
 
-				header.append('<span><a class="top" id="' + id + '" name="' + id + '">TOP</a></span>')
+				
+				if (anchor.length) {
+					id = anchor.attr('href').substr(1);
+					header.html(anchor.html());
+				} else {
+					id = baseId + idx;
+				}
 
-				menuLi.find('a').text(title)
-					.attr('href', '#' + id);
+				header.append('<span><a class="top" id="' + id + 
+								'" name="' + id + '">TOP</a></span>');
+
+				menuLi = $('<li><a href="#' + id + '">' + title + '</a></li>');
 
 				if (el.tagName.toLowerCase() === 'h2') {
 					menuLi.addClass('level0');
@@ -280,13 +298,16 @@
 
 		loadCategory(function() {
 			loadContent(function() {
+				var path = $.joinPath(name, page, section)
+					;
+
 				articleEl.find('a.top').each(function() {
 					var el = this,
 						anchor = $(el),
 						id = anchor.attr('id')
 						;
 
-					if (id === $.joinPath(name, page, section)) {
+					if (id === path) {
 						win.scrollTo(0, anchor.offset().top);
 					}
 				});
