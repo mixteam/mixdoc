@@ -4,19 +4,19 @@ SMACSS by Jonathan Snook 官网http://smacss.com/book/
 
 随着项目的越来越大，CSS也越来越难以组织。为了使CSS更加结构化以方便维护和扩展，Jonathan Snook在SMACSS中提出了一些Guide Line。
 
-SMACSS将规则分为以下几类：
+SMACSS将整个Framwork下的CSS规则分为以下几类
 
-1.Base Rules
+1.Base Rules ：定义页面级别最基本的元素选择；标签选择器，后代选择器，一些伪类；不包含任何class 或者ID选择器
 
-2.Layout Rules
+2.Layout Rules ：一个页面的大的区域部分；如footer，header都可以作为Layout；可以细分成很多小的区域，这些小的区域就成为了一个个Module
 
-3.Module Rules
+3.Module Rules：
 
-4.State Rules
+4.State Rules ：定义了两种样式分类：表示消息；表示状态
 
-5.Theme Rules
+5.Theme Rules ： Theme Style定义的是外观和感觉；容易重定义样式和外观 ；会影响主要的布局、控件外观。例如，链接的颜色；使module呈现多种色彩；影响layout的布局；会改变states style的样式。
 
-6.Changing State
+6.Changing State ：state change的三种手段：class name；pseudo-class；media query。Changing State主要集中在这三点。
 
 ##Base Rules
 
@@ -417,9 +417,13 @@ States should be made to stand alone and are usually built of a single class sel
 	Themes can affect any of the primary types. It could override base styles like default link colours. It could change module elements such as chrome colours and borders. It could affect layout with different arrangements. It could also alter how states look.
 
 即：
+
 1.Theme Style定义的是外观和感觉。
+
 2.容易重定义样式和外观
+
 3.会影响主要的布局、控件外观。例如，链接的颜色；使module呈现多种色彩；影响layout的布局；改变states style的样式。
+
 
 例如：
 	// in module-name.css
