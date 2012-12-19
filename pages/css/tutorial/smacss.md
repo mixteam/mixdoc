@@ -10,7 +10,7 @@ SMACSS将整个Framwork下的CSS规则分为以下几类
 
 **2.Layout Rules** ：一个页面的大的区域部分；如footer，header都可以作为Layout；可以细分成很多小的区域，这些小的区域就成为了一个个Module
 
-**3.Module Rules**：
+**3.Module Rules**： layout可以细分成很多小的区域，这些小的区域就成为了一个个Module,Module的特点->重复使用；控件级别。
 
 **4.State Rules** ：定义了两种样式分类：表示消息；表示状态
 
