@@ -350,4 +350,151 @@ Sub-module class name in HTML
 
 这个时候你可能又会想，当我们在页面A点击了按钮a，a有着基础的btn样式，点击以后又加载了页面B，但同时加载页面B（属于不同的产品）也有自己的基础btn样式，此时页面A的btn子类会被重写。当遇到这种情况的时候要格外当心。
 
+##State Rules
 
+官方释义：
+
+	A state is something that augments and overrides all other styles. For example, an accordion section may be in a collapsed or expanded state. A message may be in a success or error state.
+
++ 表示消息
++ 表示状态
+	
+例如：
+
+	<div id="header" class="is-collapsed">
+		<form>
+			<div class="msg is-error">
+				There is an error!
+			</div>
+			<label for="searchbox" class="is-hidden">Search</label>
+			<input type="search" id="searchbox">
+		</form>
+	</div>
+
+
+1.header用于layout，而is-collapsed则表示一种收缩的状态
+2.msg是一个module，同时伴随一个is-error的状态
+3.label的is-hidden的显示/隐藏状态
+
+State Rules和layout rule、module rule只是一个叠加，并没有重写。
+
+
+sub-module style 和state style会有一些相像，两者不同的地方在于：
+1.State styles can apply to layout and/or module styles; and
+2.State styles indicate a JavaScript dependency.
+
+第二点是主要区别。Sub-module styles在页面渲染时作用域于元素，然后就不发生变化。State styles会在一个元素发生变化的时候起作用。
+
+**Using !important**
+
+States should be made to stand alone and are usually built of a single class selector.
+
+一般而言，在复杂的应用中，State styles要重写样式，一般而言是建议使用 !important的。
+
+**Combining State Rules with Modules**
+
+	.tab {
+		background-color: purple;
+		color: white;
+	}
+
+	.is-tab-active {
+		background-color: white;
+		color: black;
+	}
+
+	
+##Theme Rules
+
+官方释义：
+
+	Theme Rules aren't as often used within a project and because of that, they aren't included as part of the core types. Some projects may have a need for them, though, as we did when working on Yahoo! Mail.
+	
+主题：
+	
+	It is probably self-evident but a theme defines colours and images that give your application or site its look and feel. Separating the theme out into its own set of styles allows for those styles to be easily redefined for alternate themes.
+
+	Themes can affect any of the primary types. It could override base styles like default link colours. It could change module elements such as chrome colours and borders. It could affect layout with different arrangements. It could also alter how states look.
+
+即：
+1.Theme Style定义的是外观和感觉。
+2.容易重定义样式和外观
+3.会影响主要的布局、控件外观。例如，链接的颜色；使module呈现多种色彩；影响layout的布局；改变states style的样式。
+
+例如：
+	// in module-name.css
+	.mod {
+		border: 1px solid;
+	}
+
+	// in theme.css
+	.mod {
+		border-color: blue;
+	}
+
+使用相同的class名称，将其独立到不同的文件中去。
+
+At Yahoo! Mail, to help with maintaining consistency across all of our theme files—we have over 50—we use a Mustache template for our CSS that allows us to specify a number of colour values, a background image, and create a final CSS file for production.
+
+几个点：
+1.颜色
+2.背景图
+3.不同的css输出文件
+
+附：	
+	Mustache is a templating language that uses {{}} around variables that are then merged with a data set to create a final product. So, we had a mustache template for the CSS file that would look something like "color: {{PRIMARY_COLOR}};
+
+**Typography**
+
+Similar to themes, there are times when you need to redefine the fonts that are being used on a wholesale basis, such as with internationalization. Locales such as China and Korea have complex ideograms that are difficult to read at smaller font sizes.As a result, we create separate font files for each locale that redefine the font size for those components.
+
+汉字比较复杂，不能使用太小的文字，为每个地域创建不同的字体文件库以适应本地化。
+
+但是，Font style会影响到base、module和State style。
+
+Font rules will normally affect base, module and state styles.
+
+此外，
+Font styles won’t normally be specified at the layout level as layouts are intended for positioning and placement, not for stylistic changes like fonts and colours.
+
+Font style不应放在layout中，因为layout负责的是position和placement。
+
+同时，
+
+Like theme files, there may not be need to define actual font classes (like f-large). Your site should only have 3 to 6 different font-sizes. If you have more than 6 font sizes declared in your project, your users will not likely notice and you are making the site harder to maintain.
+
+整个站点的字体大小应该控制在3-6种之间，一旦超过了6种不仅你的用户无法分辨出来，而且维护起来会很麻烦。
+
+**Q:**
+
+	The site I'm working on has several different "zones", each themed with a different color. Up to now, the colors were defined in separate .css files (named with the zone's name) and the pages called the relevant theme stylesheet by a link in the head. It contains things like background colors, border colors, but also some images with the specific colors (arrows and circles and things like that). Does this seem adequate or would you do it differently?
+	
+	Theme文件独立分开；引用的时候一个@import；包含背景色，border颜色，特殊的图片等等。
+**A:**
+	这样很棒
+
+
+##Changing State
+
+**What is a state change?**
+State changes are represented in one of three ways:
+
++ class name
++ pseudo-class
++ media query
+
+1.借助js改变class，达到状态改变
+2.借助于伪类标签达到状态改变
+3.定义不同的breakpoint，media query可以实现状态改变
+
+###Change via class name
+
+	// with jQuery
+	$('.btn-close').click(function(){ 
+		$(this).parents('.dialog').addClass('is-hidden');        
+	})
+	
+###Change via Pseudo-class
+
+
+###Change via Pseudo-class
