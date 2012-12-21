@@ -6,7 +6,7 @@
 
 ##Layout style
 
-![Form混合的呈现样式](../assets/images/2012-12-21-1.JPG)
+![详情页layout划分](../assets/images/2012-12-21-1.JPG)
 
 ##Module style
 
