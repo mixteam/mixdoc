@@ -1,5 +1,7 @@
 #SMACSS实践——之taobaoPad detail **SMACSS实践**
 
+by jiangC
+
 ##Theme style
 
 ##Base style

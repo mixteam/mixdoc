@@ -1,5 +1,7 @@
 #Guide Line——Scalable and Modular Architecture for class **SMACSS**
 
+by jiangC
+
 SMACSS by Jonathan Snook 官网http://smacss.com/book/
 
 随着项目的越来越大，CSS也越来越难以组织。为了使CSS更加结构化以方便维护和扩展，Jonathan Snook在SMACSS中提出了一些Guide Line。
