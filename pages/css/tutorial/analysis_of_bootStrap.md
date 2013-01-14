@@ -1,5 +1,7 @@
 #bootStrap分析文档 **bootStrap**
 
+by jiangC
+
 ##序（持续更新）
 
 ##和现有框架的比较
