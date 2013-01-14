@@ -4,6 +4,8 @@
 	* [Less生成CSS冗余测试](tutorial/redundancy_of_css_generated_by_less.md)
 	* [bootStrap分析文档](tutorial/analysis_of_bootStrap.md)
 	* [适合移动端的组件？(与PC的差别)](tutorial/whats_mobile_component.md)
+	* [Guide Line——Scalable and Modular Architecture for class](tutorial/smacss.md)
+	* [SMACSS实践之——taobaoPad商品详情](tutorial/taobaopad_detail_smacss.md)
 * [组件基础依赖/规范](#)
     * [__variables](base/__variables.md)
     * [__func](base/__func.md)
