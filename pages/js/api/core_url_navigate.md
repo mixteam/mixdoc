@@ -15,14 +15,14 @@
 
 ## 实例化
 
-### new Navigate([options[, globalRouter]])
+### new Navigate([options)
 
 * @param {object} options
+	* @key {Router} useRouter
 	* @key {number} [stateLimit=100]
-* @param {boolean} [globalRouter]
-* @return {Router} a router object
+	
 
-实例化一个导航对象。当`globalRouter`为`true`时，会使用全局的路由对象。否则会创建一个新的路由对象。
+实例化一个导航对象，并指定导航使用的路由器对象。
 
 ## 类属性/方法
 
@@ -30,27 +30,33 @@
 
 * @var {Navigate} a global Navigate object
 
-一个全局的路由对象，使用的是全局的路由对象。
+一个全局的导航对象，使用的是全局的路由对象。
 
 ## 实例属性/方法
 
-### getRouter()
+### router
 
-* @return {Router} a Router object
+* @var {Router} a Router object
 
 获取当前导航对象使用的路由对象。
 
 ### getState()
 
 * @return {object} a state object
-	* @key {string} name, the name
+	* @key {string} name, the route name
 	* @key {string} move, the movement
 	* @key {string} fragment, the hash fragment
-	* @key {object} params, the router params
+	* @key {object} params, the route params
 	* @key {object} args, the arguments
 	* @key {object} datas, the datas
 
 获得当前的[导航状态](#state)。
+
+### getStateIndex()
+
+* @return {number} the current index for states
+
+获取当前[导航状告](#state)的索引
 
 ### addRoute([name, routeText,]options)
 
