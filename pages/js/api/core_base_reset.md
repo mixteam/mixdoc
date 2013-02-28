@@ -2,6 +2,10 @@
 
 提供常用函数以及ECMA5里面补充的内置对象方法（诸如forEach等）
 
+## 引用（获取）
+
+`require('mix/core/{{JS_VERSION}}/base/reset')`
+
 ## Object
 
 ### Object.keys(obj)
@@ -100,13 +104,3 @@
 * @return {string} a new string
 
 去除字符串所有空字符
-
-## Function
-
-### Function.binded(func, context)
-
-* @param {function} func
-* @param {object} context
-* @return {function} a binded function
-
-给函数绑定一个上下文
