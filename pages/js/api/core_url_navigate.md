@@ -81,10 +81,14 @@
 * @param {object} [options]
 	* @key {object} args, the arguments
 	* @key {object} datas, the datas
+	* @key {string} [transition='forward'], the transition movement
 
 导航到某路径（前进）。当所有参数为空时，为浏览器默认的前进操作。
 
 ### backward()
+
+* @param {object} [options]
+	* @key {string} [transition='backward'], the transition movement
 
 浏览器默认的后退动作。
 
