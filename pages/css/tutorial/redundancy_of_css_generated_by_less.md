@@ -1,5 +1,7 @@
 #Less生成CSS冗余测试 **less**
 
+by jiangC
+
 ##基本结构（测试版本1.3.0）
 
 ![基本结构图](../assets/images/2012-12-11-01.JPG)
