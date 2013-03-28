@@ -1,3 +1,3 @@
-* [Mix tools](tutorial/quick-guide.md)
-* [工具列表](#)
-	* [JSON 转 Markdown 工具](tutorial/mix_json_md.md)
+* [Mix CSS入门手册](tutorial/quick-guide.md)
+* [开发文档](#)
+	* [基础文档&开发规范](tutorial/mix_json_md.md)
