@@ -6281,12 +6281,16 @@ header ul.nav li {
   height: 60px;
 }
 header ul.nav li a {
-  height: 36px;
+  display: table-cell !important;
+  text-align: center;
+  height: 60px;
+  width: 90px;
+  vertical-align: middle;
   border-radius: 0;
   box-sizing: border-box;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 12px 15px !important;
+  padding: 0 !important;
 }
 header ul.nav li a span:first-child {
   font-size: 12px;
