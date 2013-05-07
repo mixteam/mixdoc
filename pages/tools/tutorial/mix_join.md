@@ -2,7 +2,7 @@
 
 	npm install mix-join -g
 
-仅WIN下测试.
+仅windows下测试.
 
 ##功能
 
@@ -24,5 +24,5 @@
 
 其中outputs为输出拼接的相对路径和文件名.
 
-
+![demo](../assets/images/2013-05-07-01.JPG)
 
