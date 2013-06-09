@@ -88,7 +88,7 @@ grunt-init gruntfile
 - [?] Will you have a package.json file? (Y/n) 是否有package.json，有的就选Y喽
 - [?] Do you need to make any changes to the above before continuing? 问你是否要再修改。填错就时光机回去吧。
 
-完成后，会生成一个`Gruntfile.js`。打开后，可以发现里面默认配置了四个任务，分别是`concat`,`uglify`,`qunit`,`jshint`,`watch`。这里不需要用到`concat`,`qunit`,`jshint`，可以将它们删掉。
+完成后，会生成一个`Gruntfile.js`。打开后，可以发现里面默认配置了五个任务，分别是`concat`,`uglify`,`qunit`,`jshint`,`watch`。这里不需要用到`concat`,`qunit`,`jshint`，可以将它们删掉。
 
 ### 任务1：拼接依赖文件
 
@@ -140,6 +140,9 @@ cssmin: {
 }
 ```
 
+更多uglify的配置和用法，请参考[README](https://github.com/gruntjs/grunt-contrib-uglify/blob/master/README.md)   
+更多cssmin的配置和用法，请参考[README](https://github.com/gruntjs/grunt-contrib-cssmin/blob/master/README.md)
+
 ### 任务3：监控文件
 
 `watch`这个任务可以在文件改变时，执行指定的任务，这个在开发时是非常有用的。
@@ -167,6 +170,8 @@ watch: {
 	}
 }
 ```
+
+更多watch的配置和用法，请参考[README](https://github.com/gruntjs/grunt-contrib-watch/blob/master/README.md)
 
 ### 注册自定义任务
 
