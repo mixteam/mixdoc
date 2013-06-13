@@ -15,7 +15,7 @@
 .content() {
 	min-width: @screen-min-width;
 	margin: auto;
-	padding: 0 200px;
+	padding: 0 15%;
 	box-sizing: border-box;
 }
 
@@ -45,13 +45,14 @@ header {
 		//padding-left: 20px;
 		
 		li {
+            height: 60px;
 			a {
-				height: 60px;
+				height: 36px;
 				border-radius: 0;
 				box-sizing: border-box;
 				margin-top: 0;
 				margin-bottom: 0;
-				padding: 12px 20px;
+				padding: 12px 15px !important;
 
 				span:first-child {
 					font-size: 12px;
@@ -190,7 +191,8 @@ section.category {
 	@padding-left: 20px;
 	@padding-right: 10px;
 
-	width: 200px;
+	width: 15%;
+    overflow: hidden;
 	height: 100%;
 	box-sizing: border-box;
 	position: absolute;
@@ -233,6 +235,7 @@ section.category {
 
 
 	.categroup {
+        overflow: hidden;
 		& > li {
 			& > a {
 				width: 100%;
@@ -247,6 +250,7 @@ section.category {
 
 				b.caret {
 					float:right;
+                    margin-right: 3px;
 					margin-top: 12px;
 					border-top: 4px solid #555;
 				}
@@ -310,8 +314,9 @@ section.category {
 }
 
 section.content {
-	width: 100%;
-	border-left:200px solid rgb(223,223,223);
+    float: right;
+    width: 85%;
+	border-left: 1px solid rgb(223,223,223);
 	box-sizing: border-box;
 
 	article {
@@ -323,6 +328,7 @@ section.dropdown {
 	position: fixed;
 	width: 60px;
 	height: 28px;
+    padding: 0 5px;
 	box-sizing: border-box;
 	background-color: #FFF;
 	border: 1px solid #DDD;
@@ -332,7 +338,6 @@ section.dropdown {
 
 	& > a {
 		width: 100%;
-		padding: 0 5px;
 		box-sizing: border-box;
 		height: 28px;
 		line-height: 28px;
