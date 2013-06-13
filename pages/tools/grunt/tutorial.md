@@ -104,11 +104,11 @@ grunt.loadNpmTasks('grunt-depconcat');
 depconcat: {
 	js: {
 		src: ['src/*.js'],
-		dest: ['dist/all.js']
+		dest: 'dist/all.js'
 	},
     css: {
 		src: ['assets/*.css'],
-		dest: ['dist/all.css']
+		dest: 'dist/all.css'
 	}
 }
 ```
